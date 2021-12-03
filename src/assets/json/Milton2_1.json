@@ -1,0 +1,282 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton2_1_Start and ( CertTicketSent or PassTicketSent or AarghTicketSent ) )",
+    "text": [
+      "Attention: You have received a reply to your user support ticket. ",
+      "",
+      "Display reply?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Display reply",
+        "next": "SupportReply",
+        "set": "Milton2_1_DONE"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SupportReply and CertTicketSent )",
+    "text": [
+      "Topic: Account certification error%w5",
+      "User: Basic account%w5",
+      "",
+      "Reply: An account certification program diagnostic has been performed and no errors were reported.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SupportReply and PassTicketSent )",
+    "text": [
+      "Topic: Lost admin password%w5",
+      "User: Basic account%w5",
+      "",
+      "Reply: To retain your personal data please contact the network administrator and ask to be issued a new password. Otherwise please delete your existing profile and create a new one.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SupportReply and AarghTicketSent )",
+    "text": [
+      "Topic: AAaarrgghhhh%w5",
+      "User: Basic account%w5",
+      "",
+      "Reply: Sorry, your query was not recognised.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Reboot2_1 and not DeletedProf )",
+    "text": [
+      "Logging out%w5.%w5.%w5.",
+      "Deleting user.prof%w5.%w5.%w5.",
+      "User.prof deleted.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Delete user account",
+        "next": "Reboot2_1",
+        "set": "DeletedProf"
+      },
+      {
+        "text": "Create new admin account",
+        "next": "CreateAccount2_1",
+        "set": "DeletedProf"
+      },
+      {
+        "text": "Email network administrator",
+        "next": "Email2_1",
+        "set": "DeletedProf"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Reboot2_1 and DeletedProf )",
+    "text": [
+      "No user profile detected.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Delete user account",
+        "next": "Reboot2_1"
+      },
+      {
+        "text": "Create new admin account",
+        "next": "CreateAccount2_1"
+      },
+      {
+        "text": "Email network administrator",
+        "next": "Email2_1"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Email2_1 )",
+    "text": [
+      "The mail application requires network access, which is restricted to administrators.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Delete user account",
+        "next": "Reboot2_1"
+      },
+      {
+        "text": "Create new admin account",
+        "next": "CreateAccount2_1"
+      },
+      {
+        "text": "Email network administrator",
+        "next": "Email2_1"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton2_1_Start and not ( CertTicketSent or PassTicketSent or AarghTicketSent ) )",
+    "text": [
+      "Initiating system%w5.%w5.%w5.",
+      "Pinging network computers%w5.%w5.%w5.",
+      "Checking communications portal%w5.%w5.%w5.",
+      "",
+      "Incoming transmission received on emergency channel",
+      "Display transmission?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Display",
+        "next": "Display2_1",
+        "set": "Milton2_1_DONE"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Display2_1 )",
+    "text": [
+      "Connecting network drives.%w3.%w3.%w3.%w3.%w3 %w9Error: network inaccessible.%w9",
+      "###75639$ Encountered unknown errors",
+      "",
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "Hello again. It seems you're still encountering a problem.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( SupportReply and ( CertTicketSent or PassTicketSent or AarghTicketSent ) ) or Display2_1 )",
+    "text": [
+      "Have you completed the standard troubleshooting procedures?",
+      "",
+      "1) Delete existing user account (-del #user.prof)",
+      "2) Create a new admin account",
+      "3) Email the network administrator (run mail.exe)",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Delete user account",
+        "next": "Reboot2_1"
+      },
+      {
+        "text": "create new admin account",
+        "next": "CreateAccount2_1"
+      },
+      {
+        "text": "Email network administrator",
+        "next": "Email2_1"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CreateAccount2_1 and not DeletedProf )",
+    "text": [
+      "In order to prevent unauthorised access to admin controls, please take a moment to prove you are not.%w5.%w5.%w5. 789462#%w5 error%w5",
+      "",
+      "789462# error%w5 - User profile already registered%w5",
+      "",
+      "You currently have basic account functionalities. Would you like to undertake the certification process again to achieve a preferable outcome?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Yes2_1"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CreateAccount2_1 and DeletedProf )",
+    "text": [
+      "In order to prevent unauthorised access to admin controls only persons may sign up to new admin accounts. The system will now conduct%w5.%w5.%w5. 789462#%w5 error%w5",
+      "",
+      "789462# error%w5 - User has no registered account, but certification data already exists.%w5",
+      "",
+      "Would you like to undertake the certification process again to achieve a preferable outcome?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Yes2_1"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Yes2_1 )",
+    "text": [
+      "Your issues with denial will be appended to your user profile.%w5",
+      "Further attempts to overwrite certification results will be logged. %w5",
+      "You will receive a notification if your attention is required.%w5",
+      "",
+      "Exiting to command prompt%w5.%w5.%w5.",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

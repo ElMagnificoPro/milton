@@ -1,0 +1,276 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( not conflict and ( Milton1_2BadMath or Milton1_2Objective or Milton1_2PersonDenial or Milton1_2Sociopath or ( Milton1_2Liberal and Milton1_2Utilitarian ) or ( Milton1_2Liberal and Milton1_2NoMorals ) or ( Milton1_2NoMorals and Milton1_2Utilitarian ) or ( Milton1_2ValueDiscovered and Milton1_2ValueCreated ) ) )",
+    "text": "",
+    "set": "conflict"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton1_2_Start )",
+    "text": [
+      "Attention: Your user profile has now been generated.%w5",
+      "",
+      "Download profile [Y/N]?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Download1_2"
+      },
+      {
+        "text": "No",
+        "next": "Ignore1_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ignore1_2 )",
+    "text": [
+      "Advanced functionalities are unavailable to users with incomplete profiles. Are you sure?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "download user.prof",
+        "next": "Download1_2"
+      },
+      {
+        "text": "exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Download1_2 )",
+    "text": [
+      "Downloading user.prof%w5.%w5.%w5.",
+      "Registering profile%w5.%w5.%w5.",
+      "",
+      "-------------------------------",
+      "",
+      "Congratulations, your new user account has been registered. Would you like to see the details?",
+      "",
+      ""
+    ],
+    "set": "Milton1_2_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( Download1_2 or DisplayConflicts or DisplayPsych or DisplayPriv or SupportEnd or AccessCommsDenied ) and not ( CertTicketSent or PassTicketSent or AarghTicketSent ) )",
+    "text": "",
+    "options": [
+      {
+        "text": "Display conflicts",
+        "next": "DisplayConflicts"
+      },
+      {
+        "text": "Display psychological profile",
+        "next": "DisplayPsych"
+      },
+      {
+        "text": "Display account privileges",
+        "next": "DisplayPriv"
+      },
+      {
+        "text": "access_comm_portal",
+        "next": "AccessCommsDenied"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      },
+      {
+        "text": "Log MLA support ticket",
+        "next": "SupportTicket"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Download1_2 or DisplayConflicts or DisplayPsych or DisplayPriv or SupportEnd or AccessCommsDenied )",
+    "text": "",
+    "options": [
+      {
+        "text": "Display conflicts",
+        "next": "DisplayConflicts"
+      },
+      {
+        "text": "Display psychological profile",
+        "next": "DisplayPsych"
+      },
+      {
+        "text": "Display account privileges",
+        "next": "DisplayPriv"
+      },
+      {
+        "text": "access_comm_portal",
+        "next": "AccessCommsDenied"
+      },
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AccessCommsDenied )",
+    "text": [
+      "You currently hold a basic account. Network access is restricted to administrators. Please enjoy the basic functionalities.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts )",
+    "text": [
+      "",
+      "",
+      "CONFLICTS",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2BadMath )",
+    "text": [
+      "- User failed at basic mathematics.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2Objective )",
+    "text": [
+      "- User provided an objective response when asked for a subjective one.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2PersonDenial )",
+    "text": [
+      "- User provided a particular account of personhood but was uncomfortable with its implications.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2Liberal and Milton1_2Utilitarian )",
+    "text": [
+      "- User sought to maximise both liberty and quality of life, but these ideals are incompatible.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( DisplayConflicts and Milton1_2NoMorals and Milton1_2Liberal ) or ( DisplayConflicts and Milton1_2NoMorals and Milton1_2Utilitarian ) )",
+    "text": [
+      "- User denied moral authority but defended moral claims.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2ValueDiscovered and Milton1_2ValueCreated )",
+    "text": [
+      "- User had inconsistent ideas about value.%w5",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and Milton1_2Sociopath )",
+    "text": [
+      "- User displayed sociopathic tendencies.%w5",
+      "\t",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayConflicts and not conflict )",
+    "text": [
+      "No conflicts were detected during the certification process.",
+      "A note was added to this account requesting future administrator review.%w10",
+      "Note: lack of conflict indicates possible bot.",
+      "",
+      ""
+    ],
+    "set": "NoConflict"
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayPsych )",
+    "text": [
+      "",
+      "",
+      "PSYCHOLOGICAL PROFILE",
+      "You may already be criticising your own performance, but it's clear you understand how the world of ideas affects you, even if you are sometimes weary with the realities and allow your preferences to dictate your beliefs. You have a great deal of unused capacity which you have not turned to your advantage. Disciplined and self-controlled outside, you tend to be worrisome and insecure inside, but you pride yourself as an independent thinker and do not accept others' statements without satisfactory proof.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DisplayPriv )",
+    "text": [
+      "",
+      "",
+      "PROFILE PRIVILEGES",
+      "Basic Account Privileges Only",
+      "",
+      "Due to outstanding notes on your account, and despite displaying many of the characteristics of being a person, you cannot be granted admin status at this time.",
+      "",
+      "In the meantime, please enjoy the basic account functionalities.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SupportTicket )",
+    "text": [
+      "I'm sorry I wasn't better able to assist you. If you're still encountering a problem please describe it.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Account certification error",
+        "next": "SupportEnd",
+        "set": "CertTicketSent"
+      },
+      {
+        "text": "Lost admin password",
+        "next": "SupportEnd",
+        "set": "PassTicketSent"
+      },
+      {
+        "text": "AAaarrgghhhh",
+        "next": "SupportEnd",
+        "set": "AarghTicketSent"
+      },
+      {
+        "text": "exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SupportEnd )",
+    "text": [
+      "Thank you. A support ticket has been generated and appended to your profile. You will receive a notification when a reply has been sent.",
+      "",
+      ""
+    ]
+  }
+]

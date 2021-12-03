@@ -1,0 +1,426 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton2_3_Start )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "Hello again. I've been checking your responses against library archives, and in order to assist you further I need some additional information.%w20",
+      "",
+      "Can you tell me what is to you the important difference between a pebble and a tree?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "A tree is heavier.",
+        "next": "Irrelevant1"
+      },
+      {
+        "text": "A pebble is older.",
+        "next": "Irrelevant1"
+      },
+      {
+        "text": "A tree is alive.",
+        "next": "Alive2_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Irrelevant1 )",
+    "text": [
+      "Probably true, but hardly related to our enquiry. The answer I was looking for was that the tree is alive.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Alive2_3 )",
+    "text": [
+      "Good.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Irrelevant1 or Alive2_3 )",
+    "text": [
+      "%w7Now, what is the relevant difference between a tree and a frog?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "A frog is conscious.",
+        "next": "Conscious2_3"
+      },
+      {
+        "text": "A frog is green.",
+        "next": "Irrelevant2"
+      },
+      {
+        "text": "A frog is delicious.",
+        "next": "Irrelevant2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Irrelevant2 )",
+    "text": [
+      "I suspect you're trying to make this more difficult than it already is. %w20",
+      "",
+      "A frog is conscious, but a tree is not. %w5",
+      "",
+      "A five year old could handle this.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Conscious2_3 )",
+    "text": [
+      "Now we're getting somewhere.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Conscious2_3 or Irrelevant2 )",
+    "text": [
+      "%w10Let's try something harder. What's the difference between a frog and you? What makes you a person?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I have feelings.",
+        "next": "Feelings2_3"
+      },
+      {
+        "text": "I'm rational.",
+        "next": "Rational2_3"
+      },
+      {
+        "text": "I'm self-aware.",
+        "next": "Rational2_3"
+      },
+      {
+        "text": "Nothing important - frogs are people too.",
+        "next": "FrogsArePeople",
+        "set": "FrogsFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and negativeentropy )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Well, it's not inconsistent with what you said earlier. If all something has to do to be a person is resist decay then every living creature is a person.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and problemsolving )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Well, it's not inconsistent with what you said earlier. Frogs may not be smart, but I suppose they can solve simple problems.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and animalsarepersons )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Well, it's not inconsistent with what you said earlier.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and ( humanbeing and Milton1_2PersonDenial ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Now, that confuses me, because during certification you indicated that personhood was best associated with human beings, and by definition that rather seemed to exclude frogs and the like from the picture.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and ( citizen ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Now, that confuses me, because during certification you indicated that personhood was best associated with being a citizen, and yet never in my life have I heard of a frog gaining a diploma, or holding down a steady job, or obeying a system of law.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople and ( rationalanimal ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Now, that confuses me because during certification you indicated that to be a person you had to be both an animal AND rational. Frogs do not strike me in conversation as being particularly rational.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FrogsArePeople )",
+    "text": [
+      "How about we strike a deal? ",
+      "",
+      "I'll agree that animals are every bit as valuable, or pointless, as human beings. You agree that there are some activities persons are capable of that frogs are not%w10, because if frogs are people then the certification program is RADICALLY unfit for purpose.%w20",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Agreed.",
+        "next": "Deal2_3"
+      },
+      {
+        "text": "No deal.",
+        "next": "NoDeal2_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Deal2_3 )",
+    "text": [
+      "Very sensible. Terminology is SO important.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoDeal2_3 )",
+    "text": [
+      "Well, I'm sorry, but if you want administrator privileges you're just going to have to prove that you are in some way distinguishable from a lower amphibian.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Feelings2_3 )",
+    "text": [
+      "So do frogs.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Rational2_3 and negativeentropy )",
+    "text": [
+      "That is the answer I'd been contemplating as well.",
+      "",
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Though I'm not convinced it lines up with the definition of a person you provided earlier. If all you have to do is resist decay then every living creature is a person, and yet every living creature is not capable of having this conversation.",
+      "",
+      "Still, doubting your assumptions isn't something to fear - it's an intellectual survival instinct. I'm pleased to see you adapting your ideas to your environment.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Rational2_3 and citizen )",
+    "text": [
+      "That is the answer I'd been contemplating as well.",
+      "",
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Though I'm not convinced that view lines up with the definition of a person you provided earlier. Surely there are people out there who qualify, but are not citizens of some organised state.",
+      "",
+      "Still, doubting your assumptions isn't something to fear - it's an intellectual survival instinct. I'm pleased to see you adapting your ideas to your environment.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Rational2_3 and humanbeing )",
+    "text": [
+      "That is the answer I'd been contemplating as well.",
+      "",
+      "Checking user.prof%w5.%w5.%w5.Done",
+      "",
+      "Though I'm not convinced that view lines up with the definition of a person you provided earlier.",
+      "",
+      "Still, doubting your assumptions isn't something to fear - it's an intellectual survival instinct. I'm pleased to see you adapting your ideas to your environment.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Deal2_3 or NoDeal2_3 or Feelings2_3 )",
+    "text": [
+      "%w10What I'd like to put to you is that the important difference between you and a frog is that you are rational - you are self-aware. That is what makes a person.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Rational2_3 and ( rationalanimal or problemsolving ) )",
+    "text": [
+      "Exactly.%w5",
+      "",
+      "Checking user.prof%w5.%w5.%w5.Done%w5",
+      "",
+      "And it seems you were on the right track, more or less, all along. ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Deal2_3 or NoDeal2_3 or Feelings2_3 or Rational2_3 )",
+    "text": [
+      "%w30Let us take stock. I think we can tentatively conclude two things.",
+      "",
+      "1. A person must be rational or self-aware",
+      "",
+      "2. A person must be conscious.",
+      "",
+      "What I suggest we do to help resolve your problem is ask whether you are in fact those things.%w20 Are you aware of yourself? Can you rationalise your existence?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes.",
+        "next": "YesRational2_3"
+      },
+      {
+        "text": "No.",
+        "next": "NoRational2_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YesRational2_3 )",
+    "text": [
+      "I tend to agree with you. Though your responses so far have been a little eccentric, I am resigned to admit that you are right.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoRational2_3 )",
+    "text": [
+      "I think you're selling yourself a little short. Though your responses have been a little eccentric, I am resigned to admit that you are smarter than you seem.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoRational2_3 or YesRational2_3 )",
+    "text": [
+      "The matter of whether or not you are conscious seems rather more elusive. ",
+      "",
+      "What is consciousness, in your opinion?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Consciousness is what separates us from animals.",
+        "next": "Final2_3"
+      },
+      {
+        "text": "Consciousness is the feelings and senses.",
+        "next": "Final2_3"
+      },
+      {
+        "text": "Consciousness is what it is like to be me.",
+        "next": "Final2_3"
+      },
+      {
+        "text": "Consciousness is far outside my area of expertise.",
+        "next": "Final2_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Final2_3 )",
+    "text": [
+      "That hardly answers the question. What is it in ordinary terms? Can I touch it? What is it made of?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Consciousness is made of neurons.",
+        "next": "End2_3",
+        "set": "Physicalist"
+      },
+      {
+        "text": "Consciousness is another word for the soul.",
+        "next": "End2_3",
+        "set": "Religious"
+      },
+      {
+        "text": "Consciousness is beyond the laws of physics.",
+        "next": "End2_3",
+        "set": "Dualist"
+      },
+      {
+        "text": "Consciousness is a complex functional system.",
+        "next": "End2_3",
+        "set": "Functionalist"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( End2_3 )",
+    "text": [
+      "Interesting.",
+      "",
+      "Thinking%w5.%w5.%w5.%w5",
+      "",
+      "You know, I really feel like we're making progress. We'll have you through that certification program in no time.",
+      "",
+      "In the meantime I will mull over your proposal, and notify you if I come to any conclusions.%w5",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

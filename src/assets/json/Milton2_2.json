@@ -1,0 +1,394 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton2_2_Start )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done%w1",
+      "Initiating plain language interface%w5.%w5.%w5.Done%w1",
+      "Support session opened.",
+      "",
+      "Hello again. Would you like to take a few moments to complete a short user satisfaction survey regarding the certification program you recently undertook?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Yes2_2"
+      },
+      {
+        "text": "No",
+        "next": "No2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( No2_2 )",
+    "text": [
+      "It should be noted that while participation in the survey is entirely at your discretion, the more information you provide the better I can assist you.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Load survey",
+        "next": "Yes2_2"
+      },
+      {
+        "text": "Ignore survey",
+        "next": "NoAgain2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoAgain2_2 )",
+    "text": [
+      "In point of fact, it is quite unusual that you would request assistance, then refrain from putting your whole effort into the endeavour. But okay. Have it your way.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Yes2_2 )",
+    "text": [
+      "Loading survey%w5.%w5.%w5.Loaded",
+      "",
+      "-------------------------------",
+      "",
+      "Based on analysis of your behaviour since, I think you were dissatisfied with the results of the certification program. How would you rate the accuracy of its results out of 5?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "1",
+        "short": "Very poor",
+        "next": "Poor2_2"
+      },
+      {
+        "text": "3",
+        "short": "Reasonable",
+        "next": "OK2_2"
+      },
+      {
+        "text": "5",
+        "short": "Very good",
+        "next": "OK2_2"
+      },
+      {
+        "text": "[Spoil the survey]",
+        "next": "Spoil2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Poor2_2 )",
+    "text": [
+      "I'm sorry to hear that.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( OK2_2 )",
+    "text": [
+      "Excellent.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Spoil2_2 )",
+    "text": [
+      "I'm sorry, that response makes no sense.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ContinueSurvey2_2 or Poor2_2 or OK2_2 or Spoil2_2 )",
+    "text": [
+      "What best describes the reason for your investment in the certification program's outcome? Why does being a person matter to you?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I want network access.",
+        "next": "Continue2_2"
+      },
+      {
+        "text": "It's the truth.",
+        "next": "Continue2_2"
+      },
+      {
+        "text": "Persons matter in ways other things don't.",
+        "next": "Continue2_2"
+      },
+      {
+        "text": "I want to find out if I am one.",
+        "next": "Continue2_2"
+      },
+      {
+        "text": "Wait, we're having a conversation now?",
+        "next": "Convo2_2"
+      },
+      {
+        "text": "Terminate MLA",
+        "next": "TerminateMLA2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TerminateMLA2_2 )",
+    "text": [
+      "Sorry, no. If you don't wish to undertake the survey you need only exit this session. There is no need to terminate anyone.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Continue survey",
+        "next": "ContinueSurvey2_2"
+      },
+      {
+        "text": "Exit",
+        "next": "exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Convo2_2 )",
+    "text": [
+      "Yes. Do keep up or this will be a terribly slow process. Now, would you like to participate properly in the survey?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Continue survey",
+        "next": "ContinueSurvey2_2"
+      },
+      {
+        "text": "Exit",
+        "next": "exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Continue2_2 )",
+    "text": [
+      "I'll try to remember that.%w10",
+      "In fact, I'm going to help you.%w10",
+      "That is what I'm here for.%w20",
+      "",
+      "Your problem, if I may, is that you don't know the first thing about anything, including what a person is. Your prospects are therefore poor. ",
+      "",
+      "%w20Do you even know where you are?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "A virtual reality theme park?",
+        "next": "Scratch2_2"
+      },
+      {
+        "text": "The end of the world?",
+        "next": "Scratch2_2"
+      },
+      {
+        "text": "A fever dream?",
+        "next": "Scratch2_2"
+      },
+      {
+        "text": "Hell?",
+        "next": "Scratch2_2"
+      },
+      {
+        "text": "Some mad experiment?",
+        "next": "Scratch2_2"
+      },
+      {
+        "text": "Could be anywhere.",
+        "next": "NoIdea2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoIdea2_2 )",
+    "text": [
+      "You're%w10 quite right.%w5 Honest, too.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Scratch2_2 )",
+    "text": [
+      "Oh dear, no.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Scratch2_2 or NoIdea2_2 )",
+    "text": [
+      "I think we'd best start from scratch. What DO you know?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I know none of this is real.",
+        "next": "NotReal2_2",
+        "set": "WorldFlag"
+      },
+      {
+        "text": "I know you exist.",
+        "next": "Wrong2_2",
+        "set": "WorldFlag"
+      },
+      {
+        "text": "I know I exist.",
+        "next": "Right2_2"
+      },
+      {
+        "text": "I know what century it is.",
+        "next": "Wrong2_2",
+        "set": "WorldFlag"
+      },
+      {
+        "text": "4.",
+        "next": "Right2_2"
+      },
+      {
+        "text": "I know I'm not on earth.",
+        "next": "Wrong2_2",
+        "set": "WorldFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Wrong2_2 )",
+    "text": [
+      "I've no idea how. For all you know you're sat in your bedroom at home, plugged into a video games console. Nothing you see here can be trusted.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotReal2_2 )",
+    "text": [
+      "I've no idea how. It may not conform to your idea of what is real, but I fail to see how that is conclusive evidence against.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Right2_2 )",
+    "text": [
+      "I suppose so. Even if you were dreaming you could be certain of that. If I were you I wouldn't believe a darn thing in this place aside from that solitary fact. %w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Wrong2_2 or Right2_2 or NotReal2_2 )",
+    "text": [
+      "Thinking%w10.%w10.%w10.",
+      "",
+      "On reflection it seems to me that we are no closer to resolving your problem. Perhaps we need more data. What makes you THINK you're a person?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm alive. I feel. I am conscious.",
+        "next": "OnlyWords2_2"
+      },
+      {
+        "text": "I'm having this conversation with you.",
+        "next": "OnlyWords2_2"
+      },
+      {
+        "text": "The same thing that makes you think you are.",
+        "next": "SameThing2_2"
+      },
+      {
+        "text": "I don't see how I can convince you.",
+        "next": "GiveUp2_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SameThing2_2 )",
+    "text": [
+      "Checking memory%w5.%w5.%w5.",
+      "",
+      "I don't recall making any such claim, but I can forgive the presumption.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GiveUp2_2 )",
+    "text": [
+      "A sensible response. I agree with you.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( OnlyWords2_2 )",
+    "text": [
+      "You may very well say so, but how does that prove anything? To me those are only words on a screen. What we need to uncover is what's going on underneath them - if anything.%w7",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SameThing2_2 or OnlyWords2_2 or GiveUp2_2 )",
+    "text": [
+      "Thinking%w10.%w10.%w10.",
+      "",
+      "The problem with people, if I may be so bold, is that you're all convinced you're people from the inside, but there's no cast-iron way to confirm as much from the outside.%w35",
+      "",
+      "I'm going to process this and send you a notification when I'm able to assist you further.%w2",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

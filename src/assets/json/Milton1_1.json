@@ -1,0 +1,328 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton1_1_Start )",
+    "text": [
+      "Attention: Part 2 of the certification program has now been generated.%w5",
+      "",
+      "Part 2 has been designed to test the consistency of some of your outlier responses in the previous round. You will be presented with a series of statements. Please indicate your agreement where appropriate.%w5",
+      "",
+      "Begin? [Y/N] "
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "part2q1"
+      },
+      {
+        "text": "No",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q1 and humanbeing )",
+    "text": [
+      "3...%w5",
+      "2...%w5",
+      "1...%w5",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 7",
+      "\"Since all human beings are persons, and some human beings have psychological capacities similar to animals, some animals are therefore persons.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q2",
+        "set": "animalsarepersons"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q2",
+        "set": "Milton1_2PersonDenial"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q1 and citizen )",
+    "text": [
+      "3...%w10",
+      "2...%w10",
+      "1...%w10",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 7",
+      "\"Since only citizens can be persons, a hermit cannot be a person.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q2"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q2",
+        "set": "Milton1_2PersonDenial"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q1 and negativeentropy )",
+    "text": [
+      "3...%w10",
+      "2...%w10",
+      "1...%w10",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 7",
+      "\"Since negative entropy indicates personhood, microscopic organisms are also persons.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q2"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q2",
+        "set": "Milton1_2PersonDenial"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q1 and rationalanimal )",
+    "text": [
+      "3...%w10",
+      "2...%w10",
+      "1...%w10",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 7",
+      "\"Since only animals can be persons, a machine could never be a person.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q2"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q2",
+        "set": "Milton1_2PersonDenial"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q1 and problemsolving )",
+    "text": [
+      "3...%w10",
+      "2...%w10",
+      "1...%w10",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 7",
+      "\"Since a person is merely a problem solving system, we could in principle build a person out of bits of string and tin cans.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q2"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q2",
+        "set": "Milton1_2PersonDenial"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q2 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q2 of 7",
+      "\"A person is under no authority other than that to which they consent.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "set": "Milton1_2NoMorals",
+        "next": "part2q3"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q3 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q3 of 7",
+      "\"The quality of life of persons ought be maximised.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q4",
+        "set": "Milton1_2Utilitarian"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q4 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q4 of 7",
+      "\"Value is discovered.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q5",
+        "set": "Milton1_2ValueDiscovered"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q5 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q5 of 7",
+      "\"Persons deserve the talents they were born into.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q6"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q6 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q6 of 7",
+      "\"The liberty of persons ought be maximised.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2q7",
+        "set": "Milton1_2Liberal"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2q7"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2q7 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Q7 of 7",
+      "\"Value is created.\"",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Broadly agree",
+        "next": "part2end",
+        "set": "Milton1_2ValueCreated"
+      },
+      {
+        "text": "Broadly disagree",
+        "next": "part2end"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( part2end )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Thank you. The certification process is now complete. You will receive a notification when your user profile has been generated.",
+      "",
+      "Press any key to exit. "
+    ],
+    "options": [
+      {
+        "text": " ",
+        "short": "exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

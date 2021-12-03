@@ -1,0 +1,49 @@
+<div #display id="display">
+  <p
+    *ngFor="let message of messages"
+    [ngClass]="{ 'player-message': message.indexOf('>') >= 0 }"
+  >
+    {{ message }}
+  </p>
+</div>
+<div class="options" *ngIf="options.length > 0">
+  <button
+    mat-button
+    *ngFor="let option of options"
+    (click)="selectChoice(option)"
+  >
+    {{ option.short ? option.short : option.text }}
+  </button>
+</div>
+
+<div class="clear-session">
+  <button
+    mat-raised-button 
+    class="clear-session-btn"
+    matTooltip="clear current session and start again"
+    aria-label="clear current session and start again"
+    matTooltipPosition = "before"
+    (click)="onClearSession()"
+  ><mat-icon>refresh</mat-icon></button>
+</div>
+
+  <!-- <div class="save-load-btns">
+  <button
+    mat-icon-button
+    class="save-btn"
+    title="save"
+    (click)="onSave()"
+    [disabled]="writing"
+  >
+    <mat-icon>save</mat-icon>
+  </button>
+  <button
+    mat-fab-button
+    class="load-btn"
+    title="load"
+    (click)="onLoad()"
+    [disabled]="writing"
+  >
+    <mat-icon>undo</mat-icon>
+  </button>
+</div> -->

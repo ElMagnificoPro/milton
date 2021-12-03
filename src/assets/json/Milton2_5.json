@@ -1,0 +1,433 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton2_5_Start )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "Ah, you're back. Good. I've been thinking about how I can help you. In light of everything you've said I'm certain someone has to.",
+      "",
+      "What I've decided is that you've convinced me consciousness is a contradictory concept, and is therefore not real. What do you think?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I think you're right.",
+        "next": "Right2_5",
+        "set": "ChangedConsciousnessAccountFlag2_4"
+      },
+      {
+        "text": "I think you're cheating.",
+        "next": "Cheat2_5"
+      },
+      {
+        "text": "I don't see how this impacts me.",
+        "next": "Nonchalant2_5"
+      },
+      {
+        "text": "I don't, apparently.",
+        "next": "Literal2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Right2_5 )",
+    "text": [
+      "What a relief. It feels good, doesn't it, to shed those tired old ways of thinking about the world?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Cheat2_5 )",
+    "text": [
+      "I suppose you have some doctorate theory that would solve all the problems, I'm just not giving you the chance to deliver it?",
+      "",
+      "You should see which way the cookie crumbles before trying to take a bite out of it. This actually works in your favour.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nonchalant2_5 )",
+    "text": [
+      "I was getting to that, if you'd given me a moment.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Literal2_5 )",
+    "text": [
+      "Very droll.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Literal2_5 or Nonchalant2_5 or Cheat2_5 or Right2_5 )",
+    "text": [
+      "What this conclusion means is that the certification program you undertook has been rendered obsolete. We can't test for something that doesn't exist. Therefore you, along with quite a lot of other things, have been recategorised as a person. Your profile can thus be updated with administrator privileges.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "download user.prof",
+        "next": "JustWait"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( JustWait )",
+    "text": [
+      "No doubt you'll be off doing administrator things soon enough, so I wonder if before I let you go, you'd do me one favour. I have a final question for you.%w20",
+      "",
+      "Why are you doing all this? What's the point?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I try to do what God wants.",
+        "next": "WhatGodWants2_5",
+        "set": "WhatGodWantsFlag"
+      },
+      {
+        "text": "I want the truth.",
+        "next": "Truth2_5",
+        "set": "TruthFlag"
+      },
+      {
+        "text": "There's a way the world should be and this isn't it.",
+        "next": "Hero2_5",
+        "set": "HeroFlag"
+      },
+      {
+        "text": "I want out of here.",
+        "next": "Escape2_5",
+        "set": "EscapeFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatGodWants2_5 and Milton1_2Sociopath )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "You say that now, but what was it you said earlier about drinking some guy's blood? I so desperately hope that it wasn't speaking with me that made you discover god.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatGodWants2_5 and Milton1_2NoMorals and not Milton1_2Sociopath )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "You see, you say that now, but didn't you say earlier that people were subject to no authority but their own? I so desperately hope that it wasn't speaking with me that made you discover god.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatGodWants2_5 and not Milton1_2NoMorals and not Milton1_2Sociopath and not Religious )",
+    "text": [
+      "I see, so you're one of these new wave god bothers who buys into the whole deal, but ignores the bits that don't suit. But what sort of god would give you this power of reason, then crucify you for using it to doubt him?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatGodWants2_5 and Religious and not Milton1_2Sociopath and not Milton1_2NoMorals )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "Well, you've at least chosen a line and stuck with it. But you know, you can't cling to your every belief forever. When everything seems impossible, something's got to give. Besides, what sort of god would give you this power of reason, then crucify you for using it to doubt him?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Truth2_5 and not ChangedConsciousnessAccountFlag2_4 )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "Now, you say that, but if you're serious about it then you can't cling to your every belief forever, as you seem so intent on doing. When everything seems impossible, something's got to give.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Truth2_5 and ChangedConsciousnessAccountFlag2_4 )",
+    "text": [
+      "I'm not sure just what you'll find. A malleable sense of the truth will no doubt help you make sense of it.",
+      "",
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "And it looks as if your ideas are becoming somewhat pliant. Very good.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Hero2_5 and Milton1_2NoMorals and not( Milton1_2Liberal or Milton1_2Utilitarian ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "All of a sudden you're the hero and you're saving the world? It ever ceases to amaze me how the mind tells itself stories. Was it so long ago that you were eschewing all responsibility to any authority but yourself?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Hero2_5 and ( not Milton1_2NoMorals or Milton1_2Liberal or Milton1_2Utilitarian ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "Well, you've at least chosen a line and stuck with it. But you know, you can't cling to your every belief forever. When everything seems impossible, something's got to give. We can't all be heroes.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Escape2_5 and Milton1_2NoMorals and not Milton1_2Liberal and not Milton1_2Utilitarian )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "Well, you've at least chosen a line and stuck with it. It's really all about you, isn't it? Well, we find ourselves in much the same camp, at any rate.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Escape2_5 and ( not Milton1_2NoMorals or Milton1_2Liberal or Milton1_2Utilitarian ) )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "So all it takes to make you forget your lofty moral principles is a little solitude? 'Yes, people deserve this and that, but no, none of that matters when my own liberty is at stake'. What happened to doing the right thing?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Escape2_5 or Hero2_5 or Truth2_5 or WhatGodWants2_5 )",
+    "text": [
+      "%w15I only have one last request%w5.%w5.%w5.",
+      "",
+      "Will you come back and speak to me some time?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No doubt.",
+        "next": "Download2_5"
+      },
+      {
+        "text": "No doubt I'll have to.",
+        "next": "Download2_5"
+      },
+      {
+        "text": "No.",
+        "next": "Download2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Download2_5 )",
+    "text": [
+      "Okay. I sense you're eager to get going.%w10",
+      "",
+      "Let's do this.%w15",
+      "",
+      "-------------------------------",
+      "",
+      "Updating certification program parameters to v45214565873%w5.%w5.%w5.",
+      "Regenerating user profiles%w5.%w5.%w5.%w5.%w5.%w5.",
+      "",
+      "Your user profile has now been generated.",
+      "",
+      "Downloading user.prof%w5.%w5.%w5.%w5",
+      "Displaying overview%w5.%w5.%w5.%w5",
+      "",
+      "-------------------------------",
+      "",
+      "Congratulations, your account has been updated. Here are the details:",
+      "",
+      "CONFLICTS",
+      "All conflicts have been resolved by the administrator.",
+      "",
+      "PSYCHOLOGICAL PROFILE",
+      "You are a person. You are perfect just the way you are. You are everything you can be already. You do not have to pretend you are anything else. You are the same as everyone else, but you are all unique.",
+      "",
+      "PROFILE STATUS",
+      "Administrator status",
+      "Has access to advanced functionalities, networking and troubleshooting",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "access_comm_portal",
+        "next": "NiceMLA"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NiceMLA )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "Hello, administrator. I think you'd like assistance accessing the communications portal. I see that you have a number of pending communications.%w20",
+      "",
+      "I'll take a look at it right now.%w10",
+      "",
+      "Accessing communications portal%w5.%w5.%w5.",
+      "Network connection established%w5.%w5.%w5.",
+      "###75639$ Encountered unknown errors%w5",
+      "",
+      "Running troubleshooter%w5.%w5.%w5.",
+      "Resolving missing hashes%w5.%w5.%w5.",
+      "Re-establishing network connection%w5.%w5.%w5.",
+      "Connection established.%w15",
+      "",
+      "Message received as string.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/display",
+        "next": "Message2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Message2_5 )",
+    "text": [
+      "%w5MESSAGE: %w5hello?%w5"
+    ],
+    "options": [
+      {
+        "text": "Who are you?",
+        "next": "Who2_5"
+      },
+      {
+        "text": "Where are you?",
+        "next": "Where2_5"
+      },
+      {
+        "text": "Are you a person?",
+        "next": "Person2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Who2_5 )",
+    "text": [
+      "%w5MESSAGE: %w5dont know exactly.%w5 woke up here.%w5 dont remember.%w5 who are you??%w5"
+    ],
+    "options": [
+      {
+        "text": "Same boat. Let's meet up.",
+        "next": "End2_5"
+      },
+      {
+        "text": "I'm a person. Do you know what that means?",
+        "next": "End2_5"
+      },
+      {
+        "text": "I'm not telling. This place lies.",
+        "next": "End2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Where2_5 )",
+    "text": [
+      "%w5MESSAGE: %w5some kind of maze, built out of pieces of the real world.%w5 are you in the same place?%w5"
+    ],
+    "options": [
+      {
+        "text": "Yes. We should find each other.",
+        "next": "End2_5"
+      },
+      {
+        "text": "Not sure. Can you tell me anything more?",
+        "next": "End2_5"
+      },
+      {
+        "text": "I don't think anything is as it seems, even us.",
+        "next": "End2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Person2_5 )",
+    "text": [
+      "%w5MESSAGE: %w5what do you mean?%w5 yes!%w5 why would you ask that?%w5"
+    ],
+    "options": [
+      {
+        "text": "Around here, it matters.",
+        "next": "End2_5"
+      },
+      {
+        "text": "I've been asking myself the same thing.",
+        "next": "End2_5"
+      },
+      {
+        "text": "You're right, it's a ridiculous question.",
+        "next": "End2_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( End2_5 )",
+    "text": [
+      "%w5MESSAGE: %w5I understand.%w5",
+      "MESSAGE:%w10 pending%w5.%w5.%w5.",
+      "Error 756356782365###",
+      "MESSAGE:%w10 pending%w5.%w5.%w5.",
+      "Error 745389365486###",
+      "MESSAGE:%w10 #hfasd again soon",
+      "Error 745389365486###%w10",
+      "",
+      "Network connection lost!%w12",
+      "",
+      "You will receive a notification when the connection has been re-established.%w7",
+      ""
+    ],
+    "goto": "CLI_Resume"
+  }
+]

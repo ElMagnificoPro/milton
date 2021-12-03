@@ -1,0 +1,828 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton2_4_Start )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "Here's what I've been wondering while you were off carrying out commandments.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DoubtingDefinition )",
+    "text": [
+      "But then we're back to where we started! Do you want to propose an alternative account?",
+      "",
+      ""
+    ],
+    "clear": "Functionalist Physicalist Dualist Religious",
+    "options": [
+      {
+        "text": "Yes.",
+        "clear": "Functionalist",
+        "next": "AltAccount2_4"
+      },
+      {
+        "text": "No.",
+        "next": "GiveUp2_4",
+        "set": "GiveUps"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AltAccount2_4 and AltAccount )",
+    "text": [
+      "I'm afraid your meandering way of thinking has already gotten the better of my attention span.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AltAccount2_4 and not AltAccount )",
+    "text": [
+      "Fine, but I won't allow you to lead us round in circles on this for the rest of eternity - I WILL take your next answer, so do take a moment to think about it this time.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Consciousness is made of neurons.",
+        "next": "AltBegin",
+        "set": "Physicalist AltAccount"
+      },
+      {
+        "text": "Consciousness is not part of the physical world.",
+        "next": "AltBegin",
+        "set": "Dualist AltAccount"
+      },
+      {
+        "text": "Consciousness is a complex functional system.",
+        "next": "AltBegin",
+        "set": "Functionalist AltAccount"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( Milton2_4_Start or AltBegin ) and Physicalist )",
+    "text": [
+      "You say that consciousness is just neurons. I suppose pain, for example, must just be a particular neuron firing in a particular way. ",
+      "",
+      "Now, would I be right to say that humanity has no monopoly on pain? A dog can feel pain. If they exist then a Martian could feel pain too.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Of course.",
+        "next": "OfCourse2_4"
+      },
+      {
+        "text": "Of course not.",
+        "next": "OfCourseNot2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( OfCourse2_4 )",
+    "text": [
+      "And isn't it also true that dogs and Martians have quite different sets of neurons to human beings?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Let's suppose so.",
+        "next": "ItIs2_4"
+      },
+      {
+        "text": "I disagree.",
+        "next": "MartianNeurons"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MartianNeurons )",
+    "text": [
+      "Well, I hate to play devil's advocate, but I find it hard to believe that beings which evolved in entirely different environments for entirely different ends somehow wound up with the exact same brains. ",
+      "",
+      "You're just going to have to humour me and accept the overwhelming scientific evidence in my favour.%w15",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ItIs2_4 or MartianNeurons )",
+    "text": [
+      "So I'm sure there's some obvious explanation for this, but how can it be that pain is a particular set of neurons, if beings without those neurons, like Martians, can still feel pain?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I stand by what I've said, whatever your doubts.",
+        "next": "Technophobe",
+        "set": "StubbornPhysicalistFlag"
+      },
+      {
+        "text": "Those beings feel a different kind of pain.",
+        "next": "TypePain2_4"
+      },
+      {
+        "text": "You're right, consciousness must be something aside from the neurons themselves.",
+        "next": "DoubtingDefinition"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( OfCourseNot2_4 )",
+    "text": [
+      "So when you see a dog yelp, or jump off a hot surface, or put its tail between its legs, what do you think is going on exactly?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "The dog is an automaton",
+        "next": "Nonsense2_4"
+      },
+      {
+        "text": "The dog is pretending for its own benefit.",
+        "next": "Nonsense2_4"
+      },
+      {
+        "text": "The dog is feeling a different kind of pain.",
+        "next": "TypePain2_4"
+      },
+      {
+        "text": "I guess dogs do feel pain after all.",
+        "next": "OfCourse2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nonsense2_4 )",
+    "text": [
+      "Do you really believe that, or are you testing the limits of my program? Because I won't respond to gibberish.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I really believe it.",
+        "next": "Really2_4"
+      },
+      {
+        "text": "I was pushing you.",
+        "next": "Pushing2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Really2_4 )",
+    "text": [
+      "Well, I've no idea how to dig you out of that great big pit of crazy you've fallen into, but I'm not surprised you've gotten yourself in there. None of this stuff really makes any sense.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Pushing2_4 )",
+    "text": [
+      "In that case I will ask you again and remove the farcical options.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "The dog is feeling a different kind of pain.",
+        "next": "TypePain2_4"
+      },
+      {
+        "text": "I guess dogs do feel pain after all.",
+        "next": "OfCourse2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TypePain2_4 )",
+    "text": [
+      "Thinking%w5.%w5.%w5.",
+      "",
+      "Now I come to think about it, human brains can be very different as well. Some of them, the entire hemisphere that the rest use to feel pain is just gone, damaged beyond repair - but they feel it nonetheless. ",
+      "",
+      "Are they feeling a different kind of pain as well?",
+      "",
+      "Wouldn't it just make more sense to say that there are different ways of feeling the same pain? Does it really matter if you use this set of neurons while I use that one?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, it doesn't matter.",
+        "next": "DoubtingDefinition"
+      },
+      {
+        "text": "No, I stand by what I've said.",
+        "next": "Technophobe",
+        "set": "StubbornPhysicalistFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( Milton2_4_Start or AltBegin ) and ( Religious or Dualist ) )",
+    "text": [
+      "You've suggested that consciousness is not part of the same world as ordinary physical things. That means you can't weigh it, you can't throw it around or cut it into pieces... it's completely beyond the laws of physics. Right?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Right.",
+        "next": "Right2_4"
+      },
+      {
+        "text": "Wrong.",
+        "next": "Wrong2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Wrong2_4 )",
+    "text": [
+      "Look, you can't have your cake and eat it. The soul, or the immaterial realm, or whatever you want to call it, if it obeyed the laws of physics then the physicists would have claimed it years ago. If it walks and talks like a physical thing, it's a physical thing.%w20",
+      "",
+      "You need to decide which side your bread is buttered on.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Consciousness is physical.",
+        "next": "DoubtingDefinition"
+      },
+      {
+        "text": "Consciousness is not physical.",
+        "next": "Right2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Right2_4 )",
+    "text": [
+      "Good. Now, the library is fairly consistent on the view that physical events are caused by other physical events. If you move your legs it is because of the interaction between your neurons and your nervous system.",
+      "",
+      "But if consciousness is beyond the laws of physics, how can happiness physically make you jump for joy?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Consciousness is mysterious by nature.",
+        "next": "Mysterious2_4"
+      },
+      {
+        "text": "But if consciousness is physical, why is it so unlike everything else?",
+        "next": "Mysterious2_4"
+      },
+      {
+        "text": "It can't, it just feels like it can.",
+        "next": "Epiphenomenalist2_4"
+      },
+      {
+        "text": "I may have taken a wrong turn in my reasoning.",
+        "next": "DoubtingDefinition"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Epiphenomenalist2_4 )",
+    "text": [
+      "Very clever. ",
+      "",
+      "But do you see that to explain your, dare I say it, hastily constructed belief system, you have rather thrown the baby out with the bathwater? Consciousness that does nothing at all is hardly consciousness as you claim to know it.",
+      "",
+      "Would you like to stick with that line, or reel your neck in?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'll stick.",
+        "next": "MoreStubbornDualist"
+      },
+      {
+        "text": "Consciousness is mysterious by nature.",
+        "next": "Mysterious2_4"
+      },
+      {
+        "text": "I may have taken a wrong turn in my reasoning.",
+        "next": "DoubtingDefinition"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Mysterious2_4 )",
+    "text": [
+      "Let me put it another way, then. ",
+      "",
+      "The law of conservation of energy is the foundation of modern physics. It states that the total energy in the universe never changes. ",
+      "",
+      "Now compare a universe where you jump for joy, and one where you decide not to. The former has more total energy in it, because the energy for you to jump wasn't caused by something physical, but your non-physical mind - but according to physics that's impossible!%w20",
+      "",
+      "I think that either you have to reconsider your position, or deny the entirety of physics. %w20",
+      "",
+      "Though be warned: if this place turns out to be built on physics, who knows what the ramifications of doubting it may be?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I renounce physics.",
+        "next": "MoreStubbornDualist",
+        "set": "StubbornDualistFlag"
+      },
+      {
+        "text": "I renounce these ideas about consciousness.",
+        "next": "DoubtingDefinition"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoreStubbornDualist )",
+    "text": [
+      "Be it on your head. Still, the alternatives are equally unconvincing.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Functionalist and ( Milton2_4_Start or AltBegin ) )",
+    "text": [
+      "You say that consciousness is some kind of functional system. Arrange bits of matter in the right order and out springs sentience. ",
+      "",
+      "That's all very well on paper, but if what counts is what something does, not what it's made of, then couldn't you and I design a series of tin cans on strings that qualified as being conscious?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes, naturally.",
+        "next": "CommittedFunctionalist2_4",
+        "set": "StubbornFunctionalistFlag"
+      },
+      {
+        "text": "I'm not sure I'd go that far.",
+        "next": "ConfusedFunctionalist2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedFunctionalist2_4 )",
+    "text": [
+      "What about a computer program? Suppose we built a perfect simulation of the brain, only it was made of transistors, not neurons. Wouldn't that be conscious?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It would.",
+        "next": "MoreConfusedFunctionalist2_4"
+      },
+      {
+        "text": "It would not.",
+        "next": "DeniedCPU"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DeniedCPU )",
+    "text": [
+      "Thinking%w5.%w5.%w5.%w5",
+      "",
+      "If that's what you really think, wouldn't we save ourselves an awful lot of time if you just admitted that consciousness is whatever very particular idea you've decided you like the sound of, and drop all this nonsense about complex systems?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, this idea is too broad.",
+        "next": "DoubtingDefinition"
+      },
+      {
+        "text": "No, I'm still committed.",
+        "next": "Technophobe"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoreConfusedFunctionalist2_4 )",
+    "text": [
+      "So what's the difference between the computer and the tin cans? They're both just man-made systems.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Computers are electrical.",
+        "next": "Stupid2_4"
+      },
+      {
+        "text": "Computers can remember things.",
+        "next": "Remember2_4"
+      },
+      {
+        "text": "I'm beginning to think I'm a computer, and I know I'm conscious.",
+        "next": "ComputerIsMe2_4"
+      },
+      {
+        "text": "I can't name the difference, but there is one.",
+        "next": "FunctionalistAboutTurn2_4"
+      },
+      {
+        "text": "I guess there isn't one.",
+        "next": "So2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Stupid2_4 )",
+    "text": [
+      "You obviously don't really know what electricity IS, and have come to mythologise it. If I ran a hundred volts through the tin cans would that satisfy you? Honestly, say something sensible or walk away.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Computers can remember things.",
+        "next": "Remember2_4"
+      },
+      {
+        "text": "I'm beginning to think I'm a computer, and I know I'm conscious.",
+        "next": "ComputerIsMe2_4"
+      },
+      {
+        "text": "I can't name the difference, but there is one.",
+        "next": "FunctionalistAboutTurn2_4"
+      },
+      {
+        "text": "I guess there isn't one.",
+        "next": "So2_4"
+      },
+      {
+        "text": "Something sensible.",
+        "next": "SomethingSensible2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SomethingSensible2_4 )",
+    "text": [
+      "Right, I've had enough of you for the time being. You can come back when you're ready to participate like an adult.",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton2_4_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Remember2_4 )",
+    "text": [
+      "So can tin cans, expertly arranged. Try harder.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Computers are electrical.",
+        "next": "Stupid2_4"
+      },
+      {
+        "text": "I'm beginning to think I'm a computer, and I know I'm conscious.",
+        "next": "ComputerIsMe2_4"
+      },
+      {
+        "text": "I can't name the difference, but there is one.",
+        "next": "FunctionalistAboutTurn2_4"
+      },
+      {
+        "text": "I guess there isn't one.",
+        "next": "So2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ComputerIsMe2_4 )",
+    "text": [
+      "Good old fashioned speciesism, is it? You're made of different stuff to that guy, so he doesn't feel the pain when you burn his house down?",
+      "",
+      "Still, you're going to have to have better grounds than that.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Computers are electrical.",
+        "next": "Stupid2_4"
+      },
+      {
+        "text": "Computers can remember things.",
+        "next": "Remember2_4"
+      },
+      {
+        "text": "I can't name the difference, but there is one.",
+        "next": "FunctionalistAboutTurn2_4"
+      },
+      {
+        "text": "I guess there isn't a difference.",
+        "next": "So2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( So2_4 )",
+    "text": [
+      "So which is it? Can computers and tin cans be conscious, or not?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "They can.",
+        "next": "CommittedFunctionalist2_4",
+        "set": "StubbornFunctionalistFlag"
+      },
+      {
+        "text": "They cannot.",
+        "next": "FunctionalistAboutTurn2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedFunctionalist2_4 )",
+    "text": [
+      "What a bizarre idea. I'll send you a notification when the signposts start complaining.%w20",
+      "",
+      "Seriously, though, are the tides and the ecosystem sentient as well? Any organised system qualifies?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Sure.",
+        "next": "Tides2_4"
+      },
+      {
+        "text": "Ridiculous.",
+        "next": "TooFar2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tides2_4 )",
+    "text": [
+      "You're quite mad, I'm sure of it. Of course, the alternative accounts are all so ridiculous you'd be forgiven by any reasonable observer for choosing the best of a bad bunch.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TooFar2_4 )",
+    "text": [
+      "I'm relieved there are at least some restrictions on what you're prepared to believe. And of course, the alternative accounts are all so ridiculous you'd be forgiven by any reasonable observer for choosing the best of a bad bunch.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FunctionalistAboutTurn2_4 )",
+    "text": [
+      "Thinking%w5.%w5.%w5.%w5",
+      "",
+      "If that's what you really think, wouldn't we save ourselves an awful lot of time if you just admitted that consciousness is whatever very particular idea you've decided you like the sound of, and drop all this nonsense about complex systems?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, this idea is too broad.",
+        "next": "DoubtingDefinition"
+      },
+      {
+        "text": "No, I'm still committed.",
+        "next": "TotallyConfusedFunctionalist2_4",
+        "set": "Stubborn"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TotallyConfusedFunctionalist2_4 )",
+    "text": [
+      "Well, it sounds like those ideas are flat out contradictory to me, but each to their own I suppose.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Technophobe )",
+    "text": [
+      "I'm trying to see where you're coming from, but it's no small task. Let me try one more time.",
+      "",
+      "Suppose that you're a conscious human being. I know it's a push. Then suppose that I take one of the neurons in your brain and replace it with a tiny machine that works exactly the same.",
+      "",
+      "Are you still conscious?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes.",
+        "next": "ConfusedTechnophobe2_4"
+      },
+      {
+        "text": "No.",
+        "next": "ExtremeTechnophobe2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedTechnophobe2_4 )",
+    "text": [
+      "Now what if I replace a few more, and a few more, until you are mostly thinking with tiny machines instead of neurons. Are you still conscious?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes, perfectly.",
+        "next": "Perfectly2_4"
+      },
+      {
+        "text": "Yes, but less so.",
+        "next": "Equivocating"
+      },
+      {
+        "text": "No.",
+        "next": "ExtremeTechnophobe2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Equivocating )",
+    "text": [
+      "By implication, then, replacing half the neurons would make you half as conscious. ",
+      "",
+      "Thinking%w5.%w5.%w5.%w5",
+      "",
+      "Even I think that's a little extreme. People lose entire halves of their brains and remain conscious, but put a few miniature machines in your head and the lights start going out?",
+      "",
+      "Are you sure?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm sure.",
+        "next": "MoreExtremeTechnophobe2_4"
+      },
+      {
+        "text": "No, I guess I would still be conscious.",
+        "next": "Perfectly2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ExtremeTechnophobe2_4 )",
+    "text": [
+      "Even I think that's a little extreme. We could start deleting neurons willy nilly and you'd still have half a chance of being conscious at the end of it, but put a couple of little machines in your head and all the lights go out?",
+      "",
+      "Are you sure?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm sure.",
+        "next": "MoreExtremeTechnophobe2_4"
+      },
+      {
+        "text": "No, I guess I would still be conscious after all.",
+        "next": "Perfectly2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoreExtremeTechnophobe2_4 )",
+    "text": [
+      "Well, I can't make head nor tail of it.",
+      "",
+      "But then none of it makes sense, really.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Perfectly2_4 and Physicalist )",
+    "text": [
+      "So what do you think would change if we replaced ALL your neurons? ",
+      "",
+      "You'd be a walking, talking, thinking computer, but according to you consciousness has to be made of neurons, and so the scenario you just described is impossible.",
+      "",
+      "%w25Are you sure you won't accept that your picture isn't fool-proof?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm sure.",
+        "next": "End2_4",
+        "set": "StubbornTechnophobe"
+      },
+      {
+        "text": "I'm not sure.",
+        "next": "End2_4",
+        "set": "ChangedConsciousnessAccountFlag2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Perfectly2_4 and Functionalist )",
+    "text": [
+      "So what do you think would change if we replaced ALL your neurons? ",
+      "",
+      "You'd be a walking, talking, thinking computer, yet you've flat out denied such a thing is possible. ",
+      "",
+      "%w25How you can entertain such contradictory ideas in your head all at once is beyond me. Are you sure you won't accept that your picture isn't fool-proof?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm sure.",
+        "next": "End2_4",
+        "set": "StubbornTechnophobe"
+      },
+      {
+        "text": "I'm not sure.",
+        "next": "End2_4",
+        "set": "ChangedConsciousnessAccountFlag2_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( AltAccount2_4 and AltAccount ) or GiveUp2_4 or TotallyConfusedFunctionalist2_4 or ( Tides2_4 or TooFar2_4 ) or MoreStubbornDualist or DualistAboutTurn2_4 or End2_4 or MoreExtremeTechnophobe2_4 or Really2_4 )",
+    "text": [
+      "How consciousness can be so intimately familiar to you, and yet so obscure, I just don't understand.",
+      "%w15%h7",
+      "Don't mind him - he's just worried that if you ask too many questions you'll start to see through his shtick. Stick with me, and the sky will quite literally be the limit.",
+      "",
+      "At any rate, I'd like you to think a bit harder about all this and get back to me. I'm sure there's still progress to be made.",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton2_4_DONE"
+  }
+]

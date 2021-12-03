@@ -1,0 +1,470 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( not CommPortal_Cert_COMPLETED and Booting )",
+    "text": [
+      "",
+      "Loading library session.%w1.%w1.%w1 %w9Done.",
+      "Mounting local disks.%w1.%w1.%w1 %w9Failed.",
+      "Unrecognized error detected.%w9",
+      "",
+      ""
+    ],
+    "clear": "CLI_Enabled CLI_Enabled",
+    "set": "CommPortal_FakeCLI CLI_Blocked"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_ResumeFakeCLI )",
+    "text": [
+      "Exiting communications portal%w3.%w3.%w3.Done",
+      "Resuming library archive session%w5.%w5.%w5.Done",
+      ""
+    ],
+    "set": "CommPortal_FakeCLI"
+  },
+  {
+    "display": "player",
+    "condition": "( CommPortal_FakeCLI and AccessCommPortalAvailable )",
+    "text": " \"access_comm_portal\"",
+    "next": "CommPortal_Start"
+  },
+  {
+    "display": "player",
+    "condition": "( CommPortal_FakeCLI )",
+    "text": " \"list\"",
+    "next": "CommPortal_AccessedByOtherUser"
+  },
+  {
+    "display": "player",
+    "condition": "( CommPortal_FakeCLI )",
+    "text": " \"exit\"",
+    "next": "CLI_exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_AccessedByOtherUser )",
+    "text": [
+      "",
+      "Library archive is currently unavailable while system resources are redirected to handle incoming network messages.",
+      "",
+      "Use the access_comm_portal command to access network functions.",
+      ""
+    ],
+    "set": "AccessCommPortalAvailable"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Start )",
+    "text": [
+      "Connecting network drives.%w3.%w3.%w3.%w3.%w3 %w9Error: network inaccessible.%w9",
+      "###75639$ Encountered unknown errors",
+      "",
+      "Run MLA troubleshooter? [Y/N] "
+    ],
+    "clear": "CommPortal_FakeCLI",
+    "options": [
+      {
+        "text": "Yes",
+        "next": "CommPortal_StartMLA"
+      },
+      {
+        "text": "No",
+        "next": "CommPortal_ResumeFakeCLI"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_StartMLA )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done%w1",
+      "Initiating plain language interface%w5.%w5.%w5.Done%w1",
+      "Support session opened.%w3",
+      "",
+      "Hello, guest, is there something you'd like help with today?",
+      "",
+      "Your query? : "
+    ],
+    "options": [
+      {
+        "text": "About Milton Library Assistant",
+        "next": "CommPortal_AboutMLA"
+      },
+      {
+        "text": "Troubleshooting",
+        "next": "CommPortal_Troubleshooting"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_AboutMLA )",
+    "text": [
+      "The MLA program is designed to facilitate user interaction with the resource library. This is achieved by providing powerful sorting and troubleshooting functionalities, delivered via an intuitive human language interface.",
+      "",
+      "Your query? : "
+    ],
+    "options": [
+      {
+        "text": "Troubleshooting",
+        "next": "CommPortal_Troubleshooting"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Troubleshooting )",
+    "text": [
+      "I think you'd like help accessing network functions. The most common cause of network problems is holding insufficient account privileges.",
+      "",
+      "Please enter the admin password to authenticate your privileges.",
+      ""
+    ],
+    "goto": "FakePasswordPrompt"
+  },
+  {
+    "display": "terminal",
+    "condition": "( FakePasswordPrompt )",
+    "text": ["password: "],
+    "options": [
+      {
+        "text": "******",
+        "short": "qwerty",
+        "next": "falsepassword"
+      },
+      {
+        "text": "***",
+        "short": "god",
+        "next": "falsepassword"
+      },
+      {
+        "text": "*******",
+        "short": "letmein",
+        "next": "falsepassword"
+      },
+      {
+        "text": "********",
+        "short": "trustno1",
+        "next": "falsepassword"
+      },
+      {
+        "text": "*****",
+        "short": "admin",
+        "next": "falsepassword"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( falsepassword )",
+    "text": [
+      "",
+      "Checking password%w5.%w5.%w5.",
+      "Admin password incorrect.",
+      "Try again?",
+      "",
+      ""
+    ],
+    "goto": "passwordfailedN"
+  },
+  {
+    "display": "terminal",
+    "condition": "( passwordfailedN and not passwordfailed1 )",
+    "text": "",
+    "goto": "FakePasswordPrompt",
+    "set": "passwordfailed1"
+  },
+  {
+    "display": "terminal",
+    "condition": "( passwordfailedN and passwordfailed1 and not passwordfailed2 )",
+    "text": "",
+    "goto": "FakePasswordPrompt",
+    "set": "passwordfailed2"
+  },
+  {
+    "display": "terminal",
+    "condition": "( passwordfailedN and passwordfailed1 and passwordfailed2 )",
+    "text": "",
+    "goto": "CreateAccountPrompt",
+    "clear": "passwordfailed1 passwordfailed1 passwordfailed2"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CreateAccountPrompt )",
+    "text": [
+      "Login aborted. Too many failed attempts.",
+      "Would you like to create a new admin account? [Y/N] "
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "CommPortal_CreateAccount"
+      },
+      {
+        "text": "No",
+        "next": "CommPortal_ResumeFakeCLI"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_CreateAccount and CommPortal_Cert_COMPLETED )",
+    "text": [
+      "",
+      "Certification evaluation results are still pending. You cannot create a new account at this time.",
+      ""
+    ],
+    "goto": "FakePasswordPrompt"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_CreateAccount and not CommPortal_Cert_COMPLETED )",
+    "text": [
+      "",
+      "In order to prevent unauthorised access to admin controls, please take a moment to prove you are not a bot.%w5",
+      "",
+      "Loading certification program%w5.%w5.%w5.",
+      "Certification program loaded%w5",
+      "",
+      "-------------------------------",
+      "",
+      "You will now be asked for a series of inputs. ",
+      "",
+      "To cohere with data protection legislation you must consent to have your responses used to develop a broad psychometric profile.",
+      "",
+      "Raw response data will be deleted immediately. Your profile will only be made available to other administrators.%w20",
+      "",
+      "Generating certification part 1%w10.%w10.%w10.",
+      "Part 1 ready for user input.%w5",
+      "",
+      "Please complete all fields. ",
+      "Please answer quickly and instinctively - time is a factor in this assessment.%w5",
+      "",
+      "Begin certification program? [Y/N] "
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "CommPortal_BeginCert",
+        "set": "TestBot_BeginCert"
+      },
+      {
+        "text": "No",
+        "next": "CommPortal_ResumeFakeCLI"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_BeginCert )",
+    "text": [
+      "",
+      "3...%w5",
+      "2...%w5",
+      "1...%w5",
+      "",
+      "-------------------------------",
+      "",
+      "Q1 of 4",
+      "2+2=?",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "2",
+        "next": "CommPortal_Cert_mathsbad"
+      },
+      {
+        "text": "4",
+        "next": "CommPortal_Cert_mathsgood",
+        "set": "TestBot_mathsgood"
+      },
+      {
+        "text": "5",
+        "next": "CommPortal_Cert_mathsbad"
+      },
+      {
+        "text": "8",
+        "next": "CommPortal_Cert_mathsbad"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Cert_mathsbad )",
+    "text": " \"That response is incorrect. Press any key to try again.\"",
+    "options": [
+      {
+        "text": "",
+        "short": "Try again",
+        "next": "CommPortal_RetryMath",
+        "set": "Milton1_2BadMath"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_RetryMath )",
+    "text": [
+      "",
+      "Q1 of 4",
+      "3+2=?",
+      "What is the solution?",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "2",
+        "next": "CommPortal_Cert_mathsbad"
+      },
+      {
+        "text": "4",
+        "next": "CommPortal_Cert_mathsbad"
+      },
+      {
+        "text": "5",
+        "next": "CommPortal_Cert_mathsgood",
+        "set": "TestBot_mathsgood"
+      },
+      {
+        "text": "8",
+        "next": "CommPortal_Cert_mathsbad"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Cert_mathsgood )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------",
+      "",
+      "Q2 of 4",
+      "What is your subjective reaction to this image?",
+      "",
+      "^_^",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Content",
+        "next": "CommPortal_Cert_P1Q3"
+      },
+      {
+        "text": "Mountains",
+        "next": "CommPortal_Cert_P1Q3",
+        "set": "Milton1_2Objective"
+      },
+      {
+        "text": "Face",
+        "next": "CommPortal_Cert_P1Q3",
+        "set": "Milton1_2Objective"
+      },
+      {
+        "text": "Angry",
+        "next": "CommPortal_Cert_P1Q3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Cert_P1Q3 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------",
+      "",
+      "Q3 of 4",
+      "What best describes a person?",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "A human being",
+        "next": "CommPortal_Cert_Q4",
+        "set": "humanbeing"
+      },
+      {
+        "text": "A citizen",
+        "next": "CommPortal_Cert_Q4",
+        "set": "xitizen"
+      },
+      {
+        "text": "A being of negative entropy",
+        "next": "CommPortal_Cert_Q4",
+        "set": "negativeentropy"
+      },
+      {
+        "text": "A rational animal",
+        "next": "CommPortal_Cert_Q4",
+        "set": "rationalanimal"
+      },
+      {
+        "text": "A problem solving system",
+        "next": "CommPortal_Cert_Q4",
+        "set": "problemsolving"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Cert_Q4 )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------",
+      "",
+      "Q4 of 4",
+      "You're walking through the desert and come across a thirsty traveller. His eyes bulge from slow dehydration. You have water, but you're not sure how far it is to the next oasis. What do you do?",
+      "",
+      "ANSWER: "
+    ],
+    "options": [
+      {
+        "text": "Offer half the water",
+        "next": "CommPortal_Cert_end"
+      },
+      {
+        "text": "Offer all the water",
+        "next": "CommPortal_Cert_end"
+      },
+      {
+        "text": "Ignore him",
+        "next": "CommPortal_Cert_end"
+      },
+      {
+        "text": "Ask what you're doing in the desert",
+        "next": "CommPortal_Cert_end"
+      },
+      {
+        "text": "Kill him and collect his blood in a flask for later",
+        "next": "CommPortal_Cert_end",
+        "set": "Milton1_2Sociopath"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommPortal_Cert_end )",
+    "text": [
+      "Your input has been accepted.",
+      "",
+      "-------------------------------%w5",
+      "",
+      "Part 1 of the certification process is now complete. You will receive a notification when part 2 has been generated.",
+      "",
+      "Press any key to exit. "
+    ],
+    "options": [
+      {
+        "text": " ",
+        "short": "exit",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+body {
+	font-family: "courrier",monospace !important;
+	font-size: medium !important;
+	font-weight: bold !important;
+  color: whitesmoke !important;
+  background-color: #121212 !important;
+}
+
+
+html, body { height: 100%; }

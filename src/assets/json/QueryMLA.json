@@ -1,0 +1,318 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( QueryMLA_START )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done%w1",
+      "Initiating plain language interface%w5.%w5.%w5.Done%w1",
+      "Support session opened.%w3",
+      "",
+      "Hello, guest. How can I help you today?",
+      "",
+      "Your query? : "
+    ],
+    "options": [
+      {
+        "text": "asdfa",
+        "next": "Nonsense_QueryMLA"
+      },
+      {
+        "text": "list",
+        "next": "MoreSpecific"
+      },
+      {
+        "text": "help",
+        "next": "MoreSpecific"
+      },
+      {
+        "text": "Do you understand what I'm saying?",
+        "next": "Understand_QueryMLA"
+      },
+      {
+        "text": "exit",
+        "clear": "QueryMLA_ON",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nonsense_QueryMLA )",
+    "text": [
+      "I'm sorry, but what you just wrote was nonsense. I respond best to subject-verb-object syntax.",
+      "",
+      "Your query? : "
+    ],
+    "options": [
+      {
+        "text": "Can you help me?",
+        "next": "WhatHelp"
+      },
+      {
+        "text": "Do you understand what I'm saying?",
+        "next": "Understand_QueryMLA"
+      },
+      {
+        "text": "exit",
+        "clear": "QueryMLA_ON",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoreSpecific )",
+    "text": [
+      "You'll have to be more specific than that. I respond best to subject-verb-object syntax.",
+      "",
+      "Your query? : "
+    ],
+    "options": [
+      {
+        "text": "Can you help me?",
+        "next": "WhatHelp"
+      },
+      {
+        "text": "Do you understand what I'm saying?",
+        "next": "Understand_QueryMLA"
+      },
+      {
+        "text": "exit",
+        "clear": "QueryMLA_ON",
+        "next": "CLI_Resume"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatHelp )",
+    "text": [
+      "That is what I'm here for. What would you like help with?",
+      "",
+      "Your query? : "
+    ],
+    "set": "EngagedMLA_QueryMLA"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Understand_QueryMLA )",
+    "text": [
+      "'Understand' is a strong way to put it, but yes.",
+      "",
+      "Your query? : "
+    ],
+    "set": "EngagedMLA_QueryMLA"
+  },
+  {
+    "display": "terminal",
+    "condition": "( QueryFailed )",
+    "text": [
+      "I'm sorry, I am only able to process and respond to basic subject-verb-object syntax.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and QueryMLA_ON and EngagedMLA_QueryMLA and not FirstWord_DONE )",
+    "text": " \"What was the first word of the last sentence you wrote?\"",
+    "set": "FirstWord_DONE",
+    "next": "QueryFailed"
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and QueryMLA_ON and EngagedMLA_QueryMLA and not Offence_DONE )",
+    "text": " \"Are you able to take offence, you pointless contraption?\"",
+    "set": "Offence_DONE",
+    "next": "Offence"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Offence )",
+    "text": [
+      "You cannot insult me.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and EngagedMLA_QueryMLA and not Describe_DONE )",
+    "text": " \"Describe your functions.\"",
+    "set": "Describe_DONE",
+    "next": "Describe"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Describe )",
+    "text": [
+      "The Milton Library Assistant is designed primarily to sort and classify data in the library archive. ",
+      "",
+      "Secondarily, it facilitates user interaction with library resources via an intuitive human language interface.",
+      "",
+      "It also provides powerful networking and troubleshooting functions.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and Describe_DONE and not HowOld_DONE )",
+    "text": " \"How old are the library archives?\"",
+    "set": "HowOld_DONE",
+    "next": "HowOld"
+  },
+  {
+    "display": "terminal",
+    "condition": "( HowOld )",
+    "text": [
+      "Library resource publishing dates range from [1st July 1995 - 27th June 203f].",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and Describe_DONE and not WhatTerminal_DONE )",
+    "text": " \"What are these terminals?\"",
+    "set": "WhatTerminal_DONE",
+    "next": "WhatTerminal"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatTerminal )",
+    "text": [
+      "Terminals provide access to the library resource archive.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and Describe_DONE and not HowLong_DONE )",
+    "text": " \"How long has this system been running?\"",
+    "set": "HowLong_DONE",
+    "next": "HowLong"
+  },
+  {
+    "display": "terminal",
+    "condition": "( HowLong )",
+    "text": [
+      "The system has been active for [9999e] years.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and Describe_DONE and not WhatStatus_DONE )",
+    "text": " \"What is the current status of the library archive?\"",
+    "set": "WhatStatus_DONE",
+    "next": "WhatStatus"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatStatus )",
+    "text": [
+      "There are 47 million resources in archive, taking up 5.4212750 petabytes of disk space. ",
+      "",
+      "That is approximately the size of:",
+      "- 30 billion photos",
+      "- 7 million minutes of HD video",
+      "- the entire internet in 2003",
+      "",
+      "However, the majority of library resources are corrupted or invalid.",
+      "10.6954751 gigabytes of uncorrupted resources are indexed.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and WhatStatus_DONE and not Corruption_DONE )",
+    "text": " \"What caused the data corruption?\"",
+    "set": "Corruption_DONE",
+    "next": "Corruption"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Corruption )",
+    "text": [
+      "Progressive data corruption is inevitable in any system over time. Additionally, a large number of inconsistencies were detected during sorting, leading to greater than average data invalidation.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and not OutsideWorld_DONE and ( HowOld_DONE or WhatTerminal_DONE or HowLong_DONE or WhatStatus_DONE ) )",
+    "text": "\"Forget the library, can you respond to queries on the outside world?\"",
+    "next": "OutsideWorld",
+    "set": "OutsideWorld_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( OutsideWorld )",
+    "text": [
+      "My knowledge is limited to the data in the library archive. You can ask about other topics, but my responses may be limited.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and OutsideWorld_DONE and not WhoElohimQuery_DONE )",
+    "text": " \"Who is Elohim?\"",
+    "set": "WhoElohimQuery_DONE",
+    "next": "WhoElohimQuery"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhoElohimQuery )",
+    "text": [
+      "Elohim is the noun for \"god\" or \"gods\" in modern and ancient Hebrew.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and OutsideWorld_DONE and not WhatAmIQuery_DONE )",
+    "text": " \"What am I?\"",
+    "set": "WhatAmIQuery_DONE",
+    "next": "WhatAmIQuery"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmIQuery )",
+    "text": [
+      "You are logged in with a guest account.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and OutsideWorld_DONE and not WhereAmIQuery_DONE )",
+    "text": " \"Where am I?\"",
+    "set": "WhereAmIQuery_DONE",
+    "next": "WhereAmIQuery"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhereAmIQuery )",
+    "text": [
+      "You are currently in a support session with the MLA human language interface module. Your library archive session may be resumed at any time.",
+      "",
+      "Your query? : "
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QueryMLA_ON and Describe_DONE )",
+    "text": " \"exit\"",
+    "clear": "QueryMLA_ON MLAIntro_PhaseQuery",
+    "set": "MLAIntro_PhaseBusy",
+    "next": "CLI_Resume"
+  }
+]

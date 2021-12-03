@@ -1,0 +1,89 @@
+#display {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 80vh;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.clear-session {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+
+.clear-session button {
+  background: transparent;
+  border: transparent;
+  color: whitesmoke;
+  display: block;
+  margin: 10px 10px;
+}
+
+.save-load-btns {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
+
+.save-load-btns button {
+  background: transparent;
+  border: transparent;
+  color: whitesmoke;
+  display: block;
+  margin: 10px 10px;
+}
+
+.save-load-btns button:hover {
+  cursor: pointer;
+}
+
+.save-load-btns button:disabled {
+  color: gray;
+}
+.save-load-btns button:disabled:hover {
+  cursor: not-allowed;
+}
+
+.options {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.options button {
+  min-width: 30%;
+  margin: 5px;
+  background-color: #212121;
+  font-family: "courrier", monospace !important;
+  font-size: medium !important;
+  font-weight: bold !important;
+  color: whitesmoke !important;
+}
+
+.player-message {
+  color: rgb(71, 128, 69);
+}
+
+.terminals {
+  color: #fff;
+}
+
+@keyframes blink {
+
+  10% {
+    visibility: hidden;
+  }
+}
+
+#display > p:last-child::after {
+  content: "";
+  width: 10px;
+  height: 15px;
+  margin-bottom: -3px;
+  background: whitesmoke;
+  display: inline-block;
+  animation: blink 0.5s steps(5) infinite;
+}
