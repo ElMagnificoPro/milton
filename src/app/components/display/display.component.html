@@ -1,3 +1,10 @@
+
+<div class="current-terminal">
+  <p>
+    {{currTerminal}}
+  </p>
+</div>
+
 <div #display id="display">
   <p
     *ngFor="let message of messages"
@@ -16,16 +23,6 @@
   </button>
 </div>
 
-<div class="clear-session">
-  <button
-    mat-raised-button 
-    class="clear-session-btn"
-    matTooltip="clear current session and start again"
-    aria-label="clear current session and start again"
-    matTooltipPosition = "before"
-    (click)="onClearSession()"
-  ><mat-icon>refresh</mat-icon></button>
-</div>
 
   <!-- <div class="save-load-btns">
   <button

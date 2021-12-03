@@ -15,6 +15,7 @@ export class DisplayComponent implements OnInit {
   options: string[] = [];
   writing: boolean = false;
   res;
+  currTerminal:string = "";
 
   @ViewChild('display') element: ElementRef;
 
@@ -24,6 +25,8 @@ export class DisplayComponent implements OnInit {
     private dialog: MatDialog
   ) {}
 
+  
+
   openDialog() {
     const dialogRef = this.dialog.open(TerminalsDialogComponent, {
       disableClose: true,
@@ -31,6 +34,7 @@ export class DisplayComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed : ', result);
+      this.currTerminal = result;
       this.messages = [];
       // this.terminalNumber = result;
       this.onTerminal(result);

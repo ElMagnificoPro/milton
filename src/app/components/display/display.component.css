@@ -87,3 +87,15 @@
   display: inline-block;
   animation: blink 0.5s steps(5) infinite;
 }
+
+.current-terminal{
+  position: relative;
+  top: 0px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.current-terminal p {
+  border-bottom: #212121 solid 1px;
+}

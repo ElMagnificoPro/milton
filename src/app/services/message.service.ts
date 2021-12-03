@@ -24,53 +24,7 @@ export class MessageService {
     /**************************************************************** */
 
     console.log("getMessage called");
-    
-    // original getmessage
-
-    /*
-    console.log(this.index, this.flags);
-    while (this.index < this.story.length) {
-      if (this.story[this.index]) {
-        if (this.story[this.index].display === 'terminal') {
-          if (this.parseLabel(this.story[this.index].condition)) {
-            if (this.story[this.index].set) {
-              this.story[this.index].set.split(' ').map((v) => {
-                this.flags.add(v);
-              });
-            }
-            return this.story[this.index++];
-          }
-        } else if (this.story[this.index].display === 'player') {
-          let obj = { options: [] };
-          this.story.map((v) => {
-            if (v.display === 'player' && this.parseLabel(v.condition)) {
-              obj.options.push(v);
-            }
-          });
-
-          if (obj.options.length === 0){
-            this.index++;
-            //this.getMessage();
-            return null;
-          } 
-
-          return obj;
-        }
-      }
-      this.index++;
-
-      // in case of infinite loop check this out
-
-       if(this.index >= this.story.length) this.index = 0;
-    }
-
-    return null;
-
-    */
-
-    // getmessage v2
-
-    //TODO fix goto ie:go backwards
+ 
     this.toDisplay = {}
     this.toDisplay.text = [];
     this.toDisplay.options = [];
@@ -86,25 +40,6 @@ export class MessageService {
 
         if (e.goto) {
           this.gotoLabel(e.goto)
-/*          this.flags.add(e.goto);
-          console.log("here 1 ");
-          
-          let index = this.story
-            .map((v) => v.condition || '')
-            .findIndex((v) => v.indexOf(e.goto + ' ') >= 0 && this.parseLabel(v));
-            console.log("here 2 ");
-            if (index>=0) {
-              console.log("goto in get message v2 index :",index,"goto",e.goto,this.flags);
-              if (this.story[index].text) obj.text.push(...this.story[index].text);
-              if (this.story[index].options) obj.options.push(...this.story[index].options);
-              if (this.story[index].set) this.setFlags(this.story[index].set.split(' '));
-              if (this.story[index].clear)
-              this.story[index].clear.split(' ').map((v) => {
-                this.flags.delete(v);
-              });
-            }
-            this.flags.delete(e.goto);
-            */
         }
 
         if (e.clear)
