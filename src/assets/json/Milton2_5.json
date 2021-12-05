@@ -187,7 +187,7 @@
   },
   {
     "display": "terminal",
-    "condition": "( Hero2_5 and Milton1_2NoMorals and not( Milton1_2Liberal or Milton1_2Utilitarian ) )",
+    "condition": "( Hero2_5 and Milton1_2NoMorals and not ( Milton1_2Liberal or Milton1_2Utilitarian ) )",
     "text": [
       "Checking user.prof%w5.%w5.%w5.",
       "",

@@ -11,7 +11,6 @@ export class MessageService {
   currentLabel: string = '';
   showTerminals: boolean = false;
   toDisplay
-  //TODO:
 
   getMessage() {
     /****************   testing somrthing remove later     ************ */
@@ -39,6 +38,7 @@ export class MessageService {
         if (e.set) this.setFlags(e.set.split(' '));
 
         if (e.goto) {
+          this.toDisplay.goto = e.goto;
           this.gotoLabel(e.goto)
         }
 
@@ -165,14 +165,10 @@ export class MessageService {
   gotoLabel(label) {
 
     this.flags.add(label);
-
-
-    console.log("here 1 ");
     
     let index = this.story
       .map((v) => v.condition || '')
       .findIndex((v) => v.indexOf(label + ' ') >= 0 && this.parseLabel(v));
-      console.log("here 2 ");
       if (index>=0) {
         console.log("goto in get message v2 index :",index,"goto",label,this.flags);
         if (this.story[index].text) this.toDisplay.text.push(...this.story[index].text);
@@ -186,14 +182,14 @@ export class MessageService {
           this.gotoLabel(this.story[index].goto)
       }
 
-
-
       this.flags.delete(label);
 
     console.log('on goto', this.toDisplay);
   }
 
   postStart() {
+    this.flags.delete('Booting');
+
     this.flags.delete('QueryMLA_START');
     //this.flags.delete('QueryMLA_ON');
     this.flags.delete('Milton1_1_Start');
@@ -204,7 +200,7 @@ export class MessageService {
     this.flags.delete('Milton2_4_Start');
     this.flags.delete('Milton2_5_Start');
     this.flags.delete('Milton2_6_Start');
-    this.flags.delete('Booting');
+
   }
 
   initflags() {

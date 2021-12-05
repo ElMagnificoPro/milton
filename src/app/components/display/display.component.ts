@@ -15,7 +15,7 @@ export class DisplayComponent implements OnInit {
   options: string[] = [];
   writing: boolean = false;
   res;
-  currTerminal:string = "";
+  currTerminal: string = '';
 
   @ViewChild('display') element: ElementRef;
 
@@ -24,8 +24,6 @@ export class DisplayComponent implements OnInit {
     private _cookieService: CookieService,
     private dialog: MatDialog
   ) {}
-
-  
 
   openDialog() {
     const dialogRef = this.dialog.open(TerminalsDialogComponent, {
@@ -42,29 +40,13 @@ export class DisplayComponent implements OnInit {
   }
 
   async getMessage() {
-    if (this.res && this.res.goto) {
-      console.log("in display getMessage in this.res.goto.length >0");
-      //  this.res = this._messageService.getMessageLabel(this.res.goto);
-      if (this.res.goto === 'CLI_Resume' || this.res.goto === 'CLI_exit') {
-        this.onExit();
-      }else{
-        //this._messageService.gotoLabel(this.res.goto)
-        //this.res = this._messageService.getMessage();
+    this.res = this._messageService.getMessage();
 
-        this.res = this._messageService.gotoLabel(this.res.goto);
-        console.log("goto called");
-        
-
-      }
-    } else {
-      this.res = this._messageService.getMessage();
-    }
-
-
+    console.log('from messageService', this.res);
 
     if (this.res) {
       this.messages.push('');
-      if (this.res.options) {
+      if (this.res.options && this.res.options.length > 0) {
         if (this.res.text) {
           for (let i = 0; i < this.res.text.length; i++) {
             await this.displayMessage(this.res.text[i], 3);
@@ -74,13 +56,25 @@ export class DisplayComponent implements OnInit {
         this.messages.push('');
         this.displayMessage('  >  ', 10);
         this.displayOptions();
-        //this.getMessage();
       } else {
         for (let i = 0; i < this.res.text.length; i++) {
           await this.displayMessage(this.res.text[i], 3);
           this.messages.push('');
         }
-        this.getMessage();
+        if (
+          this.res.goto &&
+          (this.res.goto === 'CLI_Resume' || this.res.goto === 'CLI_exit')
+        ) {
+          this.res.options = [
+            {
+              text: 'exit',
+              next: 'CLI_Resume',
+            },
+          ];
+          this.messages.push('');
+          this.displayMessage('  >  ', 10);
+          this.displayOptions();
+        } else this.getMessage();
       }
     } else {
       this._messageService.resetTerminal();
@@ -127,7 +121,11 @@ export class DisplayComponent implements OnInit {
       //this.messages.push('');
       this.options = [];
       await this.displayMessage(option.text, 30);
-      this.getMessage();
+      if (this.res.goto === 'CLI_Resume' || this.res.goto === 'CLI_exit') {
+        this.onExit();
+      } else {
+        this.getMessage();
+      }
     }
   }
 
@@ -158,12 +156,12 @@ export class DisplayComponent implements OnInit {
   onTerminal(n) {
     this._messageService.setTerminal(n);
     this.getMessage();
-    this._messageService.postStart()
+    this._messageService.postStart();
   }
 
   onClearSession() {
     this._messageService.clearflags();
-    this._cookieService.delete("flags")
+    this._cookieService.delete('flags');
     window.location.reload();
   }
 

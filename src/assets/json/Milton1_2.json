@@ -62,37 +62,6 @@
   },
   {
     "display": "terminal",
-    "condition": "( ( Download1_2 or DisplayConflicts or DisplayPsych or DisplayPriv or SupportEnd or AccessCommsDenied ) and not ( CertTicketSent or PassTicketSent or AarghTicketSent ) )",
-    "text": "",
-    "options": [
-      {
-        "text": "Display conflicts",
-        "next": "DisplayConflicts"
-      },
-      {
-        "text": "Display psychological profile",
-        "next": "DisplayPsych"
-      },
-      {
-        "text": "Display account privileges",
-        "next": "DisplayPriv"
-      },
-      {
-        "text": "access_comm_portal",
-        "next": "AccessCommsDenied"
-      },
-      {
-        "text": "Exit",
-        "next": "CLI_Resume"
-      },
-      {
-        "text": "Log MLA support ticket",
-        "next": "SupportTicket"
-      }
-    ]
-  },
-  {
-    "display": "terminal",
     "condition": "( Download1_2 or DisplayConflicts or DisplayPsych or DisplayPriv or SupportEnd or AccessCommsDenied )",
     "text": "",
     "options": [
@@ -271,6 +240,17 @@
       "Thank you. A support ticket has been generated and appended to your profile. You will receive a notification when a reply has been sent.",
       "",
       ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( Download1_2 or DisplayConflicts or DisplayPsych or DisplayPriv or SupportEnd or AccessCommsDenied ) and not ( CertTicketSent or PassTicketSent or AarghTicketSent ) )",
+    "text": "",
+    "options": [
+      {
+        "text": "Log MLA support ticket",
+        "next": "SupportTicket"
+      }
     ]
   }
 ]
