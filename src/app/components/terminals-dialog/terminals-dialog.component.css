@@ -1,3 +1,10 @@
-.dialog-component{
+.dialog-component {
   text-align: center;
+}
+
+.dialog-component span {
+  display: inline-block;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  margin: 2px 5px;
 }

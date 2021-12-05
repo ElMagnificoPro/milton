@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TerminalsDialogComponent } from './components/terminals-dialog/terminals-dialog.component';
 
@@ -19,6 +20,7 @@ import { TerminalsDialogComponent } from './components/terminals-dialog/terminal
     MatIconModule,
     MatTooltipModule,
     MatDialogModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

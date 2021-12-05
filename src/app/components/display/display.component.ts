@@ -106,7 +106,9 @@ export class DisplayComponent implements OnInit {
   }
 
   onExit() {
-    console.log('onExit');
+    let x = this._cookieService.get('flags');
+    this._cookieService.set('flags '+this.currTerminal, x, 69);
+
     this.options = [];
     this.openDialog();
   }

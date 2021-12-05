@@ -1,108 +1,148 @@
 <div class="dialog-component">
   <h1 mat-dialog-title>Select Terminal</h1>
   <div mat-dialog-content>
-    <button mat-button [mat-dialog-close]="'QueryMLA'">QueryMLA</button>
-    <button mat-button [mat-dialog-close]="'MLA_CommPortal'">
-      MLA_CommPortal
-    </button>
-    <br />
-    <button mat-button [mat-dialog-close]="'Milton1_1'">Milton1_1</button>
-    <button mat-button [mat-dialog-close]="'Milton1_2'">Milton1_2</button>
-    <br />
-    <button mat-button [mat-dialog-close]="'Milton2_1'">Milton2_1</button>
-    <button mat-button [mat-dialog-close]="'Milton2_2'">Milton2_2</button>
-    <button mat-button [mat-dialog-close]="'Milton2_3'">Milton2_3</button>
-    <button mat-button [mat-dialog-close]="'Milton2_4'">Milton2_4</button>
-    <button mat-button [mat-dialog-close]="'Milton2_5'">Milton2_5</button>
-    <button mat-button [mat-dialog-close]="'Milton2_6'">Milton2_6</button>
-
-    <br />
     <div class="clear-session">
       <button
         mat-raised-button
         class="clear-session-btn"
         matTooltip="clear current session and start again"
         aria-label="clear current session and start again"
-        matTooltipPosition="before"
+        matTooltipPosition="below"
         (click)="onClearSession()"
       >
         <mat-icon>refresh</mat-icon>
       </button>
     </div>
 
-    <br />
+<mat-divider [inset]="true"></mat-divider>
 
-    <div class="save-state">
+
+    <span>
+      <button mat-button [mat-dialog-close]="'QueryMLA'">QueryMLA</button>
       <button
-        mat-raised-button
+        mat-icon-button
         class="save-load-btn"
-        matTooltip="save state"
-        aria-label="save state"
-        matTooltipPosition="before"
-        (click)="onSaveState(1)"
-      >
-        <mat-icon>file_download</mat-icon>
-      </button>
-
-      <button
-        mat-raised-button
-        class="save-load-btn"
-        matTooltip="save state"
-        aria-label="save state"
-        matTooltipPosition="before"
-        (click)="onSaveState(2)"
-      >
-        <mat-icon>file_download</mat-icon>
-      </button>
-
-      <button
-        mat-raised-button
-        class="save-load-btn"
-        matTooltip="save state"
-        aria-label="save state"
-        matTooltipPosition="before"
-        (click)="onSaveState(3)"
-      >
-        <mat-icon>file_download</mat-icon>
-      </button>
-    </div>
-
-    <br>
-
-    <div class="load-state">
-      <button
-        mat-raised-button
-        class="save-load-btn"
-        matTooltip="load state"
-        aria-label="load state"
-        matTooltipPosition="before"
-        (click)="onLoadState(1)"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('QueryMLA')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
-
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'MLA_CommPortal'">MLA_CommPortal</button>
       <button
-        mat-raised-button
+        mat-icon-button
         class="save-load-btn"
-        matTooltip="load state"
-        aria-label="load state"
-        matTooltipPosition="before"
-        (click)="onLoadState(2)"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('MLA_CommPortal')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
+    </span>
+<mat-divider [inset]="true"></mat-divider>
 
+
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton1_1'">Milton1_1</button>
       <button
-        mat-raised-button
+        mat-icon-button
         class="save-load-btn"
-        matTooltip="load state"
-        aria-label="load state"
-        matTooltipPosition="before"
-        (click)="onLoadState(3)"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton1_1')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
-    </div>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton1_2'">Milton1_2</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton1_2')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+<mat-divider [inset]="true"></mat-divider>
+
+
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_1'">Milton2_1</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_1')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_2'">Milton2_2</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_2')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_3'">Milton2_3</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_3')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_4'">Milton2_4</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_4')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_5'">Milton2_5</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_5')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
+    <span>
+      <button mat-button [mat-dialog-close]="'Milton2_6'">Milton2_6</button>
+      <button
+        mat-icon-button
+        class="save-load-btn"
+        matTooltip="load progress from this terminal"
+        matTooltipPosition="below"
+        (click)="onLoadState('Milton2_6')"
+      >
+        <mat-icon>file_upload</mat-icon>
+      </button>
+    </span>
 
   </div>
   <div mat-dialog-actions></div>
