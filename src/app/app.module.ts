@@ -9,7 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { TerminalsDialogComponent } from './components/terminals-dialog/terminals-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, DisplayComponent, TerminalsDialogComponent],
@@ -20,7 +22,9 @@ import { TerminalsDialogComponent } from './components/terminals-dialog/terminal
     MatIconModule,
     MatTooltipModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

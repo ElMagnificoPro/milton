@@ -1,6 +1,36 @@
 <div class="dialog-component">
   <h1 mat-dialog-title>Select Terminal</h1>
   <div mat-dialog-content>
+    <mat-divider [inset]="true"></mat-divider>
+
+    <div class="save-load-text">
+      <button
+        mat-raised-button
+        matTooltip="save to text"
+        matTooltipPosition="below"
+        (click)="onSaveText()"
+      >
+        save
+      </button>
+      <button
+        mat-raised-button
+        matTooltip="load from text"
+        matTooltipPosition="below"
+        (click)="onLoadText()"
+      >
+        load
+      </button>
+      <br />
+      <mat-form-field class="save-textarea" appearance="fill">
+        <mat-label>Save Data</mat-label>
+        <textarea
+        matInput 
+        placeholder="click save button to get data or put exixting data and click load"
+          [(ngModel)]="saveText"
+        ></textarea>
+      </mat-form-field>
+    </div>
+
     <div class="clear-session">
       <button
         mat-raised-button

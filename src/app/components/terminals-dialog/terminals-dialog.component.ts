@@ -22,6 +22,8 @@ export class TerminalsDialogComponent implements OnInit {
     private _cookieService: CookieService
   ) {}
 
+  saveText;
+
   ngOnInit(): void {}
 
   onClearSession() {
@@ -40,5 +42,24 @@ export class TerminalsDialogComponent implements OnInit {
     let x = this._cookieService.get('flags ' + i);
     this._cookieService.set('flags', x, 69);
     window.location.reload();
+  }
+
+  onSaveText(){
+    this.saveText = JSON.stringify(this._cookieService.getAll())
+  }
+
+  onLoadText(){
+    
+    
+    try {
+      let x = JSON.parse(this.saveText)
+      this._cookieService.deleteAll();
+      for (const [key, value] of Object.entries(x)) {
+        this._cookieService.set(`${key}`, `${value}`, 69);
+      }
+      window.location.reload();
+    } catch (error) {
+      alert(error)
+    }
   }
 }
