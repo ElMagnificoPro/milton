@@ -419,6 +419,7 @@
     "options": [
       {
         "text": "Exit",
+        "set":"Milton2_3_DONE",
         "next": "CLI_Resume"
       }
     ]

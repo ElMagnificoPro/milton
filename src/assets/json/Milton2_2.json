@@ -278,7 +278,7 @@
         "set": "WorldFlag"
       },
       {
-        "text": "4.",
+        "text": "I know 2+2=4.",
         "next": "Right2_2"
       },
       {
@@ -387,6 +387,7 @@
     "options": [
       {
         "text": "Exit",
+        "set":"Milton2_2_DONE",
         "next": "CLI_Resume"
       }
     ]

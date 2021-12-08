@@ -1,17 +1,17 @@
 [
   {
     "display": "terminal",
-    "condition": "( not CommPortal_Cert_COMPLETED and Booting )",
+    "condition": "( Booting and not CommPortal_Cert_COMPLETED )",
     "text": [
       "",
       "Loading library session.%w1.%w1.%w1 %w9Done.",
-      "Mounting local disks.%w1.%w1.%w1 %w9Failed.",
-      "Unrecognized error detected.%w9",
+      "Mounting local disks.%w1.%w1.%w1 %w9%s0Failed.",
+      "Unrecognized error detected.%s0%w9",
       "",
       ""
     ],
     "clear": "CLI_Enabled CLI_Enabled",
-    "set": "CommPortal_FakeCLI CLI_Blocked"
+    "set": "CommPortal_FakeCLI"
   },
   {
     "display": "terminal",
@@ -57,7 +57,7 @@
     "display": "terminal",
     "condition": "( CommPortal_Start )",
     "text": [
-      "Connecting network drives.%w3.%w3.%w3.%w3.%w3 %w9Error: network inaccessible.%w9",
+      "Connecting network drives.%w3.%w3.%w3.%w3.%w3 %w9Error: network inaccessible.%s0%w9",
       "###75639$ Encountered unknown errors",
       "",
       "Run MLA troubleshooter? [Y/N] "
@@ -126,7 +126,7 @@
   {
     "display": "terminal",
     "condition": "( FakePasswordPrompt )",
-    "text": ["password: "],
+    "text": "\"password: \"",
     "options": [
       {
         "text": "******",
@@ -173,7 +173,7 @@
     "condition": "( passwordfailedN and not passwordfailed1 )",
     "text": "",
     "goto": "FakePasswordPrompt",
-    "set": "passwordfailed1"
+    "set": "passwordfailed1 passwordfailed1"
   },
   {
     "display": "terminal",
@@ -209,11 +209,11 @@
   },
   {
     "display": "terminal",
-    "condition": "( CommPortal_CreateAccount and CommPortal_Cert_COMPLETED )",
+    "condition": "( CommPortal_CreateAccount and  CommPortal_Cert_COMPLETED )",
     "text": [
       "",
       "Certification evaluation results are still pending. You cannot create a new account at this time.",
-      ""
+      "  "
     ],
     "goto": "FakePasswordPrompt"
   },
@@ -389,9 +389,9 @@
         "set": "humanbeing"
       },
       {
-        "text": "A citizen",
+        "text": "A Citizen",
         "next": "CommPortal_Cert_Q4",
-        "set": "xitizen"
+        "set": "citizen"
       },
       {
         "text": "A being of negative entropy",
@@ -459,6 +459,7 @@
       "",
       "Press any key to exit. "
     ],
+    "set": "CommPortal_Cert_COMPLETED",
     "options": [
       {
         "text": " ",

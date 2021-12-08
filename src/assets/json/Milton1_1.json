@@ -172,8 +172,7 @@
     "options": [
       {
         "text": "Broadly agree",
-        "set": "Milton1_2NoMorals",
-        "next": "part2q3"
+        "set": "Milton1_2NoMorals"
       },
       {
         "text": "Broadly disagree",
@@ -317,6 +316,7 @@
       "",
       "Press any key to exit. "
     ],
+    "set": "Milton1_1_DONE",
     "options": [
       {
         "text": " ",

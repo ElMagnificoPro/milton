@@ -11,6 +11,7 @@
       "",
       "Your query? : "
     ],
+    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "asdfa",
@@ -43,6 +44,7 @@
       "",
       "Your query? : "
     ],
+    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "Can you help me?",
@@ -67,6 +69,7 @@
       "",
       "Your query? : "
     ],
+    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "Can you help me?",
@@ -218,8 +221,8 @@
       "",
       "That is approximately the size of:",
       "- 30 billion photos",
-      "- 7 million minutes of HD video",
-      "- the entire internet in 2003",
+      "\t- 7 million minutes of HD video",
+      "\t- the entire internet in 2003",
       "",
       "However, the majority of library resources are corrupted or invalid.",
       "10.6954751 gigabytes of uncorrupted resources are indexed.",
@@ -247,8 +250,8 @@
     "display": "player",
     "condition": "( QueryMLA_ON and not OutsideWorld_DONE and ( HowOld_DONE or WhatTerminal_DONE or HowLong_DONE or WhatStatus_DONE ) )",
     "text": "\"Forget the library, can you respond to queries on the outside world?\"",
-    "next": "OutsideWorld",
-    "set": "OutsideWorld_DONE"
+    "set": "OutsideWorld_DONE",
+    "next": "OutsideWorld"
   },
   {
     "display": "terminal",
@@ -311,7 +314,7 @@
     "display": "player",
     "condition": "( QueryMLA_ON and Describe_DONE )",
     "text": " \"exit\"",
-    "clear": "QueryMLA_ON MLAIntro_PhaseQuery",
+    "clear": "QueryMLA_ON",
     "set": "MLAIntro_PhaseBusy",
     "next": "CLI_Resume"
   }

@@ -24,8 +24,8 @@
       <mat-form-field class="save-textarea" appearance="fill">
         <mat-label>Save Data</mat-label>
         <textarea
-        matInput 
-        placeholder="click save button to get data or put exixting data and click load"
+          matInput
+          placeholder="click save button to get data or put exixting data and click load"
           [(ngModel)]="saveText"
         ></textarea>
       </mat-form-field>
@@ -59,7 +59,11 @@
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'MLA_CommPortal'">
+      <button
+        mat-button
+        [mat-dialog-close]="'MLA_CommPortal'"
+        [disabled]="isDisabled('MLAIntro_PhaseBusy')"
+      >
         MLA_CommPortal
       </button>
       <button
@@ -68,6 +72,7 @@
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('MLA_CommPortal')"
+        [disabled]="isDisabled('MLAIntro_PhaseBusy')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
@@ -75,25 +80,33 @@
     <mat-divider [inset]="true"></mat-divider>
 
     <span>
-      <button mat-button [mat-dialog-close]="'Milton1_1'">Milton1_1</button>
+      <button
+        mat-button
+        [mat-dialog-close]="'Milton1_1'"
+        [disabled]="isDisabled('CommPortal_Cert_end')"
+      >
+        Milton1_1
+      </button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton1_1')"
+        [disabled]="isDisabled('CommPortal_Cert_end')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton1_2'">Milton1_2</button>
+      <button mat-button [mat-dialog-close]="'Milton1_2'" [disabled]="isDisabled('Milton1_1_DONE')">Milton1_2</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton1_2')"
+        [disabled]="isDisabled('Milton1_1_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
@@ -101,73 +114,79 @@
     <mat-divider [inset]="true"></mat-divider>
 
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_1'">Milton2_1</button>
+      <button mat-button [mat-dialog-close]="'Milton2_1'" [disabled]="isDisabled('Milton1_2_DONE')">Milton2_1</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton2_1')"
+        [disabled]="isDisabled('Milton1_2_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_2'">Milton2_2</button>
+      <button mat-button [mat-dialog-close]="'Milton2_2'" [disabled]="isDisabled('Milton2_1_DONE')">Milton2_2</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton2_2')"
+        [disabled]="isDisabled('Milton2_1_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_3'">Milton2_3</button>
+      <button mat-button [mat-dialog-close]="'Milton2_3'" [disabled]="isDisabled('Milton2_2_DONE')">Milton2_3</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
-        (click)="onLoadState('Milton2_3')"
+        (click)="onLoadState('Milton2_2')"
+        [disabled]="isDisabled('Milton2_2_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_4'">Milton2_4</button>
+      <button mat-button [mat-dialog-close]="'Milton2_4'" [disabled]="isDisabled('Milton2_3_DONE')">Milton2_4</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton2_4')"
+        [disabled]="isDisabled('Milton2_3_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_5'">Milton2_5</button>
+      <button mat-button [mat-dialog-close]="'Milton2_5'" [disabled]="isDisabled('Milton2_4_DONE')">Milton2_5</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton2_5')"
+        [disabled]="isDisabled('Milton2_4_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton2_6'">Milton2_6</button>
+      <button mat-button [mat-dialog-close]="'Milton2_6'" [disabled]="isDisabled('Milton2_5_DONE')">Milton2_6</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton2_6')"
+        [disabled]="isDisabled('Milton2_5_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
@@ -176,61 +195,66 @@
     <mat-divider [inset]="true"></mat-divider>
 
     <span>
-      <button mat-button [mat-dialog-close]="'Milton3_1'">Milton3_1</button>
+      <button mat-button [mat-dialog-close]="'Milton3_1'" [disabled]="isDisabled('Milton2_6_DONE')">Milton3_1</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton3_1')"
+        [disabled]="isDisabled('Milton2_6_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton3_2'">Milton3_2</button>
+      <button mat-button [mat-dialog-close]="'Milton3_2'" [disabled]="isDisabled('Milton3_1_DONE')">Milton3_2</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton3_2')"
+        [disabled]="isDisabled('Milton3_1_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton3_3'">Milton3_3</button>
+      <button mat-button [mat-dialog-close]="'Milton3_3'" [disabled]="isDisabled('Milton3_2_DONE')">Milton3_3</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton3_3')"
+        [disabled]="isDisabled('Milton3_2_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton3_4'">Milton3_4</button>
+      <button mat-button [mat-dialog-close]="'Milton3_4'" [disabled]="isDisabled('Milton3_3_DONE')">Milton3_4</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton3_4')"
+        [disabled]="isDisabled('Milton3_3_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Milton3_5'">Milton3_5</button>
+      <button mat-button [mat-dialog-close]="'Milton3_5'" [disabled]="isDisabled('Milton3_4_DONE')">Milton3_5</button>
       <button
         mat-icon-button
         class="save-load-btn"
         matTooltip="load progress from this terminal"
         matTooltipPosition="below"
         (click)="onLoadState('Milton3_5')"
+        [disabled]="isDisabled('Milton3_4_DONE')"
       >
         <mat-icon>file_upload</mat-icon>
       </button>

@@ -62,4 +62,13 @@ export class TerminalsDialogComponent implements OnInit {
       alert(error)
     }
   }
+
+
+  isDisabled(terminal){
+    let flags = this._cookieService.get('flags');
+    if (flags.includes(terminal)) {
+      return false;
+    }
+    return true;
+  }
 }
