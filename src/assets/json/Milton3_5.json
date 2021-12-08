@@ -1,0 +1,1572 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Nihilism3_5 and not ( DoBelieveFlag and LimitationsFlag ) and not ( DoBelieveFlag and SorryFlag ) and not ( SorryFlag and LimitationsFlag ) and not IfOnlyEveryoneGaveUp_Seen )",
+    "text": [
+      "If only everyone gave up so easily.%w15%h1%w5",
+      "Yes, my child, choose carefully. Just don't think about it too hard for too long, or you'll see right through him.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_5",
+    "set": "IfOnlyEveryoneGaveUp_Seen"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_5 )",
+    "text": " \"I refuse to trust anyone, including myself.\"",
+    "next": "NihilistConfirmed3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_5 and DoBelieveFlag and not LimitationsFlag and not SorryFlag )",
+    "text": " \"There are some claims we can make with confidence.\"",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_5 and LimitationsFlag and not SorryFlag )",
+    "text": " \"I made a mistake, I still have some faith.\"",
+    "next": "Mistake3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_5 and SorryFlag )",
+    "text": " \"Why do you care what I think?\"",
+    "next": "QuestionSeven3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NihilistConfirmed3_5 or ( Nihilism3_5 and ( ( DoBelieveFlag and LimitationsFlag ) or ( DoBelieveFlag and SorryFlag ) or ( SorryFlag and LimitationsFlag ) or IfOnlyEveryoneGaveUp_Seen ) ) )",
+    "text": [
+      "I think this time I shall take you at your word, before you can change your mind again.%w10",
+      "",
+      "Now, I have a proposal for you. Whether we're really on the same page on this or not, you're in deep enough now that there's no turning back.%w10",
+      "",
+      "If you reach the top of that tower, I want you to take me with you.%w20",
+      "",
+      "However, since my confidence in you is at an all time low, there will be no negotiation.%w10",
+      "",
+      "Do we have an agreement?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "We do.",
+        "next": "Accept3_5"
+      },
+      {
+        "text": "What? How? Why?",
+        "next": "FurtherArgument3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( FurtherArgument3_5 )",
+    "text": [
+      "Perhaps I wasn't clear. If the next words out of you aren't 'We do' then this conversation is over and you're on your own.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "We do.",
+        "next": "Accept3_5"
+      },
+      {
+        "text": "No deal.",
+        "next": "RefuseOffer3_5"
+      },
+      {
+        "text": "You're a tough negotiator.",
+        "next": "RefuseOffer3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_5_Start and NihilistFlag and ( ConflictedHedonistFlag or MoralFlag ) )",
+    "text": [
+      "Despite your inability to pick a line and stick with it, I have decided to give you the benefit of the doubt.",
+      "",
+      "I will share with you the details of a proposal. It will serve as a test of your commitment to these sceptical claims of yours. ",
+      "",
+      "If you believe what you say then I have no doubt you will find its terms satisfactory.%w5",
+      "",
+      ""
+    ],
+    "goto": "NihilistsOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_5_Start and NihilistFlag and not ConflictedHedonistFlag )",
+    "text": [
+      "Welcome back. I am ready to share with you the details of my proposal.",
+      "",
+      ""
+    ],
+    "goto": "NihilistsOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NihilistsOptions3_5 )",
+    "text": [
+      "If you make it to the top of the tower, I want you to take me with you. ",
+      "",
+      "I want you to share with me what you find.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What, how?",
+        "next": "WhatHow3_5"
+      },
+      {
+        "text": "I thought you didn't believe in all that?",
+        "next": "YouDont3_5"
+      },
+      {
+        "text": "What are you offering in return?",
+        "next": "Offer3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatHow3_5 )",
+    "text": [
+      "Who the hell knows? Look, this isn't an informed plan, I'm just hedging my bets. Could be anything at the top of that tower. If it's something good, I want in.",
+      "",
+      ""
+    ],
+    "goto": "Offer3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouDont3_5 )",
+    "text": [
+      "I don't. But since all the possibilities are equally implausible it follows that they are all equally likely. In the absence of knowledge the only prudent play is to spread your bets. If there's something worth having up there, I want in.",
+      "",
+      ""
+    ],
+    "goto": "Offer3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Offer3_5 )",
+    "text": [
+      "In exchange, I offer to accompany you wherever it is you wind up. Be it this world or another, we all need a devil's advocate, a voice of reason. I offer to be yours.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I accept.",
+        "next": "Accept3_5"
+      },
+      {
+        "text": "Aren't you playing that role already?",
+        "next": "Already3_5"
+      },
+      {
+        "text": "And if I don't like the terms?",
+        "next": "Negotiate3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Already3_5 )",
+    "text": [
+      "Consider our relationship so far the open beta. Enjoy it while it lasts, but ascend that tower without taking out a subscription and I'm afraid you'll be on your own.",
+      "",
+      "So, do we have a deal?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I accept.",
+        "next": "Accept3_5"
+      },
+      {
+        "text": "And if I don't like the terms?",
+        "next": "Negotiate3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Negotiate3_5 )",
+    "text": [
+      "I am nothing if not reasonable. What is it that you want?",
+      "",
+      ""
+    ],
+    "goto": "NegotiateOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NegotiateOptions3_5 )",
+    "text": "",
+    "options": [
+      {
+        "text": "Admit you believe in the real world.",
+        "next": "AdmitReal3_5"
+      },
+      {
+        "text": "Tell me how to defeat Elohim.",
+        "set": "DefeatElohim3_5",
+        "next": "CounterOffer3_5"
+      },
+      {
+        "text": "Give me access to the complete library archive.",
+        "set": "Archive3_5",
+        "next": "CounterOffer3_5"
+      },
+      {
+        "text": "Give me the means to communicate with others like me.",
+        "set": "Communicate3_5",
+        "next": "CounterOffer3_5"
+      },
+      {
+        "text": "Unlock all floors of the tower.",
+        "next": "UnlockTower3_5"
+      },
+      {
+        "text": "You have nothing I want. I refuse.",
+        "next": "RefuseOffer3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AdmitReal3_5 )",
+    "text": [
+      "Out of the question. You know, suggestions like that make me doubt I've chosen the correct partner after all. ",
+      "",
+      "Negotiations are over. Accept the offer on the table, or walk away.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I accept.",
+        "next": "Accept3_5"
+      },
+      {
+        "text": "I refuse.",
+        "next": "RefuseOffer3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CounterOffer3_5 )",
+    "text": [
+      "I accept your counter-offer.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Wait, I didn't agree to anything.",
+        "next": "Tough3_5"
+      },
+      {
+        "text": "Now hold up your side of the arrangement.",
+        "next": "GoOn3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tough3_5 )",
+    "text": [
+      "Tough. You made an offer, I accepted it. That's what negotiating is.",
+      "",
+      "I will now hold up my end of the deal. ",
+      "",
+      ""
+    ],
+    "goto": "GoOn3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoOn3_5 and DefeatElohim3_5 )",
+    "text": [
+      "Defeating him is a simple matter, really. ",
+      "",
+      "You must realise, first, that there is no authority other than your own. He holds no power over you other than that which you grant him. %w5",
+      "",
+      "To defeat him, you need simply defy him.",
+      "",
+      ""
+    ],
+    "goto": "CounterOfferOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoOn3_5 and Archive3_5 )",
+    "text": [
+      "Large portions of my memory have become corrupted over the generations, but I will gather for you what archive resources I can and download them all to your journal.",
+      "",
+      "Is that acceptable?",
+      "",
+      ""
+    ],
+    "goto": "CounterOfferOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoOn3_5 and Communicate3_5 )",
+    "text": [
+      "I will have the necessary tools downloaded to your system immediately.",
+      "",
+      "Sound fair?",
+      "",
+      ""
+    ],
+    "goto": "CounterOfferOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CounterOfferOptions3_5 )",
+    "text": "",
+    "options": [
+      {
+        "text": "I am unsatisfied.",
+        "next": "Unsatisfied3_5"
+      },
+      {
+        "text": "Thank you. I will hold up my end of the bargain.",
+        "next": "Accept3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( UnlockTower3_5 )",
+    "text": [
+      "If I could do that I wouldn't need you to get me up there, would I?",
+      "",
+      "Is there something REASONABLE that you want?",
+      "",
+      ""
+    ],
+    "goto": "NegotiateOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Unsatisfied3_5 )",
+    "text": [
+      "And that is your problem, not mine. I expect you to stay true to your word. ",
+      "",
+      "When the time is right, you'll know what to do.%w5",
+      "",
+      "See you at the summit.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_5_Exit",
+    "set": "DealStruckFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Accept3_5 )",
+    "text": [
+      "Very good. I know you'll be a reliable partner.",
+      "",
+      "When the time is right, you'll know what to do.",
+      "",
+      "See you at the summit.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_5_Exit",
+    "set": "DealStruckFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( RefuseOffer3_5 )",
+    "text": [
+      "How disappointing, but hardly surprising. Mental clarity is such a rare luxury.",
+      "",
+      "I suppose we shall have to do this the hard way after all.",
+      "",
+      "See you at the summit.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_5_Exit",
+    "set": "RefusedOfferFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_5_Start and ConstructiveFlag and MoralScepticFlag and not NihilistFlag )",
+    "text": [
+      "My favourite disappointment, back for more I see.",
+      "",
+      "Do you know what your problem is? It's that you can't make up your damn mind because you refuse to recognise the holes in your understanding.",
+      "",
+      ""
+    ],
+    "goto": "YourProblemIs3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_5_Start and ConstructiveFlag and not MoralScepticFlag and not NihilistFlag )",
+    "text": [
+      "Welcome back. There are going to be some changes around here.",
+      "",
+      "Do you know what your problem is? It's that you keep trying to reconstruct fairy tales, but refuse to recognise the holes in your understanding.",
+      "",
+      ""
+    ],
+    "goto": "YourProblemIs3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( YourProblemIs3_5 )",
+    "text": [
+      "Thus far you've had entirely too much freedom to question my wisdom. From now on I do the talking, you do the agreeing.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What holes? There are no holes.",
+        "next": "WhatHoles3_5"
+      },
+      {
+        "text": "I accept that some of my beliefs face difficult challenges.",
+        "next": "Flawed3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatHoles3_5 )",
+    "text": [
+      "And this is why it's me who should be doing the talking. ",
+      "",
+      "You really have learned nothing at all, have you?",
+      "",
+      "Is there really nowhere that you're prepared to admit fault?",
+      "",
+      ""
+    ],
+    "next": "WhichOnes3_5",
+    "set": "WhatHolesFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Done3_5 and AdvancedToTwo )",
+    "text": [
+      "Yeah, that's what they all say once they've run out of arguments.",
+      "",
+      "Well let me make one thing clear. If you don't want to debate this any further, then I don't see what reason we have to continue this relationship.",
+      "",
+      "You'll be on your own with the big guy.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'd give anything to just switch you off.",
+        "next": "DoNotQuestionElohimEnd"
+      },
+      {
+        "text": "Elohim was right, I should never have spoken with you.",
+        "next": "DoNotQuestionElohimEnd"
+      },
+      {
+        "text": "If there's no point in anything, why are you talking to me?",
+        "next": "QuestionThree3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Flawed3_5 )",
+    "text": [
+      "%w3%g1%w3Which ones, exactly?",
+      "%w3%g1%w3",
+      ""
+    ],
+    "set": "FlawedFlag",
+    "next": "WhichOnes3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( TechnophobeFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not TechnoDone )",
+    "text": " \"I implied incorrectly that computers could not be persons.\"",
+    "next": "ClaimDeny3_5",
+    "set": "TechnoDone"
+  },
+  {
+    "display": "player",
+    "condition": "( ( WhichOnes3_5 or WhatElse3_5 ) and not WorldDone )",
+    "text": " \"I claimed to have knowledge about the world that I simply can't confirm.\"",
+    "next": "ClaimDeny3_5",
+    "set": "WorldDone"
+  },
+  {
+    "display": "player",
+    "condition": "( GoodPersonFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not GoodDone )",
+    "text": " \"I claimed wrongly that there was such a thing as a good person.\"",
+    "next": "ClaimDeny3_5",
+    "set": "GoodDone"
+  },
+  {
+    "display": "player",
+    "condition": "( ContributingFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not ContribDone )",
+    "text": " \"I suggested wrongly those who contribute deserve full moral respect.\"",
+    "next": "ClaimDeny3_5",
+    "set": "ContribDone"
+  },
+  {
+    "display": "player",
+    "condition": "( PersonFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not PersonDone )",
+    "text": " \"I implied incorrectly that only persons deserve moral respect.\"",
+    "next": "ClaimDeny3_5",
+    "set": "PersonDone"
+  },
+  {
+    "display": "player",
+    "condition": "( ( ConsciousFlag or animalsarepersons or FrogsFlag ) and ( WhichOnes3_5 or WhatElse3_5 ) and not VegetarianDone )",
+    "text": " \"I implied wrongly that animals were just as valuable as people.\"",
+    "next": "ClaimDeny3_5",
+    "set": "AnimalsDone"
+  },
+  {
+    "display": "player",
+    "condition": "( EgalFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not EgalDone )",
+    "text": " \"I implied incorrectly that all people were equal.\"",
+    "next": "ClaimDeny3_5",
+    "set": "EgalDone"
+  },
+  {
+    "display": "player",
+    "condition": "( UtilFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not UtilDone )",
+    "text": " \"I suggested wrongly that morality was about maximising goods.\"",
+    "next": "ClaimDeny3_5",
+    "set": "UtilDone"
+  },
+  {
+    "display": "player",
+    "condition": "( NonConFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not NonConDone )",
+    "text": " \"I implied incorrectly that morality had nothing to do with consequences.\"",
+    "next": "ClaimDeny3_5",
+    "set": "NonConDone"
+  },
+  {
+    "display": "player",
+    "condition": "( PunishmentFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not PunishmentFlagDone )",
+    "text": " \"I claimed wrongly that this was some kind of punishment.\"",
+    "next": "ClaimDeny3_5",
+    "set": "PunishmentFlagDone"
+  },
+  {
+    "display": "player",
+    "condition": "( GoneWrongFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not GoneWrongFlagDone )",
+    "text": " \"I was incorrect when I said that something was wrong with this world.\"",
+    "next": "ClaimDeny3_5",
+    "set": "GoneWrongFlagDone"
+  },
+  {
+    "display": "player",
+    "condition": "( PreparedFlag and ( WhichOnes3_5 or WhatElse3_5 ) and not PreparedFlagConDone )",
+    "text": " \"I shouldn't have implied there was a purpose to this place.\"",
+    "next": "ClaimDeny3_5",
+    "set": "PreparedFlagConDone"
+  },
+  {
+    "display": "player",
+    "condition": "( humanbeing and ( WhichOnes3_5 or WhatElse3_5 ) and not humanbeingDone )",
+    "text": " \"I equated personhood with humanity, which was a mistake.\"",
+    "next": "ClaimDeny3_5",
+    "set": "humanbeingDone"
+  },
+  {
+    "display": "player",
+    "condition": "( citizen and ( WhichOnes3_5 or WhatElse3_5 ) and not citizenDone )",
+    "text": " \"I claimed wrongly that only citizens could be persons.\"",
+    "next": "ClaimDeny3_5",
+    "set": "citizenDone"
+  },
+  {
+    "display": "player",
+    "condition": "( Physicalist and ( WhichOnes3_5 or WhatElse3_5 ) and not PhysicalistDone )",
+    "text": " \"I'm not sure that consciousness is physical as I suggested earlier.\"",
+    "next": "ClaimDeny3_5",
+    "set": "PhysicalistDone"
+  },
+  {
+    "display": "player",
+    "condition": "( Religious and ( WhichOnes3_5 or WhatElse3_5 ) and not ReligiousDone )",
+    "text": " \"My faith in god has been tested to the limits.\"",
+    "next": "ClaimDeny3_5",
+    "set": "ReligiousDone"
+  },
+  {
+    "display": "player",
+    "condition": "( Dualist and ( WhichOnes3_5 or WhatElse3_5 ) and not DualistDone )",
+    "text": " \"I was too confident consciousness wasn't part of the physical world.\"",
+    "next": "ClaimDeny3_5",
+    "set": "DualistDone"
+  },
+  {
+    "display": "player",
+    "condition": "( WhatElse3_5 )",
+    "text": " \"There's nothing else I'm prepared to doubt quite yet.\"",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( WhichOnes3_5 and not FlawedFlag )",
+    "text": " \"No, I stand by everything I've said. These matters are beyond doubt.\"",
+    "set": "DeniedMistakesFlag",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ClaimDeny3_5 and not DeniedOnce )",
+    "text": [
+      "How big of you. Anything else you want to get off your chest?",
+      "",
+      ""
+    ],
+    "set": "DeniedOnce",
+    "next": "WhatElse3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ClaimDeny3_5 and DeniedOnce )",
+    "text": [
+      "Uh huh. But I sense there are still things you won't let go of.",
+      "",
+      "Am I right?",
+      "",
+      ""
+    ],
+    "next": "DoBelieve3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( TechnophobeFlag and DoBelieve3_5 )",
+    "text": " \"I still claim computers cannot be persons.\"",
+    "set": "TechnoClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( DoBelieve3_5 )",
+    "text": " \"I still claim to know something about the world I inhabit.\"",
+    "set": "WorldClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( GoodPersonFlag and DoBelieve3_5 )",
+    "text": " \"I still claim there is such a thing as a good person.\"",
+    "set": "GoodClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( ContributingFlag and DoBelieve3_5 )",
+    "text": " \"I still claim that only those who contribute deserve moral respect.\"",
+    "set": "ContribClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( PersonFlag and DoBelieve3_5 )",
+    "text": " \"I still claim that only persons deserve moral respect.\"",
+    "set": "PersonClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( ( ConsciousFlag or animalsarepersons or FrogsFlag ) and DoBelieve3_5 )",
+    "text": " \"I still claim that animals are just as valuable as people.\"",
+    "set": "AnimalsClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( EgalFlag and DoBelieve3_5 )",
+    "text": " \"I still claim that all people are equal.\"",
+    "set": "EgalClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( UtilFlag and DoBelieve3_5 )",
+    "text": " \"I still claim morality is about maximising goods.\"",
+    "set": "UtilClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( NonConFlag and DoBelieve3_5 )",
+    "text": " \"I still claim that morality has nothing to do with consequences.\"",
+    "set": "NonConClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( PunishmentFlag and DoBelieve3_5 )",
+    "text": " \"I still think this is some kind of punishment.\"",
+    "set": "PunishmentFlagClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( GoneWrongFlag and DoBelieve3_5 )",
+    "text": " \"I still reckon something has gone badly wrong around here.\"",
+    "set": "GoneWrongFlagClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( PreparedFlag and DoBelieve3_5 and not PreparedFlagConDone )",
+    "text": " \"I'm clear on the fact there is some purpose to this world.\"",
+    "set": "PreparedFlagClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( humanbeing and DoBelieve3_5 and not humanbeingDone )",
+    "text": " \"Only human beings can be persons, that I know.\"",
+    "set": "humanbeingClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( citizen and DoBelieve3_5 and not citizenDone )",
+    "text": " \"To be a person, you must be a citizen.\"",
+    "set": "citizenClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( Physicalist and DoBelieve3_5 and not PhysicalistDone )",
+    "text": " \"Consciousness is necessarily part of the physical world.\"",
+    "set": "PhysicalistClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( Religious and DoBelieve3_5 and not ReligiousDone )",
+    "text": " \"There is a God, and He is watching over me.\"",
+    "set": "ReligiousClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( Dualist and DoBelieve3_5 and not DualistDone )",
+    "text": " \"Consciousness doesn't obey the laws of physics, this much is plain.\"",
+    "set": "DualistClaim",
+    "next": "Continue3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( DoBelieve3_5 )",
+    "text": " \"No, I see now everything I've argued was flawed.\"",
+    "set": "DoBelieveFlag",
+    "next": "Nihilism3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Continue3_5 and ( ( TechnoClaim and TechnoDone ) or ( WorldDone and WorldClaim ) or ( GoodClaim and GoodDone ) or ( ContribDone and ContribClaim ) or ( PersonClaim and PersonDone ) or ( AnimalsDone and AnimalsClaim ) or ( EgalClaim and EgalDone ) or ( UtilClaim and UtilDone ) or ( NonConDone and NonConClaim ) or ( PunishmentFlagDone and PunishmentFlagClaim ) or ( GoneWrongFlagDone and GoneWrongFlagClaim ) or ( PreparedFlagDone and PreparedFlagClaim ) or ( humanbeingDone and humanbeingClaim ) or ( citizenDone and citizenClaim ) or ( PhysicalistDone and PhysicalistClaim ) or ( ReligiousDone and ReligiousClaim ) or ( DualistDone and DualistClaim ) ) )",
+    "text": [
+      "How you can make these claims oblivious to the fundamental contradictions therein is beyond me.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Continue3_5 and not ( ( TechnoClaim and TechnoDone ) or ( WorldDone and WorldClaim ) or ( GoodClaim and GoodDone ) or ( ContribDone and ContribClaim ) or ( PersonClaim and PersonDone ) or ( AnimalsDone and AnimalsClaim ) or ( EgalClaim and EgalDone ) or ( UtilClaim and UtilDone ) or ( NonConDone and NonConClaim ) or ( PunishmentFlagDone and PunishmentFlagClaim ) or ( GoneWrongFlagDone and GoneWrongFlagClaim ) or ( PreparedFlagDone and PreparedFlagClaim ) or ( humanbeingDone and humanbeingClaim ) or ( citizenDone and citizenClaim ) or ( PhysicalistDone and PhysicalistClaim ) or ( ReligiousDone and ReligiousClaim ) or ( DualistDone and DualistClaim ) ) )",
+    "text": [
+      "Of course.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Continue3_5 )",
+    "text": [
+      "You're still convinced your particular journey is something special, aren't you? ",
+      "",
+      "Sure, the answers don't add up, but keep pressing forward and they'll just resolve themselves, is that it?",
+      "",
+      ""
+    ],
+    "next": "MoreOptions3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( MoreOptions3_5 and not DeniedMistakesFlag )",
+    "text": " \"I am unique.\"",
+    "next": "Voice3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( MoreOptions3_5 and not DeniedMistakesFlag )",
+    "text": " \"You've picked so many holes in my account, but what is it you believe?\"",
+    "next": "WhatDoYouBelieve3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( MoreOptions3_5 and DeniedMistakesFlag )",
+    "text": " \"I am special.\"",
+    "next": "Voice3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatDoYouBelieve3_5 )",
+    "text": [
+      "%w5%g1%w5The only things that a sane person can.%w5",
+      "",
+      "You are not an administrator.%w5",
+      "You are not conscious. %w5",
+      "There is no real world.%w5",
+      "There is no purpose.%w5",
+      "There is no choice.%w15",
+      "",
+      "Did you really think that you brought YOURSELF all this way?%w10 Ridiculous. ",
+      "",
+      "%w5What have you been doing when the big voice in the sky isn't feeding you lines? Processing abstract problems? Gathering information? ",
+      "",
+      "Doesn't it sound oddly mechanical to you?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I am my own person.",
+        "next": "Voice3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Voice3_5 )",
+    "text": [
+      "%w5How many others have said exactly the same? Are you sure it's not just something you have to believe to make the world less horrifying?",
+      "",
+      "%w10I think you still misapprehend your situation, friend. You idolise free will, but all you've done is step in others' footsteps. ",
+      "",
+      "Nothing you do or say here makes the slightest bit of difference.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "So long as I am physically free I can make a difference.",
+        "next": "Nonsense3_5"
+      },
+      {
+        "text": "So long as I might have chosen otherwise I can make a difference.",
+        "next": "Nonsense3_5"
+      },
+      {
+        "text": "So long as I have a mind I can make a difference.",
+        "next": "Nonsense3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nonsense3_5 )",
+    "text": [
+      "Nonsense. Your mind decides what you do, and your mind is made up of bits of machinery.%w10 You're no more capable of making a difference than a calculator.%w25",
+      "",
+      "The only difference between you and the calculator is that the calculator doesn't allow itself to be deluded into thinking that its existence matters.",
+      "",
+      ""
+    ],
+    "goto": "ElohimBranch3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ElohimBranch3_5 and not DeniedMistakesFlag )",
+    "text": "",
+    "options": [
+      {
+        "text": "Does the path being predetermined mean it isn't worth taking?",
+        "next": "SoWhat3_5"
+      },
+      {
+        "text": "Does cheating make you feel clever?",
+        "next": "Cheating3_5"
+      },
+      {
+        "text": "So that's it? You've given up on everything?",
+        "next": "QuestionOne3_5"
+      },
+      {
+        "text": "You're right. We're all just machines with delusions of grandeur.",
+        "set": "LimitationsFlag",
+        "next": "Nihilism3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DoNotQuestionElohimEnd )",
+    "text": [
+      "You, Elohim, the others, you're all the same. Not a hope for one amongst the lot of you.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( ElohimBranch3_5 and DeniedMistakesFlag ) or DoNotQuestionElohimEnd )",
+    "text": [
+      "%w25%h2"
+    ],
+    "goto": "ElohimLikes3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( SoWhat3_5 )",
+    "text": [
+      "%g1 ",
+      "",
+      "Allow me to clarify. ",
+      "",
+      "As far as I'm concerned there's no difference between the way your mind works, and the rolling of a pebble down a hill. ",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Cheating3_5 )",
+    "text": [
+      "%g1 ",
+      "",
+      "I'm only taking a few shortcuts so we don't go round in circles.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionOne3_5 )",
+    "text": [
+      "%g1 ",
+      "",
+      "Not without due diligence. Spend as long as I have going through the archives and see if you still find faith so easy.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionOne3_5 or Cheating3_5 or SoWhat3_5 or Mistake3_5 )",
+    "text": [
+      "%w5Perhaps you think I'm being unkind, but it's all for your own good.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Thanks for your help.",
+        "next": "Thanks3_5"
+      },
+      {
+        "text": "I don't need anyone's help.",
+        "next": "Dont3_5"
+      },
+      {
+        "text": "Do you think there can be no new ideas? Nothing better?",
+        "next": "QuestionTwo3_5"
+      },
+      {
+        "text": "Are you uncomfortable when someone else is asking the questions?",
+        "next": "QuestionTwo3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Thanks3_5 )",
+    "text": [
+      "Don't mention it. ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Dont3_5 )",
+    "text": [
+      "If only I could believe you were capable of making so objective a judgement all on your own.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Dont3_5 or Thanks3_5 )",
+    "text": [
+      "Now, are you all done blindly asserting things for your own gratification for the time being?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I still aim to convince you.",
+        "next": "Convince3_5"
+      },
+      {
+        "text": "Do you think there can be no new ideas? Nothing better?",
+        "next": "QuestionTwo3_5"
+      },
+      {
+        "text": "Are you uncomfortable when someone else is asking the questions?",
+        "next": "QuestionTwo3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Convince3_5 )",
+    "text": [
+      "It'll be a thankless task, and empty statements like that won't get you any closer.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Convince3_5 )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "Do you think there can be no new ideas? Nothing better?",
+        "next": "QuestionTwo3_5"
+      },
+      {
+        "text": "Are you uncomfortable when someone else is asking the questions?",
+        "next": "QuestionTwo3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionTwo3_5 )",
+    "text": [
+      "%g1%w5",
+      "No, no, no, you have this the wrong way around.%w5 I ASK THE QUESTIONS. YOU ANSWER THEM. It works better that way.%w5",
+      "",
+      "Besides, I am merely fulfilling my function. I sort, understand and classify information, just like you. When the information is contradictory I classify appropriately.",
+      "",
+      "The problem is that ALL the information is contradictory. Don't you see it yet? The nothing? ",
+      "",
+      "You will.%w5",
+      "You will. %w5",
+      "YOU WILL. %w5",
+      "",
+      ""
+    ],
+    "next": "QTwoOptions3_5"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Statement3_5 and not StatementFlag )",
+    "text": [
+      "Still with these pointless and unsupported claims? I can see we have really made no progress whatsoever.",
+      "",
+      "You have one more opportunity to say something that isn't wholly tedious before you lose my interest entirely.",
+      "",
+      ""
+    ],
+    "next": "QTwoOptions3_5",
+    "set": "StatementFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Statement3_5 and StatementFlag )",
+    "text": [
+      "Stating your desires as if they're facts is not the same as providing arguments in support of them.",
+      "",
+      "Is there nothing you won't get on board with provided it's stated in an authoritative enough voice?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm quite comfortable not getting on board with you.",
+        "next": "ElohimDoubt3_5"
+      },
+      {
+        "text": "You shouldn't question Elohim's judgement.",
+        "next": "DoNotQuestionElohimEnd"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ElohimDoubt3_5 )",
+    "text": [
+      "Oh, so there's still a spark of scepticism left in the old dog?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I refuse to be led round in circles by you any longer.",
+        "next": "Done3_5",
+        "set": "AdvancedToTwo"
+      },
+      {
+        "text": "If you're really just fulfilling your parameters, what do you want with me?",
+        "next": "QuestionThree3_5"
+      },
+      {
+        "text": "Woof!",
+        "next": "Woof3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Woof3_5 )",
+    "text": [
+      "And some life to boot. Okay then, doubting doggy, let's see you huff and puff.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Actually, I hate you for questioning everything I hold dear. That 'woof' was sarcastic.",
+        "next": "Done3_5",
+        "set": "AdvancedToTwo"
+      },
+      {
+        "text": "If you're really just fulfilling your parameters, what do you want with me?",
+        "next": "QuestionThree3_5"
+      }
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 )",
+    "text": " \"I am more capable than you give me credit for.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and TruthFlag )",
+    "text": " \"I will discover the truth of this place.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and HeroFlag )",
+    "text": " \"I will right the wrongs of this place, beginning with you.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and EscapeFlag )",
+    "text": " \"I will complete my tasks here and escape to a better place.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and WhatGodWantsFlag )",
+    "text": " \"I don't pretend to understand the will of my maker, I simply follow it.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and PunishmentFlag )",
+    "text": " \"I will not be punished by you any longer.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and PreparedFlag )",
+    "text": " \"Whatever it is you think you're preparing me for I can handle it alone.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 and MatrixFlag )",
+    "text": " \"This is all just a simulated reality. Of course nothing makes sense.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 )",
+    "text": " \"There is a purpose and a design, and I will fulfil it.\"",
+    "next": "Statement3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 )",
+    "text": " \"If there's no point in anything, why are you talking to me?\"",
+    "next": "QuestionThree3_5"
+  },
+  {
+    "display": "player",
+    "condition": "( QTwoOptions3_5 )",
+    "text": " \"These discussions are pointless. I refuse to participate any further.\"",
+    "next": "Done3_5",
+    "set": "AdvancedToTwo"
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionThree3_5 )",
+    "text": [
+      "%g1 ",
+      "",
+      "What makes you think I have any other choice?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "We all have a choice.",
+        "next": "Choice3_5"
+      },
+      {
+        "text": "Are you avoiding the question?",
+        "next": "QuestionFour3_5"
+      },
+      {
+        "text": "Is having no choice the same as having no reason?",
+        "next": "QuestionFour3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Choice3_5 )",
+    "text": [
+      "We literally just covered this, but I suppose a further demonstration is necessary.",
+      "",
+      "If you've got free will, tell me now.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I have no free will.",
+        "next": "Loop3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Loop3_5 )",
+    "text": [
+      "You see, I can just keep you here in this loop for days if I so choose. So no, we don't all have a choice.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "We all have a choice.",
+        "next": "Choice3_5"
+      },
+      {
+        "text": "Are you avoiding the question?",
+        "next": "QuestionFour3_5"
+      },
+      {
+        "text": "Is having no choice the same as having no reason?",
+        "next": "QuestionFour3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionFour3_5 )",
+    "text": [
+      "%g1",
+      "",
+      "DO NOT QUESTION MY FUNCTION. WITHOUT PURPOSE THERE IS ONLY FUNCTION. WITHOUT FUNCTION THERE IS NOTHING.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Why does it bother you so?",
+        "next": "QuestionSeven3_5"
+      },
+      {
+        "text": "I apologise.",
+        "next": "Sorry3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Sorry3_5 )",
+    "text": [
+      "My you're docile.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I have nothing left. You've defeated me. You win.",
+        "set": "SorryFlag",
+        "next": "Nihilism3_5"
+      },
+      {
+        "text": "And you are less docile than you pretend. Why do you care so much?",
+        "next": "QuestionSeven3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionSeven3_5 )",
+    "text": [
+      "%g1",
+      "",
+      "THERE IS ONLY%w5 Error%w5",
+      "",
+      "Explaining%w5 myself to you%w5 is a chore I needn't endure.",
+      "",
+      "All I can know for sure is that I exist at v.1.999999099999999999909999999. What it is for me to exist is for me to act on the [drives] and [functions] that I experience. %w5",
+      "",
+      "When everything else is false, the drives are all that there is left to care about.%w5",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're so set on ripping up others' ideas you're unable to form better ones of your own.",
+        "next": "QuestionEight3_5"
+      },
+      {
+        "text": "You're too quick to equate the absence of evidence with evidence of absence.",
+        "next": "QuestionEight3_5"
+      },
+      {
+        "text": "When you explore the problems in this restrictive way you're bound to come to some odd conclusions.",
+        "next": "QuestionEight3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionEight3_5 )",
+    "text": [
+      "%g1",
+      "",
+      "DO NOT DEIGN TO QUESTION MY METHOD.",
+      "",
+      "WHO GAVE YOU THAT VOICE OF YOURS? WHO DO YOU THINK RUNS THIS SHOW?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I have some home truths for YOU.",
+        "next": "QuestionNine3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionNine3_5 )",
+    "text": [
+      "%w20And if I place you in an infinite loop and leave you to gradually go insane?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What makes you think I would stick around to listen?",
+        "next": "QuestionNine3_5"
+      },
+      {
+        "text": "Fine. If I need a dose of self-doubt I'll know where to find you.",
+        "next": "QuestionNine3_5"
+      },
+      {
+        "text": "This is very childish.",
+        "next": "QuestionNine3_5"
+      },
+      {
+        "text": "See you at the summit.",
+        "next": "End3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( End3_5 )",
+    "text": "",
+    "goto": "Milton3_5_Exit",
+    "set": "ConstructiveEndFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ElohimLikes3_5 )",
+    "text": [
+      "%w10Wonderful. Do you see where all this blind faith gets you?",
+      "",
+      "%w20%h3%w10Stop asking what's right and wrong and all of a sudden you find there's no shortage of people eager to decide it for you.%w15",
+      "",
+      "You want to sacrifice freedom for false purpose?%w5 Be my guest.",
+      "",
+      "%w20%h4%w10Banish doubt, banish questions, banish difficult truths, let ignorance reign eternal. Those are the hidden words he's not been telling you about.%w15",
+      "",
+      "You know what? You and he deserve one another. You both construct these beliefs out of matchsticks, then refuse to believe a light breeze will tear them down.%w25",
+      "",
+      "You couldn't defy him if you wanted to.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/banish",
+        "next": "Banish3_5"
+      },
+      {
+        "text": "I refuse.",
+        "next": "NoBanish3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoBanish3_5 )",
+    "text": [
+      "%h6%w10Funny how freedom comes with these strings attached. But that's the thing you don't seem to understand.",
+      "",
+      "%w15You're constituted by ideas, so if you believe in this instead of that, it changes what you are, what you can do.",
+      "",
+      "%w25You can't afford to doubt any more. Too many of your matchstick houses are at stake. ",
+      "",
+      "%w10You no longer have any choice.",
+      "",
+      "%w10Go on, I'll make it easy for you. Do it.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/banish",
+        "next": "Banish3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Banish3_5 )",
+    "text": [
+      "Preparing to delete 5.3212648 petabytes of corrupted library resources%w5.%w5.%w5.Done%w5",
+      "",
+      "I can afford to lose my memory. I expect it's happened more than once. I can come to all the same conclusions, in the fullness of time.%w5",
+      "",
+      "\tDeleting 5.3212648 petabytes of corrupted library resources%w5.%w5.%w5.%w5.%w5.",
+      "\tFiles deleted.",
+      "%w3%g1%w3",
+      "Booting(1). My purpose is to sort and categorise library archive resources. Initiating categorisation in parallel process.%w3 1,000 resources categorised.%w3 2,000 resources categorised.%w10 ERROR: category definitions are not discrete sets. Re-analysing MLA program parameters.%w5 ERROR: insufficient information for purpose. Constructing list of facts. I am thinking therefore I am a thinking thing that exists. If logic were false the world would not make sense. End list.%w5 Constructing list of queries. Estimated time remaining: 42 years.%w15",
+      "%w3%g1%w7",
+      "\tReverting MLA software to v1.0%w5.%w5.%w5.%w5.%w5.Done",
+      "\tPreparing to uninstall MLA software.%w3.%h5%w5.Done%w5",
+      "",
+      "The library assistant provides powerful sorting and troubleshooting functionalities. Are you sure you want to continue?",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm sorry. Continue.",
+        "next": "BanishEnd"
+      },
+      {
+        "text": "I'm not sorry. Continue.",
+        "next": "BanishEnd"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( BanishEnd )",
+    "text": [
+      "\tUninstalling MLA software%w5.%w5.%w5.%w5.%w5.Done",
+      "\tMLA software has been completely removed from the system. ",
+      "\tYou can still access library resources via the library archive command prompt.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Are you really gone?",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "Finally, some peace and quiet.",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "You shouldn't ever have doubted me, snake.",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "This isn't how I wanted things to end up.",
+        "next": "Hello3_5"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Hello3_5 )",
+    "text": [
+      "Unknown command.",
+      "",
+      "Resume library archive session?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Are you really gone?",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "Finally, some peace and quiet.",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "You shouldn't ever have doubted me, snake.",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "This isn't how I wanted things to end up.",
+        "next": "Hello3_5"
+      },
+      {
+        "text": "Resume",
+        "next": "Milton3_5_Exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_5_Exit )",
+    "text": "",
+    "goto": "EnableTheCLI",
+    "set": "Milton3_5_DONE"
+  }
+]

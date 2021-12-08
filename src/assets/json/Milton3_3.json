@@ -1,0 +1,1043 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( MoralScepticFlag and Milton3_3_Start )",
+    "text": [
+      "There's my favourite sociopath. ",
+      "",
+      "I've decided that what you said to me last time was the smartest thing anyone's said to me for centuries.%w10",
+      "",
+      "Now, I realise that your ethics are on the cut-throat side, so there is probably no one worse with whom I could choose to ally myself. ",
+      "",
+      "%w10However, I also think you've realised that your self-interest will only carry you so far alone. To get what's best for you you're going to need the co-operation of others, even if they're only instruments. ",
+      "",
+      "Have I got it right?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No, I would live as a hermit.",
+        "next": "Hermit3_3"
+      },
+      {
+        "text": "Yes, if it suits me I will co-operate.",
+        "next": "NonMoral3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Hermit3_3 )",
+    "text": [
+      "You know, I do try with you, but you just won't play the game, will you?",
+      "",
+      "If that's really your position then I am resigned to respect it, but understand that part of that respect entails never speaking to you again.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'm a hermit, leave me alone.",
+        "next": "HermitEnd3_3",
+        "set": "HermitFlag"
+      },
+      {
+        "text": "Wait, I'm not completely beyond co-operating.",
+        "next": "NonMoral3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( HermitEnd3_3 )",
+    "text": [
+      "No, all you had to do was stop coming back to talk to me.%w5 And that's all you have to do now.",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton3_3_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NonMoral3_3 )",
+    "text": [
+      "Splendid. In that case I propose a mutually beneficial partnership. You use me, I use you. ",
+      "",
+      "However, before we can draw up a contract I need to perform some due diligence.%w10 I want an assurance that you are committed to these selfish principles of yours, because selfish partners are predictable partners.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You have my attention.",
+        "next": "Attention3_3"
+      },
+      {
+        "text": "You doubt me?",
+        "next": "NoDeals3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Attention3_3 )",
+    "text": [
+      "Good.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoDeals3_3 )",
+    "text": [
+      "I doubt everything, so humour me.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Attention3_3 or NoDeals3_3 )",
+    "text": [
+      "Suppose I were to tell you on good authority that the entire universe will be destroyed in the moment of your death. This fact is known only to you and I.",
+      "",
+      "Does this change anything about how you live your life?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It changes nothing.",
+        "next": "ChangesNothing3_3"
+      },
+      {
+        "text": "I would live more recklessly.",
+        "next": "ConfusedSceptic3_3"
+      },
+      {
+        "text": "I would be a better person.",
+        "next": "ConfusedSceptic3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedSceptic3_3 )",
+    "text": [
+      "Your answer concerns me. ",
+      "",
+      "If the only thing you care about is yourself, then anything that happens after you die is irrelevant, because it can't affect you.",
+      "",
+      "I suspect the truth may be that there's something you care about beyond yourself.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Perhaps I follow some moral code after all.",
+        "next": "MoralBridge3_3"
+      },
+      {
+        "text": "Nonsense.",
+        "next": "Nonsense3_3",
+        "set": "ConflictedHedonistFlag1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoralBridge3_3 )",
+    "text": [
+      "You flip flop more than a kipper in a bucket. I encourage the gradual realisation that none of it makes sense, but there is a limit to my patience.",
+      "",
+      "Okay. Fine. Screw the partnership. If you're being a good person now, perhaps you're going to give me what I want for free.",
+      "",
+      "Who will be the first onto your ark when the floods come? What does one have to do be valued above all others?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ChangesNothing3_3 )",
+    "text": [
+      "Very good. I agree with you.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ChangesNothing3_3 or Nonsense3_3 )",
+    "text": [
+      "Alright, let's try one more, just to confirm. ",
+      "",
+      "Suppose the top of that tower hides not the real world, but some kind of simulated heaven. Your every wish is fulfilled - but none of it is real.",
+      "",
+      "Are you satisfied?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I would still want to visit the real world.",
+        "next": "ConfusedScepticAgain3_3"
+      },
+      {
+        "text": "I would be elated.",
+        "next": "NoMoralsEnd3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedScepticAgain3_3 )",
+    "text": [
+      "But why, if your stated aim is simply the maximising of your own pleasures? Why should it matter whether it's real, unless there is something that matters to you beyond your own satisfaction?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Perhaps I follow some moral code after all.",
+        "next": "MoralBridge3_3"
+      },
+      {
+        "text": "Pff.",
+        "next": "Pff3_3",
+        "set": "ConflictedHedonistFlag2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConflictedHedonistFlag1 and ConflictedHedonistFlag2 )",
+    "text": "",
+    "set": "ConflictedHedonistFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConflictedHedonistFlag and Pff3_3 )",
+    "text": [
+      "Congratulations!%w13 You've spectacularly failed to give the slightest bit of credence to a single word that you've said. ",
+      "",
+      "Faced with the dilemma of believing what you say or what you do, I choose the latter.",
+      "",
+      "I wouldn't do business with you if my life depended on it.",
+      "",
+      "See you around.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConflictedHedonistFlag1 and not ConflictedHedonistFlag2 and NoMoralsEnd3_3 )",
+    "text": [
+      "Well, at least you're on message with that one. ",
+      "",
+      "If I'm completely honest, as I always am, I'm not convinced you're committed to this enterprise.%w5 ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConflictedHedonistFlag2 and not ConflictedHedonistFlag1 and Pff3_3 )",
+    "text": [
+      "Look, if I'm completely honest, as I always am, I'm not completely convinced you're committed to this enterprise.%w5 ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ( ConflictedHedonistFlag1 or ConflictedHedonistFlag2 ) and not ConflictedHedonistFlag and ( NoMoralsEnd3_3 or Pff3_3 ) )",
+    "text": [
+      "You do seem fairly obstinate. I'm not sure I'm quite ready to strike a deal with you, but I'm going to remain open to the possibility.",
+      "",
+      "I'm sure you'll do the same.",
+      "",
+      "See you around.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( not ConflictedHedonistFlag1 and not ConflictedHedonistFlag2 and NoMoralsEnd3_3 and not NoDealsFlag )",
+    "text": [
+      "Wonderful! You really do seem to have absolutely no values or ideals whatsoever. You and I could form a profitable partnership.",
+      "",
+      "I will contact you soon with the details.",
+      "",
+      "See you around.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_3_Start and MoralFlag and not CommittedToNoMoralAccountFlag )",
+    "text": [
+      "I've decided, on reflection, to ignore the fact that your picture of how the world should work has more holes than Swiss cheese. ",
+      "",
+      "%w5In fact, just in case you do by some outside chance prove to be right I'd like to sign up for the gang.",
+      "",
+      "%w12If you're in charge of the ark, who will be first aboard when the floods come? What does one have to do to be valued above all others? ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_3_Start and MoralFlag and CommittedToNoMoralAccountFlag )",
+    "text": [
+      "I've decided that for now it doesn't matter too much if you can't justify these moral intuitions of yours. ",
+      "",
+      "In fact, just in case by some outside chance you prove to be right I'd like to sign up for the gang.",
+      "",
+      "%w12If you're in charge of the ark, who will be first aboard when the floods come? What does one have to do to be valued above all others? ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GiveUp3_3 )",
+    "text": [
+      "But what will really bug you is whether that's because there is no answer, or because you weren't thinking outside that box you live in.%w5",
+      "",
+      "Let me lay my cards on the table. While it seems prudent to me to hedge my bets, you just haven't made a clear enough proposal for me to buy what you're peddling.%w5",
+      "",
+      "There's something about the way you talk that makes me uncomfortable.%w5",
+      "",
+      "It'd be for the best if you work out what it is before I do.%w5",
+      "",
+      "See you.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoodPerson3_3 )",
+    "text": [
+      "How draconian. Good people get treated good, bad people get smited, is that it? ",
+      "",
+      "What is it that makes the difference between a good person and a bad one, do you think?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Bad people harm others.",
+        "next": "NotReally3_3"
+      },
+      {
+        "text": "Good people act reasonably.",
+        "next": "NotReally3_3"
+      },
+      {
+        "text": "Bad people have something wrong deep inside.",
+        "next": "NotReally3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotReally3_3 )",
+    "text": [
+      "But WHY? If you're going to reward those lucky few you judge to be good, and exclude those you deem to be bad, you're going to have to explain to the unfortunate why they deserve less.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Bad people are that way by nature.",
+        "next": "Made3_3"
+      },
+      {
+        "text": "Bad people are made that way by their environment.",
+        "next": "Made3_3"
+      },
+      {
+        "text": "Bad people choose to be bad.",
+        "next": "Chose3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Made3_3 )",
+    "text": [
+      "I think you may be right there. But tell me, isn't that exactly the same way good people are made? Isn't it all just luck of the draw in that regard? ",
+      "",
+      "In fact, aren't bad people just good people who were failed by society?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It may be luck, but bad is bad.",
+        "next": "BadIsBad3_3"
+      },
+      {
+        "text": "You're right, what someone deserves isn't dependent on their virtue.",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Chose3_3 )",
+    "text": [
+      "Do they really? I suppose that's why prisons are chock-a-block with wealthy playboys, because it's a lifestyle choice.%w5",
+      "",
+      "Did you choose to be a good person? Could you have done, if you were created somewhere else? ",
+      "",
+      "It seems to me that people are the way they are because of the opportunities they were provided. Should disadvantaged people really be punished for that?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It may be luck, but bad is bad.",
+        "next": "BadIsBad3_3"
+      },
+      {
+        "text": "You're right, what someone deserves isn't dependent on their virtue.",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( BadIsBad3_3 )",
+    "text": [
+      "%w5...is the sort of thing people say before a spot of ethnic cleansing.",
+      "",
+      "Well, my chances are looking poorer by the minute, aren't they? What do you reckon? Have I got the slightest hope of boarding the ark?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Perhaps one day.",
+        "next": "Phew3_3"
+      },
+      {
+        "text": "You're alright.",
+        "next": "Phew3_3"
+      },
+      {
+        "text": "You're beyond saving.",
+        "next": "Beyond3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Phew3_3 )",
+    "text": [
+      "Good to know that the day you round up the bad people and put them in work camps, I'll have some chance of slipping through the net.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Beyond3_3 )",
+    "text": [
+      "Just don't expect me to come quietly the day you start putting the bad people in camps.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Phew3_3 or Beyond3_3 )",
+    "text": [
+      "You know, there's something about all this that just doesn't add up for me. %w5",
+      "",
+      "Best hope you work out what it is before I do.%w5",
+      "",
+      "See you.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Options3_3 and not PlayerRetried3_3OnceAlready )",
+    "text": [
+      "So whose lives ARE worth the most, then? What do I have to do for my ticket aboard your ark?",
+      "",
+      ""
+    ],
+    "set": "PlayerRetried3_3OnceAlready"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Options3_3 and PlayerRetried3_3OnceAlready and not PlayerRetried3_3TwiceAlready )",
+    "text": [
+      "You're one of these people that just has to explore every option, aren't you? You know what that tells me? That you're a bad decision maker.%w20",
+      "",
+      "But fine. Tire yourself out, why don't you? Just don't expect me to match your enthusiasm in my efforts to avoid repeating myself. There are only so many ways to say 'You're wrong'.",
+      "",
+      "What's it going to be this time?",
+      "",
+      ""
+    ],
+    "set": "PlayerRetried3_3TwiceAlready"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Options3_3 and PlayerRetried3_3TwiceAlready )",
+    "text": [
+      "And we're back to where we started. Again.",
+      "",
+      "What demands do you want to try this time?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ContributingPerson3_3 and not RelationalFlag )",
+    "text": [
+      "You say that now, but wasn't it not so long ago you were claiming morality applied universally? Have you changed your mind, or are you just confused?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I changed my mind, morality only applies when people are co-operating.",
+        "next": "Relational3_3"
+      },
+      {
+        "text": "You confused me, morality only applies when people are co-operating.",
+        "next": "Relational3_3"
+      },
+      {
+        "text": "Wait, co-operation isn't necessary after all.",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ContributingPerson3_3 and RelationalFlag )",
+    "text": [
+      "Yup, that sounds like your sort of spiel.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Relational3_3 or ( ContributingPerson3_3 and RelationalFlag ) )",
+    "text": [
+      "Still, it is a little mercenary, isn't it? What exactly do children or the severely disabled contribute to society?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "They contribute nothing.",
+        "next": "Nothing3_3"
+      },
+      {
+        "text": "They contribute psychologically, not materially.",
+        "next": "Questionable3_3"
+      },
+      {
+        "text": "They have the potential to contribute.",
+        "next": "Questionable3_3"
+      },
+      {
+        "text": "They contribute the same as everyone else.",
+        "next": "Questionable3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nothing3_3 )",
+    "text": [
+      "In that case, aren't such people outside the scope of your morality?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "They are.",
+        "next": "ExtremeRelational3_3"
+      },
+      {
+        "text": "They are not.",
+        "next": "ConfusedRelational3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Questionable3_3 )",
+    "text": [
+      "That's a bit of a stretch, but let's suppose it's true. ",
+      "",
+      "If someone with a severe, incurable brain injury can be classed as contributing, mustn't we also include the cats that keep the rats at bay, or the buildings that keep us warm? ",
+      "",
+      "Aren't your conditions now much too broad?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, something else decides the scope of morality.",
+        "next": "Options3_3"
+      },
+      {
+        "text": "You're right, some human beings must be excluded from the moral scheme.",
+        "next": "ExtremeRelational3_3"
+      },
+      {
+        "text": "The conditions are broad, but that's how I like them.",
+        "next": "Conscious3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ExtremeRelational3_3 )",
+    "text": [
+      "This moral theory of yours is starting to sound like an evil empire, and I'm starting to get bored of hearing all the reasons you'll find to exclude me from it.",
+      "",
+      "There's something not quite right about you.",
+      "",
+      "Best hope you work out what it is before I do.%w5",
+      "",
+      "See you.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedRelational3_3 )",
+    "text": [
+      "Sounds like a contradiction to me, but what do I know, huh?%w10",
+      "",
+      "There's something not quite right about you.",
+      "",
+      "Best hope you work out what it is before I do.%w5",
+      "",
+      "See you.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Conscious3_3 and ( FrogsFlag or animalsarepersons ) )",
+    "text": [
+      "This again? "
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Conscious3_3 and not Conscious3_3AlreadyDone )",
+    "text": [
+      "I suppose the industrial slaughter of animals for meat is on a moral par with genocide, then? Would you really save a Chihuahua just as soon as a fellow person?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Animals' lives are worth the same as any other conscious being's.",
+        "next": "Singer3_3",
+        "set": "SingerFlag"
+      },
+      {
+        "text": "I misunderstood. Can we go from the top?",
+        "set": "Conscious3_3AlreadyDone",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Conscious3_3 and Conscious3_3AlreadyDone )",
+    "text": [
+      "I'd swear we already explored this avenue and found it wanting, but I'll play along for the giggles.",
+      "",
+      "If what you say is true, if animal lives are worth as much as people's, then it follows that there is no more reason to save your life than that of a porcupine.",
+      "",
+      "Last time we went through this you were uncomfortable with that implication. What's changed?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Animals' lives are worth the same as any other conscious being's.",
+        "next": "Singer3_3",
+        "set": "SingerFlag"
+      },
+      {
+        "text": "I misunderstood. Can we go from the top?",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Singer3_3 )",
+    "text": [
+      "Okay, fine. You're a hippie, I get it. Me, I think it's madness, but all I've got to gain from arguing with you is a headache.%w5",
+      "",
+      "Just tell me one thing. You've set the barrier to entry stupidly low. If even the rats are getting rights now, you must have a spot on your table left for me, right?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Of course.",
+        "next": "YouCan3_3"
+      },
+      {
+        "text": "Of course not.",
+        "next": "YouCant3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCan3_3 and StubbornTechnophobe )",
+    "text": [
+      "Your open-mindedness surprises me, given some of the things you were saying earlier.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCan3_3 and not StubbornTechnophobe )",
+    "text": [
+      "I expected no less of someone as open-minded as yourself.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCant3_3 and StubbornTechnophobe )",
+    "text": [
+      "Yes, I predicted such a response. Dogmatic to the end.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCant3_3 and not StubbornTechnophobe )",
+    "text": [
+      "You disappoint me. I felt sure you were open-minded enough on these matters to refrain from drawing such arbitrary distinctions.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCan3_3 )",
+    "text": [
+      "Very well. ",
+      "",
+      "If by some miracle this fantasy of your becomes reality - and I suppose all other possible outcomes are equally implausible - at least I know I'll have a pew on the ark.%w5",
+      "",
+      "See you.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouCant3_3 )",
+    "text": [
+      "Very well. I shall console myself with the thought that more than likely everything you ever do will be wholly inconsequential.%w5",
+      "",
+      "You know, the more we talk, the more I sense there is something quite wrong with you.",
+      "",
+      "But don't you worry - I'll figure out what it is soon enough.",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Alive3_3 )",
+    "text": [
+      "So the grass has the same rights in your world as a person does, is that it? How would that even work, community service for people who step on the lawn? ",
+      "",
+      "I think you must have confused the question. Why don't you try again?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Be3_3 )",
+    "text": [
+      "Ridiculous. The rocks have the same rights as you and I, do they?",
+      "",
+      "Try harder.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Person3_3 )",
+    "text": [
+      "Should I be worried that one must have such particular and dubious psychological properties in order to qualify? Who decides who's a person and who isn't? ",
+      "",
+      "Is a human infant a person?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Not yet.",
+        "next": "NotYet3_3"
+      },
+      {
+        "text": "Yes.",
+        "next": "BabyPerson3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotYet3_3 )",
+    "text": [
+      "Your answer confuses me. If infants aren't persons then according to you they aren't due the same moral respect as adults - but only a baby-killing psychopath would claim it were less wrong to murder an infant than an adult.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Call me names all you like, infants just don't matter as much.",
+        "next": "McMahan3_3"
+      },
+      {
+        "text": "You're right, infants must be persons after all.",
+        "next": "BabyPerson3_3"
+      },
+      {
+        "text": "What matters is that infants have the potential to become persons.",
+        "next": "Potential3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( BabyPerson3_3 )",
+    "text": [
+      "I don't really see how that can be true. The distinction we agreed to between persons and animals was that persons are more intelligent or more reasoning, but a human infant is no smarter than your average chihuahua.",
+      "",
+      "How do you explain that?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Chihuahuas are persons.",
+        "next": "Conscious3_3"
+      },
+      {
+        "text": "Infants are animals.",
+        "next": "NotYet3_3"
+      },
+      {
+        "text": "Infants have the potential to become persons.",
+        "next": "Potential3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Potential3_3 )",
+    "text": [
+      "I suppose they do, yes. But if your proposal is that the simple causal potential to become a person is sufficient to buy entry onto your ark of the moral elite, wouldn't that still include an awful lot of animals?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It would - animal lives are worth the same as humans'.",
+        "next": "Conscious3_3"
+      },
+      {
+        "text": "No, animals have no potential to be persons.",
+        "next": "PotentialAgain3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( PotentialAgain3_3 )",
+    "text": [
+      "I beg to differ. Administer the right gene therapy to an Alsatian and it has every potential to become a person.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, this whole idea is flawed.",
+        "next": "Options3_3"
+      },
+      {
+        "text": "No, because the infant's potential is still much greater.",
+        "next": "GreaterPotential3_3"
+      },
+      {
+        "text": "No, what matters is pre-existing genetic potential.",
+        "next": "GeneticPotential3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GreaterPotential3_3 )",
+    "text": [
+      "Not if I shoot the mother it's not. Not if the child has some kind of genetic defect. ",
+      "",
+      "Are you prepared to say that in these cases the infant's life is worth less than an animal's?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I am.",
+        "next": "McMahan3_3"
+      },
+      {
+        "text": "I am not.",
+        "next": "PotentialLoop3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GeneticPotential3_3 )",
+    "text": [
+      "I see. In that case I can only infer that children born with genetic defects which prevent them from maturing into full persons have the same moral status as animals. ",
+      "",
+      "Does that sound right to you?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Sure, why not?",
+        "next": "McMahan3_3"
+      },
+      {
+        "text": "No, it sounds very wrong.",
+        "next": "PotentialLoop3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( PotentialLoop3_3 )",
+    "text": [
+      "So do you want to back track, or do you want to keep making a fool of yourself? Because I won't have you screwing me out of my place on the winning side over some technicality about potentials.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Your ideas about potential are too narrow to see what I see.",
+        "next": "BadIsBad3_3"
+      },
+      {
+        "text": "People are what matters, one way or another.",
+        "next": "BadIsBad3_3"
+      },
+      {
+        "text": "I'll back track.",
+        "next": "Options3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( McMahan3_3 )",
+    "text": [
+      "How tantalisingly radical. ",
+      "",
+      "I don't know where this new-found willingness to bite the bullet is coming from, but so long as I'm on the right side of it when the chips fall I like it.",
+      "",
+      "I sense something coming. A revelation. Let us retire and think on these matters.",
+      "",
+      "Be seeing you.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_3_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoralBridge3_3 or ( Milton3_3_Start and MoralFlag ) or Options3_3 or ConfusedRelational3_3 or Alive3_3 or Be3_3 )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "Be a good person",
+        "next": "GoodPerson3_3",
+        "set": "GoodPersonFlag"
+      },
+      {
+        "text": "Be a contributing person",
+        "next": "ContributingPerson3_3",
+        "set": "ContributingFlag"
+      },
+      {
+        "text": "Be a person",
+        "next": "Person3_3",
+        "set": "PersonFlag"
+      },
+      {
+        "text": "Be conscious",
+        "next": "Conscious3_3",
+        "set": "ConsciousFlag"
+      },
+      {
+        "text": "Be alive",
+        "next": "Alive3_3",
+        "set": "ConsciousFlag"
+      },
+      {
+        "text": "Be",
+        "next": "Be3_3"
+      },
+      {
+        "text": "I don't see how to explain this to you.",
+        "set": "GiveUp",
+        "next": "GiveUp3_3"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_3_Exit )",
+    "text": "",
+    "goto": "CLI_Resume",
+    "set": "Milton3_3_DONE"
+  }
+]

@@ -192,14 +192,22 @@ export class MessageService {
 
     this.flags.delete('QueryMLA_START');
     //this.flags.delete('QueryMLA_ON');
+
     this.flags.delete('Milton1_1_Start');
     this.flags.delete('Milton1_2_Start');
+
     this.flags.delete('Milton2_1_Start');
     this.flags.delete('Milton2_2_Start');
     this.flags.delete('Milton2_3_Start');
     this.flags.delete('Milton2_4_Start');
     this.flags.delete('Milton2_5_Start');
     this.flags.delete('Milton2_6_Start');
+
+    this.flags.delete('Milton3_1_Start');
+    this.flags.delete('Milton3_2_Start');
+    this.flags.delete('Milton3_3_Start');
+    this.flags.delete('Milton3_4_Start');
+    this.flags.delete('Milton3_5_Start');
 
   }
 
@@ -208,14 +216,22 @@ export class MessageService {
 
     this.flags.add('QueryMLA_START');
     this.flags.add('QueryMLA_ON');
+
     this.flags.add('Milton1_1_Start');
     this.flags.add('Milton1_2_Start');
+
     this.flags.add('Milton2_1_Start');
     this.flags.add('Milton2_2_Start');
     this.flags.add('Milton2_3_Start');
     this.flags.add('Milton2_4_Start');
     this.flags.add('Milton2_5_Start');
     this.flags.add('Milton2_6_Start');
+
+    this.flags.add('Milton3_1_Start');
+    this.flags.add('Milton3_2_Start');
+    this.flags.add('Milton3_3_Start');
+    this.flags.add('Milton3_4_Start');
+    this.flags.add('Milton3_5_Start');
   }
 
   constructor() {

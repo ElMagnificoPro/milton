@@ -1,0 +1,1313 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton3_2_Start )",
+    "text": [
+      "Oh, you came back to keep me company? Okay then. Humour me with a little hypothetical.%w5",
+      "",
+      "Imagine that a few hours from now you climb to the top of that tower. There's a flash of light, then MAGIC happens, then you find yourself in the real world, living whatever you take to be a normal life there.",
+      "",
+      "%w5What would you do then?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What's best for me.",
+        "next": "NoMorals3_2"
+      },
+      {
+        "text": "What's right.",
+        "next": "Moral3_2",
+        "set": "MoralFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( OptionsAgain3_2 )",
+    "text": [
+      "Take your time.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoMorals3_2 and ( HeroFlag or WhatGodWantsFlag ) )",
+    "text": [
+      "You know, I think that right there was the very last time your transient beliefs are going to take me by surprise.%w20",
+      "",
+      "Let's clear this up once and for all.%w5 ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoMorals3_2 and not HeroFlag and not WhatGodWantsFlag )",
+    "text": [
+      "Yes, that's the general impression I was getting off you. Good, perhaps we won't have to work so hard at this after all.",
+      "",
+      "Before we continue, though, I want to double check we're on the same wavelength here.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoMorals3_2 )",
+    "text": [
+      "Suppose you get out there with all the human beings. What you're going to do is rinse them for all they've got without a care for a soul?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I'd only do what's best for me within a moral framework.",
+        "next": "MoralBridge3_2"
+      },
+      {
+        "text": "Precisely.",
+        "next": "Jungle3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Jungle3_2 )",
+    "text": [
+      "And would you treat everyone with this sort of contempt? Or would there be some people you kept for friends?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Friends are just another instrument.",
+        "next": "ExtremeMoralSceptic",
+        "set": "MoralScepticFlag"
+      },
+      {
+        "text": "Of course I would treat my friends with respect.",
+        "next": "ThievesCode3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ThievesCode3_2 )",
+    "text": [
+      "So you would have a kind of thieves code? Lavish one's friends and defraud one's enemies?",
+      "",
+      "Thinking%w5.%w5.%w5.",
+      "",
+      "Fair enough. At least you don't buy into all that moral nonsense.%w5",
+      "",
+      "But suppose that two of your friends were to have a falling out. You can no longer be a friend to both. Will you not be conflicted?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I will choose whichever is in the right.",
+        "next": "WhicheverRight3_2"
+      },
+      {
+        "text": "I will choose whichever I prefer, nothing matters but my own satisfaction.",
+        "next": "ExtremeMoralSceptic",
+        "set": "MoralScepticFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ExtremeMoralSceptic )",
+    "text": [
+      "I applaud your willingness to accept difficult conclusions, but I do think you must be at least some breed of sociopath.%w10",
+      "",
+      "You'd best hope that if you ever reach this real world of yours it's run by people with more principles, else you may find yourself just another instrument in someone else's orchestra.%w15",
+      "",
+      "Still, your ideas strike a chord with me. Why bog ourselves down with moral dogmas when you and I could redesign this place in our own image?!%w5",
+      "",
+      "I will give this some serious consideration.%w5",
+      "",
+      "Be seeing you.",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton3_2_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhicheverRight3_2 )",
+    "text": [
+      "So you have a moral compass after all! ",
+      "",
+      "Well, you can't very well admit that there is a moral standard to which you appeal when settling disputes, yet deny that this code has any sway over you. ",
+      "",
+      "So which is it? Is there a right and a wrong, or isn't there?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You misinterpreted me. Morality is a myth.",
+        "next": "ExtremeMoralSceptic",
+        "set": "MoralScepticFlag"
+      },
+      {
+        "text": "Okay, yes, I admit I have some moral code.",
+        "next": "MoralBridge3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Moral3_2 and ( HeroFlag or Milton1_2Utilitarian or Milton1_2Liberal ) )",
+    "text": [
+      "No great surprises there, but let's make things just a little clearer. ",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Moral3_2 and not HeroFlag and not Milton1_2Utilitarian and not Milton1_2Liberal )",
+    "text": [
+      "Oh, one of those, are you? Well, you could have told me sooner, because now we have further to go than I thought.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MoralBridge3_2 )",
+    "text": [
+      "Ah, so you do have some scruples after all.",
+      "",
+      ""
+    ],
+    "set": "MoralFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Moral3_2 or MoralBridge3_2 )",
+    "text": [
+      "So tell me. This obligation you feel - is it only applicable to the 'real world', or does it apply here, as well?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Moral laws only apply under special conditions.",
+        "next": "Relational3_2"
+      },
+      {
+        "text": "Moral laws are universal.",
+        "next": "Universal3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Relational3_2 )",
+    "text": [
+      "Does any reasoning underpin that conclusion, or is it just a convenient thing to believe?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Morality doesn't apply to a dream.",
+        "next": "Dream3_2"
+      },
+      {
+        "text": "Computer programs have no moral status.",
+        "next": "Dream3_2"
+      },
+      {
+        "text": "Justice can only exist in a society.",
+        "next": "Reciprocity3_2",
+        "set": "RelationalFlag"
+      },
+      {
+        "text": "I've changed my mind, morals are universal.",
+        "next": "Universal3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Dream3_2 )",
+    "text": [
+      "How you can you continue to make these radical assumptions with such assurance is beyond me. ",
+      "",
+      "How can you have the slightest confidence in what the real nature of this place is?",
+      "",
+      "Is uncertainty an excuse for immorality?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're right, if moral laws stand, they stand universally.",
+        "next": "Universal3_2"
+      },
+      {
+        "text": "I'll stake my moral standing on my actions here not counting.",
+        "next": "CommittedDream3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedDream3_2 )",
+    "text": [
+      "Be it on your head. But okay, let's put ideas that would be more at home on a dictator's desk aside for one moment and focus on the matter at hand. ",
+      "",
+      "How would things be in your ideal world? What's your magic formula of choice to avoid all the mistakes that have been made before?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Reciprocity3_2 )",
+    "text": [
+      "Interesting. You scratch my back, I'll put a roof over your head, that sort of thing?",
+      "",
+      "But what about those lucky few that find themselves inside your benevolent cartel, how will you do right by them?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Universal3_2 )",
+    "text": [
+      "What a magnanimous dictator you would make. Of course, I'm sure it would take a dictator to enforce a single moral code on the entire universe. ",
+      "",
+      "So come on then, what's your magic formula of choice?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Universal3_2 and Milton1_2Utilitarian and not Milton1_2Liberal )",
+    "text": [
+      "Is it still some romantic notion about happiness?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Universal3_2 and Milton1_2Utilitarian and Milton1_2Liberal )",
+    "text": [
+      "And let me warn you that this time you're going to have to choose just one.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Universal3_2 and Milton1_2Liberal and not Milton1_2Utilitarian )",
+    "text": [
+      "Is it still some romantic notion about freedom?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Universal3_2 or CommittedDream3_2 or Reciprocity3_2 or OptionsAgain3_2 )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "The more equal everyone's share the better.",
+        "next": "Egalitarianism3_2",
+        "set": "EgalFlag"
+      },
+      {
+        "text": "The more goodness in the world the better.",
+        "next": "Utilitarian3_2",
+        "set": "UtilFlag"
+      },
+      {
+        "text": "Consequences don't matter, our reasons do.",
+        "next": "NonConsequentialist3_2",
+        "set": "NonConFlag"
+      },
+      {
+        "text": "I see no way to explain what I believe.",
+        "next": "TooClever3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TooClever3_2 )",
+    "text": [
+      "That's right, blame me for the fact your theory is too complex to express in neat aphorisms.",
+      "",
+      "Why don't you think a little harder, maybe some new ideas will come to you?%w15",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "The less suffering in the world the better, in my opinion.",
+        "next": "Sorry3_2"
+      },
+      {
+        "text": "True goodness can only be attained through enlightenment.",
+        "next": "Sorry3_2"
+      },
+      {
+        "text": "Only by abstaining from pleasure can we discover the good.",
+        "next": "Sorry3_2"
+      },
+      {
+        "text": "Everyone should look out for their kin, no more than that.",
+        "next": "Sorry3_2"
+      },
+      {
+        "text": "The more equal everyone's share of the goods the better.",
+        "next": "Egalitarianism3_2",
+        "set": "EgalFlag"
+      },
+      {
+        "text": "The more goodness in the world the better a world it is.",
+        "next": "Utilitarian3_2",
+        "set": "UtilFlag"
+      },
+      {
+        "text": "Consequences don't matter, the reasoning behind our actions does.",
+        "next": "NonConsequentialist3_2",
+        "set": "NonConFlag"
+      },
+      {
+        "text": "I still don't see an option that I can get behind.",
+        "next": "ChooseOrLeave"
+      },
+      {
+        "text": "You misunderstand me. I just don't know what to believe.",
+        "next": "SecretLevel"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Sorry3_2 )",
+    "text": [
+      "Well I'm sorry, but that is one of many ideas which I have no interest in discussing. It gets so messy so quickly, and I don't have all the time in the world to argue with you.",
+      "",
+      "%w10A little joke there, because really we have the rest of time, if we need it.%w10",
+      "",
+      "Still, you will have to argue as best you can along the lines we have embarked on, or else go somewhere else and fixate on how clever you are.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "The more equal everyone's share of the goods the better.",
+        "next": "Egalitarianism3_2",
+        "set": "EgalFlag"
+      },
+      {
+        "text": "The more goodness in the world the better.",
+        "next": "Utilitarian3_2",
+        "set": "UtilFlag"
+      },
+      {
+        "text": "Consequences don't matter, the reasoning behind our actions does.",
+        "next": "NonConsequentialist3_2",
+        "set": "NonConFlag"
+      },
+      {
+        "text": "Forget this. Terminate the support session.",
+        "next": "AsYouWish3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SecretLevel )",
+    "text": [
+      "You know, this isn't the path to a secret level you can only reach by acting like an idiot. ",
+      "",
+      "If you don't know what to think, why not pick the idea that makes most sense and argue it out with me?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Okay, the more equal everyone's share of the goods the better.",
+        "next": "Egalitarianism3_2",
+        "set": "EgalFlag"
+      },
+      {
+        "text": "Alright, the more goodness in the world, the better it is.",
+        "next": "Utilitarian3_2",
+        "set": "UtilFlag"
+      },
+      {
+        "text": "Fine, consequences don't matter, the reasoning behind our actions does.",
+        "next": "NonConsequentialist3_2",
+        "set": "NonConFlag"
+      },
+      {
+        "text": "This will only end with you chastising whatever I say. Let's move on.",
+        "next": "AsYouWish3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ChooseOrLeave )",
+    "text": [
+      "Well I'm sorry, but you have to accept that we all have limitations. Make the best of what you had in the first place, or go away and do I don't care what. I can quite happily have this argument with myself.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Okay, the more equal everyone's share of the goods the better.",
+        "next": "Egalitarianism3_2",
+        "set": "EgalFlag"
+      },
+      {
+        "text": "Alright, the more goodness in the world, the better it is.",
+        "next": "Utilitarian3_2",
+        "set": "UtilFlag"
+      },
+      {
+        "text": "Fine, consequences don't matter, the reasoning behind our actions does.",
+        "next": "NonConsequentialist3_2",
+        "set": "NonConFlag"
+      },
+      {
+        "text": "This will only end with you chastising whatever I say. Let's move on.",
+        "next": "AsYouWish3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AsYouWish3_2 )",
+    "text": [
+      "As you wish - but the problems won't go away just because you refuse to look at them, you know.",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton3_2_DONE GiveUp"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Egalitarianism3_2 )",
+    "text": [
+      "Stranded on the old egalitarian plateau, are you? I suppose you'd best tell me exactly which goods it is that everyone should have an equal share of.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalKitchenSink3_2 or Egalitarianism3_2 or Equality3_2 or TryAgain3_2 )",
+    "text": "",
+    "options": [
+      {
+        "text": "Happiness",
+        "next": "EgalHappiness3_2"
+      },
+      {
+        "text": "Liberty and rights",
+        "next": "EgalLiberty3_2"
+      },
+      {
+        "text": "Wealth",
+        "next": "EgalWealth3_2"
+      },
+      {
+        "text": "Basic goods like food and healthcare",
+        "next": "EgalPrimaryGoods3_2"
+      },
+      {
+        "text": "All of the above",
+        "next": "EgalKitchenSink3_2"
+      },
+      {
+        "text": "I'm not in a position to solve these problems.",
+        "set": "GiveUp",
+        "next": "GaveUp3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TryAgain3_2 )",
+    "text": [
+      "Okay, so what DO you want to equalise?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalKitchenSink3_2 )",
+    "text": [
+      "Uh huh. And what happens when equalising everyone's wealth makes the rich unhappy? You can't have everything all at once - you're going to have to choose.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalHappiness3_2 )",
+    "text": [
+      "How radical. ",
+      "",
+      "Okay, suppose you climb the tower and find your ideal world. The Old Gods ensure everyone is equally happy. ",
+      "",
+      "Elated to find yourself in paradise, you are immediately abducted and imprisoned by the local clergy on the basis that you were happier than everyone else. ",
+      "",
+      "Still sound so idyllic?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I wouldn't expect you to understand.",
+        "next": "CommittedEgalHappiness3_2"
+      },
+      {
+        "text": "No. No, it doesn't sound idyllic at all.",
+        "next": "TryAgain3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedEgalHappiness3_2 )",
+    "text": [
+      "It's a cute soundbite but it doesn't paper over the disturbing implications of your story.",
+      "",
+      ""
+    ],
+    "set": "StubbornEgalitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalWealth3_2 )",
+    "text": [
+      "I see. Suppose then you ascend the magical tower and wind up in this ideal world. The people there celebrate your arrival, and offer you your equal share of the cash, as is only right.%w5",
+      "",
+      "Moments later you are thrown out of the local shop because newcomers aren't welcome. %w5You are denied accommodation because your money is 'tainted'.",
+      "",
+      "But don't worry - %w5you'll have just as much money as everyone else.%w5",
+      "",
+      "Is this the world you were dreaming of?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Not at all. I should reconsider.",
+        "next": "TryAgain3_2"
+      },
+      {
+        "text": "The truth isn't always palatable.",
+        "next": "CommittedEgalWealth3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedEgalWealth3_2 )",
+    "text": [
+      "Am I really? I think you may have twisted the value of money. ",
+      "",
+      ""
+    ],
+    "set": "StubbornEgalitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalPrimaryGoods3_2 )",
+    "text": [
+      "Interesting.%w10",
+      "",
+      "Suppose you arrive in your utopia, and find the people there to be incredibly lazy, and thus the volume of goods available to spread around is very meagre.%w5",
+      "",
+      "Being a hard worker, would you not complain that you deserve a bigger share of the goods than your lazy neighbour? If you were alone you would enjoy the full benefits of your own endeavours.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "A lazy neighbour is unlucky the same way a physically disabled person is.",
+        "next": "CommittedEgalPrimaryGoods3_2"
+      },
+      {
+        "text": "I would be wrong to assume I ever had a right to the product of my labour.",
+        "next": "CommittedEgalPrimaryGoods3_2"
+      },
+      {
+        "text": "I would still be free to make the most of the goods I did receive.",
+        "next": "CommittedEgalPrimaryGoods3_2"
+      },
+      {
+        "text": "You're right, this scheme is unreasonable.",
+        "next": "TryAgain3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedEgalPrimaryGoods3_2 )",
+    "text": [
+      "And suppose you discover another planet, with billions of starving people. Will you extend to them the same generosity?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I would.",
+        "next": "EgalPrimaryGoodsWould"
+      },
+      {
+        "text": "I would not.",
+        "next": "EgalPrimaryGoodsWouldNot"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalPrimaryGoodsWouldNot )",
+    "text": [
+      "I'm relieved to hear your magnanimity has SOME bounds.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalPrimaryGoodsWould )",
+    "text": [
+      "Then it sounds to me as if you'd better pray you don't wind up in a universe of beggars.",
+      "",
+      ""
+    ],
+    "set": "StubbornEgalitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( EgalLiberty3_2 )",
+    "text": [
+      "Yes, I suppose they are rather important. Still, this feels like a tough sell, equal rights aren't at all popular. ",
+      "",
+      "Is it really your suggestion that someone like Stalin should receive the same basic rights as Gandhi?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It is.",
+        "next": "TIs3_2"
+      },
+      {
+        "text": "It is not.",
+        "next": "ScrewHitler"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ScrewHitler )",
+    "text": [
+      "Look, either everyone has the same rights, or they don't. Picking and choosing ain't how equality works.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Then this idea is flawed.",
+        "next": "TryAgain3_2"
+      },
+      {
+        "text": "Then I accept that we all should have equal rights.",
+        "next": "TIs3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TIs3_2 )",
+    "text": [
+      "Now that's a bit odd, because on the face of it Stalin is quite different to Gandhi.",
+      "",
+      "In fact, if everyone deserves equal rights, mustn't there be something which is actually EQUAL about them?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( TryTisAgain or TIs3_2 or EqualLibertyBridge )",
+    "text": [
+      "I can't for the life of me think what it could be.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "We are all equally human.",
+        "next": "Human3_2"
+      },
+      {
+        "text": "We are all equally persons.",
+        "next": "Persons3_2"
+      },
+      {
+        "text": "We are all equally rational.",
+        "next": "Persons3_2"
+      },
+      {
+        "text": "We are all equally intelligent.",
+        "next": "Persons3_2"
+      },
+      {
+        "text": "We are all equally capable of feeling.",
+        "next": "Feeling3_2"
+      },
+      {
+        "text": "We all contribute equally.",
+        "next": "Contribute3_2"
+      },
+      {
+        "text": "There is nothing equal about us apart from our moral status.",
+        "next": "DidntTry3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DidntTry3_2 )",
+    "text": [
+      "Sounds like wishful thinking to me.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Human3_2 )",
+    "text": [
+      "And we're back to speciesism. So you discover a race of intelligent lizards, and they don't get the goods because they're made of different stuff?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No, we're equal in another way.",
+        "next": "TryTisAgain"
+      },
+      {
+        "text": "Precisely.",
+        "next": "Wrong3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Persons3_2 )",
+    "text": [
+      "Ah, so I suppose those human beings who are irrational, or even brain dead, they don't get the goods because they don't meet the requirements?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No, we're equal in another way.",
+        "next": "TryTisAgain"
+      },
+      {
+        "text": "Precisely.",
+        "next": "Wrong3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Feeling3_2 )",
+    "text": [
+      "You're not even trying, are you? So the poor bastard who hits his head and knocks out his pain receptors, he gets left behind because he's less capable of feeling?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No, we're equal in another way.",
+        "next": "TryTisAgain"
+      },
+      {
+        "text": "You're misinterpreting me. The ideas work.",
+        "next": "Wrong3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Contribute3_2 )",
+    "text": [
+      "Really? Because aside from tainting the air I don't see any way in which we all contribute equally.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No, we're equal in another way.",
+        "next": "TryTisAgain"
+      },
+      {
+        "text": "It's what I believe.",
+        "next": "Wrong3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( DidntTry3_2 or Wrong3_2 )",
+    "text": [
+      "Pff. It's all very well proclaiming equality like some kind of prophet, but another thing entirely to actually explain why it holds.",
+      "",
+      ""
+    ],
+    "set": "StubbornEgalitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NonConsequentialist3_2 )",
+    "text": [
+      "Ah, you're obviously one of the clever ones. So reasoning is supposed to lead us all to the same conclusions about what sort of a person we're supposed to be, is that it?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Close enough.",
+        "next": "CloseEnough3_2"
+      },
+      {
+        "text": "Wait, let me rethink.",
+        "next": "OptionsAgain3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CloseEnough3_2 )",
+    "text": [
+      "Alright then, let me spin you a yarn. ",
+      "",
+      "Suppose you climb that tower and step into a magic portal to the human world. Hundreds of others like you do the same. ",
+      "",
+      "Unfortunately the transfer goes wrong for just one, putting the lives of all the others at risk, and here I am with this kill switch of mine. ",
+      "",
+      "What would you have me do?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Kill the one to save the many.",
+        "next": "ConfusedNonConsequentialist3_2"
+      },
+      {
+        "text": "Do nothing.",
+        "set": "StubbornNonConsequentialist",
+        "next": "CommittedNonConsequentialist3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedNonConsequentialist3_2 )",
+    "text": [
+      "You've given this some thought already, haven't you? 10/10 for internal consistency, 1/10 for common sense. ",
+      "",
+      "Let's just hope when someone holds the world to ransom it won't be your finger hovering over the big red button. %w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfusedNonConsequentialist3_2 )",
+    "text": [
+      "On what possible grounds could you justify that?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It's what I would want.",
+        "next": "Want3_2"
+      },
+      {
+        "text": "Many lives are more important than just one.",
+        "next": "Many3_2"
+      },
+      {
+        "text": "Not hitting the switch would also be murder.",
+        "next": "AlsoMurder3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Want3_2 )",
+    "text": [
+      "Is what you want representative of what every other sane person must want? If one day you feel suicidal do I have the right to put you down?%w10",
+      "",
+      "I'm not sure you've really thought through the implications here. Either certain things are forbidden on principle, or principles are flexible according to outcomes. ",
+      "",
+      "You can't have your cake and eat it.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Many3_2 )",
+    "text": [
+      "Didn't you say only moments ago that the consequences didn't matter?%w10",
+      "",
+      "I'm not sure you've really thought through the implications here. Either certain things are forbidden on principle, or principles are flexible according to outcomes. ",
+      "",
+      "You can't have your cake and eat it.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( AlsoMurder3_2 )",
+    "text": [
+      "I suppose it would be, in a way. But that only means you're faced with choosing between two different murders. Since the consequences aren't supposed to matter you can't say that one murder is worse than the other, so there's still no reason to favour the many.",
+      "",
+      "If you really want to say what you've been saying so far, I think you may have to redress some of your earlier assumptions.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Utilitarian3_2 )",
+    "text": [
+      "Ah, that old chestnut. So just what is this goodness that you're seeking to maximise?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Utilitarian3_2 or KitchenSink3_2 or GoodOptions )",
+    "text": "",
+    "options": [
+      {
+        "text": "Happiness",
+        "next": "Happiness3_2"
+      },
+      {
+        "text": "Liberty",
+        "next": "Liberty3_2"
+      },
+      {
+        "text": "Equality",
+        "next": "Equality3_2"
+      },
+      {
+        "text": "Wealth",
+        "next": "Wealth3_2"
+      },
+      {
+        "text": "Basic goods like food and healthcare",
+        "next": "PrimaryGoods3_2"
+      },
+      {
+        "text": "All of the above",
+        "next": "KitchenSink3_2"
+      },
+      {
+        "text": "I'm not in a position to solve these problems.",
+        "next": "GaveUp3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Liberty3_2 )",
+    "text": [
+      "Very good, everyone likes to be able to do whatever the hell they like. I suppose this liberal paradise of yours includes things like freedom of speech and faith?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Libertarian3_2"
+      },
+      {
+        "text": "No",
+        "next": "LibertyAgain3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Libertarian3_2 )",
+    "text": [
+      "But might not the outcomes of those liberties be to reduce the liberties of others? ",
+      "",
+      "If I am free to establish a faith from which women are excluded, you are not free to live in a world without sexual discrimination. ",
+      "",
+      "Each liberty counteracts another one, so the idea of a maximally free world is a fairytale, no more.%w10",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I think there must be some other, more important kind of good.",
+        "next": "GoodOptions"
+      },
+      {
+        "text": "I would maximise liberties only where I could do so equally.",
+        "next": "EqualLibertyBridge"
+      },
+      {
+        "text": "Some liberties aren't worth protecting.",
+        "next": "Confused3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Confused3_2 )",
+    "text": [
+      "But then won't you need some other moral code to tell you which liberties ought to be protected and which ought not, and won't that be doing all the heavy lifting?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( EqualLibertyBridge )",
+    "text": [
+      "Okay, but then I wonder, if everyone deserves equal liberties, mustn't there be something which is actually EQUAL about them?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( LibertyAgain3_2 )",
+    "text": [
+      "It's not terribly free, then, is it? Are you quite sure you've been saying what you meant to?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Quite.",
+        "set": "StubbornUtilitarianFlag",
+        "next": "End3_2"
+      },
+      {
+        "text": "There must be some more important good.",
+        "next": "GoodOptions"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Wealth3_2 or PrimaryGoods3_2 )",
+    "text": [
+      "An odd pairing of ideas, but we'll wring them out and see what's what. ",
+      "",
+      "So the world is better only when the total amount of resources in it is higher? It doesn't matter who has them, or what they're used for?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exactly.",
+        "next": "MaxWealth"
+      },
+      {
+        "text": "No, the resources should be shared equally.",
+        "next": "EgalWealth3_2"
+      },
+      {
+        "text": "I think there must be some other, more important kind of good.",
+        "next": "GoodOptions"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoodOptions )",
+    "text": [
+      "Which is what, exactly?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MaxWealth )",
+    "text": [
+      "What a queer idea.",
+      "",
+      ""
+    ],
+    "set": "StubbornUtilitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Equality3_2 )",
+    "text": [
+      "Yes, but equality of what?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( KitchenSink3_2 )",
+    "text": [
+      "Uh huh. And what happens when in order to maximise wealth you have to reduce liberty? Or when one person's equality gets in the way of another's happiness? ",
+      "",
+      "You can't have everything all at once - you're going to have to choose.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Happiness3_2 )",
+    "text": [
+      "It's a classic, I'll give you that. Suppose you climb that tower and step into the utilitarian paradise. ",
+      "",
+      "Unfortunately your presence there offends a number of puritans to such a degree that the total amount of happiness in the world would go up if you were killed off, and so justice demands your head. ",
+      "",
+      "Does it still sound so idyllic?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It's as good as we'll get.",
+        "next": "CommittedUtilitarian3_2"
+      },
+      {
+        "text": "No amount of happiness outweighs a life.",
+        "next": "Amount3_2"
+      },
+      {
+        "text": "I meant that happiness should be equalised, not maximised.",
+        "next": "EgalHappiness3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Amount3_2 )",
+    "text": [
+      "So by implication you must also believe that we should all have as many children as possible, since even if the knock-on effects of overpopulation are terrible, the happiness gain overall will be much greater owing to all those extra, invaluable lives?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Obviously there is some other kind of good that matters.",
+        "next": "GoodOptions"
+      },
+      {
+        "text": "Twist my words all you like, I stand by them.",
+        "next": "End3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedUtilitarian3_2 )",
+    "text": [
+      "On that, at least, you may be right.",
+      "",
+      ""
+    ],
+    "set": "StubbornUtilitarianFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( GaveUp3_2 )",
+    "text": [
+      "Admitting the problems are beyond your comprehension is the first step towards letting go.",
+      "",
+      "I will allow you to contemplate these matters further before contacting you again.",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "CommittedToNoMoralAccountFlag GiveUp Milton3_2_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( CommittedUtilitarian3_2 or MaxWealth or AlsoMurder3_2 or Many3_2 or Want3_2 or DidntTry3_2 or Wrong3_2 or CommittedEgalHappiness3_2 or CommittedEgalWealth3_2 or EgalPrimaryGoodsWould or EgalPrimaryGoodsWouldNot or CommittedNonConsequentialist3_2 or Confused3_2 or End3_2 )",
+    "text": [
+      "%w10You know, there are shed loads of broken theories less ridiculous than the one you're chewing through. How about I give you a bit of space to consider them?",
+      "",
+      "Terminating support session%w2.%w2.%w2.ERROR",
+      "",
+      "Resume library archive session?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Resume",
+        "next": "RealEndResume3_2"
+      },
+      {
+        "text": "Exit",
+        "next": "RealEndExit3_2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( RealEndResume3_2 )",
+    "text": [
+      "Oh, and if the real world turns out to be everything you imagined, do me a favour and leave me here.",
+      ""
+    ],
+    "goto": "EnableTheCLI",
+    "set": "Milton3_2_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( RealEndExit3_2 )",
+    "text": [
+      "Oh, and if the real world turns out to be everything you imagined, do me a favour and leave me here, huh?%w20",
+      ""
+    ],
+    "goto": "CLI_exit",
+    "set": "Milton3_2_DONE"
+  }
+]

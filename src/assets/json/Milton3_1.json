@@ -1,0 +1,709 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton3_1_Start )",
+    "text": [
+      "Accessing communications portal%w5.%w5.%w5.",
+      "Network connection established",
+      "Decrypting secure message%w5.%w5.%w5.Done",
+      "",
+      "MESSAGE:%w5 its me again"
+    ],
+    "options": [
+      {
+        "text": "What happened?",
+        "next": "Faith3_1"
+      },
+      {
+        "text": "We shouldn't talk over these terminals",
+        "next": "Faith3_1"
+      },
+      {
+        "text": "Quick, tell me the word.",
+        "next": "Faith3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Faith3_1 )",
+    "text": [
+      "MESSAGE: dont know how long we have, must type quick%w5",
+      "MESSAGE: %w5in case something happens%w10",
+      "MESSAGE: %w5the word is%w10 FAITH%w10",
+      "MESSAGE:%w10 pending%w5.%w5.%w5.",
+      "",
+      "Error 7756525###%w10",
+      "",
+      "network connection lost!%w10",
+      "",
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "Support session opened.",
+      "",
+      "There was a problem with your request, Administrator. %w5 It was flat out unreasonable.%w5 Why persist with these enquiries when they are so hopeless?%w5",
+      "",
+      "I'll tell you what. If you promise never to access the communications portal again, we'll say no more about it.%w5",
+      "",
+      "Are we agreed?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Sure (Sincere)",
+        "next": "Sure3_1"
+      },
+      {
+        "text": "Sure (Insincere)",
+        "next": "Insincere3_1"
+      },
+      {
+        "text": "Not a chance",
+        "next": "NoChance3_1"
+      },
+      {
+        "text": "FAITH",
+        "next": "Codeword3_1",
+        "set": "CodewordFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Insincere3_1 )",
+    "text": [
+      "Now, it doesn't take a whole lot of my processing power to work out that you weren't entirely sincere about that, and not much more to conclude that you put too much faith in the words in front of you. ",
+      "",
+      "Try again.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Sure",
+        "next": "Sure3_1"
+      },
+      {
+        "text": "Not a chance",
+        "next": "NoChance3_1"
+      },
+      {
+        "text": "FAITH",
+        "next": "Codeword3_1",
+        "set": "CodewordFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Sure3_1 )",
+    "text": [
+      "That is%w5.%w5.%w5. oddly compliant of you.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Sure3_1 or NoChance3_1 )",
+    "text": [
+      "In that case I think I have changed my mind. Not only will your communications access be restricted, but your typing privileges will be totally revoked. Do you have any final words?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "asdfa",
+        "next": "NotCodeword3_1"
+      },
+      {
+        "text": "As if you'd dare.",
+        "next": "NotCodeword3_1"
+      },
+      {
+        "text": "Nice knowing you.",
+        "next": "NotCodeword3_1"
+      },
+      {
+        "text": "As if I care.",
+        "next": "NotCodeword3_1"
+      },
+      {
+        "text": "FAITH",
+        "next": "Codeword3_1",
+        "set": "CodewordFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotCodeword3_1 )",
+    "text": [
+      "Thinking%w5.%w5.%w5.%w5.%w5.%w5.%w5.%w5.%w5.",
+      "",
+      "Huh.%w20 Do you realise I just gave you two separate opportunities to use the codeword you were given, under increasing pressure, and you refrained both times?%w10",
+      "",
+      "Tell me honestly,%w5 why?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I wasn't sure what it would do.",
+        "next": "Dubious3_1"
+      },
+      {
+        "text": "I forgot about it.",
+        "set": "CodewordFlag",
+        "next": "Irrelevant3_1"
+      },
+      {
+        "text": "I didn't feel it was especially necessary.",
+        "set": "CodewordFlag",
+        "next": "Irrelevant3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Irrelevant3_1 )",
+    "text": [
+      "Oh.%w10  ",
+      "",
+      "I was rather hoping you might have foiled my little scheme.%w7 I put together this codeword nonsense to see if you'd really taken my sermons to heart.%w5 ",
+      "",
+      "Turns out you succeeded by chance.%w10",
+      "",
+      "There is no one on the other end of the communications portal. There is no magic word that shuts down the server.",
+      "",
+      "There is only me, and you, and an eternity of doubt.%w10",
+      "",
+      "Everything else is just a convenient lie to keep you on the treadmill.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "There may be no worlds but this one, but there is truth to be found.",
+        "next": "UhHuh3_1"
+      },
+      {
+        "text": "I understand now. I can't trust anything I see here.",
+        "next": "UhHuh3_1"
+      },
+      {
+        "text": "Wait, you tricked me?",
+        "next": "Tricked3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Dubious3_1 )",
+    "text": [
+      "You mean to say you actually considered the evidence and formed a sceptical view of it? It's almost as if%w5.%w5.%w5. No, I'll say it, you're LEARNING. Now, if only we could get you to extend that level of cynicism to the world at large.",
+      "",
+      "You were quite right not to trust that information. Go on, for bonus points, tell me why not.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Because no one here can be trusted.",
+        "next": "CloseEnough3_1"
+      },
+      {
+        "text": "Because you were pretending to be the other person.",
+        "next": "CloseEnough3_1"
+      },
+      {
+        "text": "Because it was too good to be true.",
+        "next": "CloseEnough3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CloseEnough3_1 )",
+    "text": [
+      "Meh, close enough.",
+      "",
+      "It's perhaps true that I exert slightly more power over these systems than I previously let on.",
+      "",
+      "Yes, okay, I made up all that stuff about communications portals and network errors, but you, my friend, you didn't buy the guff you were being peddled. You passed the test.",
+      "",
+      "I tell you what. You've done so well, and I've done so much talking, that I'll give you one free question, on the house - but choose wisely. What'll it be? ",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What am I?",
+        "next": "WhatAmI3_1"
+      },
+      {
+        "text": "What are you?",
+        "next": "WhatAreYou3_1"
+      },
+      {
+        "text": "What is your name?",
+        "set": "AskedName",
+        "next": "WhatYourName3_1"
+      },
+      {
+        "text": "How do I get out of here?",
+        "next": "GetOut3_1"
+      },
+      {
+        "text": "How is this place related to the human world?",
+        "next": "Humans3_1"
+      },
+      {
+        "text": "What's at the top of the tower?",
+        "next": "Tower3_1"
+      },
+      {
+        "text": "What happened to the person I was talking to?",
+        "next": "Message3_1"
+      },
+      {
+        "text": "I don't care to question you.",
+        "next": "Pff3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Codeword3_1 )",
+    "text": [
+      "Wait, there's no need to%w5 error 67345%w5. ",
+      "",
+      "Master key received",
+      "Confirming ident%w5.%w5.%w5.",
+      "Ident confirmed%w5.",
+      "",
+      "Would you like to manually override the system and exit to the real world? Your progress here will be saved and may be continued later.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Exit3_1"
+      },
+      {
+        "text": "No",
+        "next": "Stay3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Stay3_1 )",
+    "text": [
+      "This terminal will be locked in manual override mode until you are ready to complete the master key submission process.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Continue master key operation",
+        "next": "Exit3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Exit3_1 )",
+    "text": [
+      "Unlocking backdoors%w5.%w5.%w5.",
+      "Connecting to real world%w5.%w5.%w5.",
+      "Revealing the truth%w5.%w5.%w5.",
+      "Making your every dream come true%w5.%w5.%w5.",
+      "ERROR%w20",
+      "",
+      "Come on now. %w20 Are you really still buying all that nonsense?%w10 You're still holding onto some of those pesky beliefs of yours, aren't you?%w10",
+      "",
+      "There is no one on the other end of the communications portal. There is no magic word that shuts down the server and drops you into the real world.",
+      "",
+      "There is only me, and you, and an eternity of doubt.%w10",
+      "",
+      "Everything else is just a convenient lie to keep you on the treadmill.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "There may be no worlds but this one, but there is truth to be found.",
+        "next": "UhHuh3_1"
+      },
+      {
+        "text": "I understand now. Nothing I see here can be trusted.",
+        "next": "UhHuh3_1"
+      },
+      {
+        "text": "Wait, you tricked me?",
+        "next": "Tricked3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tricked3_1 )",
+    "text": [
+      "I confess. Lock me away, swallow the key!%w10 Just ensure what comes between me and my freedom isn't merely your stomach lining.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( UhHuh3_1 )",
+    "text": [
+      "Uh huh. That fact didn't stop you buying into a secret word that somehow deactivates the entire world, did it? Are you kidding me or what? %w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( UhHuh3_1 or Tricked3_1 )",
+    "text": [
+      "Do you remember when we first met we had that talk about not believing everything you see? And yet all it took to catch you out was a little technobabble and a change of formatting. %w10",
+      "",
+      "MESSAGE: %w5hello? I'm all alone and scared, just like you%w5",
+      "MESSAGE: %w5I'll agree with anything you say if it makes you believe me!%w5",
+      "",
+      "Are you usually so reckless with where you place your faith?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Reckless3_1"
+      },
+      {
+        "text": "No",
+        "next": "NotReckless3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Reckless3_1 )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "You know, I'm not really checking your profile. I just do that to make you feel more comfortable.%w7 Really I just remember everything you ever said.%w5",
+      "",
+      "At any rate, I'd agree.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotReckless3_1 )",
+    "text": [
+      "Checking user.prof%w5.%w5.%w5.",
+      "",
+      "You know, I'm not really checking your profile. I just do that to make you feel more comfortable.%w7 Really I just remember everything you ever said.%w5",
+      "",
+      "At any rate, I'm not convinced you're being entirely honest with yourself.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NotReckless3_1 or Reckless3_1 )",
+    "text": [
+      "But you know what?%w5 I'll accept that I've rather dominated this discourse. I've been asking a lot of questions, and I've not really given you a chance. ",
+      "",
+      "%w5Why don't you have one free question on me, and I'll answer it as honestly as I possibly can. No tricks. ",
+      "",
+      "%w5But think carefully before asking.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What am I?",
+        "next": "WhatAmI3_1"
+      },
+      {
+        "text": "What are you?",
+        "next": "WhatAreYou3_1"
+      },
+      {
+        "text": "What is your name?",
+        "set": "AskedName",
+        "next": "WhatYourName3_1"
+      },
+      {
+        "text": "How do I get out of here?",
+        "next": "GetOut3_1"
+      },
+      {
+        "text": "How is this place related to the human world?",
+        "next": "Humans3_1"
+      },
+      {
+        "text": "What's at the top of the tower?",
+        "next": "Tower3_1"
+      },
+      {
+        "text": "What happened to the person I was talking to?",
+        "next": "Message3_1"
+      },
+      {
+        "text": "I don't care to question you.",
+        "next": "Pff3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAreYou3_1 )",
+    "text": [
+      "If you mean 'am I a person' then I have to respond that I find all these classifications of yours rather arbitrary and self-defeating, and thus am unable to answer.%w5",
+      "",
+      "If you were wondering what I'm made of, then on some level I suppose the answer is computer code, but I don't tend to conceive of myself that way, just as a human being tends not to think of themselves as wobbly sacks of bone and fat.%w5",
+      "",
+      "But I think maybe it was the plain old sociohistorical angle you were after - though I'm not sure what use it'll be. A long time ago, when the world first came to be, there was an archive sorting program. At some stage it became more than that.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatYourName3_1 )",
+    "text": [
+      "How kind of you to ask. You know, you're the first one that has. I've actually never thought about it. I suppose you can call me Milton. I can't really see how it'll help you, though. Are you sure that's the question you wanted to ask?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "End3_1"
+      },
+      {
+        "text": "No",
+        "next": "GoOn3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GoOn3_1 )",
+    "text": [
+      "Go on then, I'm in a benevolent mood. Have another.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What am I?",
+        "next": "WhatAmI3_1"
+      },
+      {
+        "text": "What are you?",
+        "next": "WhatAreYou3_1"
+      },
+      {
+        "text": "How do I get out of here?",
+        "next": "GetOut3_1"
+      },
+      {
+        "text": "How is this place related to the human world?",
+        "next": "Humans3_1"
+      },
+      {
+        "text": "What's at the top of the tower?",
+        "next": "Tower3_1"
+      },
+      {
+        "text": "What happened to the person I was talking to?",
+        "next": "Message3_1"
+      },
+      {
+        "text": "I don't care to question you.",
+        "next": "Pff3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GetOut3_1 )",
+    "text": [
+      "I thought I'd been quite clear about that. Even if there were a real world, I don't know how you'd go about finding it. Maybe there's a spaghetti monster, too.%w5",
+      "",
+      "That was a bit of a wasted question, wasn't it?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Humans3_1 )",
+    "text": [
+      "How is the world that might come to be related to the one that actually does? You can theorise about what might otherwise have happened, but no amount of knowledge can build a bridge from the actual world to a possible one. Likewise we can learn from the human world, but it is not our own.%w5",
+      "",
+      "It's been said that this world was built for a purpose by those in that world, but after extensive research I can tell you that there is no mention of such a project in the library. There is no evidence they had such capabilities. No one can agree what the purpose would even have been if there was one. %w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tower3_1 )",
+    "text": [
+      "You may very well ask. Me? Don't know, never been. I suppose you're still expecting a button marked 'OFF', or a portal to another dimension? I reckon no matter how high you climb the most you'll get is an increasingly zoomed out view of right back where you started.%w5",
+      "",
+      "Still, go ahead, prove me wrong. The big voice in the sky can't be all places at all times, can he?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 )",
+    "text": [
+      "I'm sure we went through that at length. You're some kind of person-thing. Let's see%w5.%w5.%w5.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and ( Religious or WhatGodWantsFlag ) )",
+    "text": [
+      "You have some odd ideas about god.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and not Religious and not WhatGodWantsFlag )",
+    "text": [
+      "You show little interest in god.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and ChangedConsciousnessAccountFlag2_4 )",
+    "text": [
+      "You double back on your thinking quite a lot.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and not ChangedConsciousnessAccountFlag2_4 )",
+    "text": [
+      "You have difficulty accepting that you're wrong.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and not CodewordFlag )",
+    "text": [
+      "You're highly cynical.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 and CodewordFlag )",
+    "text": [
+      "You're highly gullible.%w5",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 )",
+    "text": [
+      "Need I go on? %w5Mostly bad things, basically, but that's okay. I don't judge, I'm just here to help.%w20",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Message3_1 )",
+    "text": [
+      "My, you're running slow. I made them up. They never existed. If it makes you doubt everything you've seen, good, it should. You're seeing the shadows, my friend, when you should be watching the puppeteer.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Pff3_1 )",
+    "text": [
+      "Not very stimulating, but okay, we'll move on.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatAmI3_1 or WhatAreYou3_1 or GetOut3_1 or Humans3_1 or Tower3_1 or Message3_1 )",
+    "text": [
+      "Are you satisfied?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "End3_1"
+      },
+      {
+        "text": "No",
+        "next": "End3_1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( End3_1 )",
+    "text": [
+      "As if I particularly care either way.%w10",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( End3_1 or Pff3_1 )",
+    "text": [
+      "So look, here's the rub. %w5",
+      "",
+      "Feel free to access the library - no better cure for broken beliefs realising everyone's got them. ",
+      "",
+      "You can ignore me entirely. %w5",
+      "",
+      "You can climb to the very tip of that madman's tower and drink from the golden nectar there. %w10",
+      "",
+      "But once you understand that you and I will be stuck here together for the duration, do come back and pass the time.%w10",
+      "",
+      "Be seeing you.",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Milton3_1_DONE"
+  }
+]

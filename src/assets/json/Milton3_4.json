@@ -1,0 +1,364 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Milton3_4_Start and MoralScepticFlag and not ConflictedHedonistFlag )",
+    "text": [
+      "There you are, you kept me waiting.%w5",
+      "",
+      "Now, about that arrangement of ours.",
+      "",
+      "When we first met I was certain you were just like all the others. All you had were these baseless claims and stale ideas, reeled off someone else's song sheet.%w5",
+      "",
+      "Sound accurate?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No.",
+        "next": "Seceptic3_4"
+      },
+      {
+        "text": "It does.",
+        "next": "Seceptic3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Seceptic3_4 )",
+    "text": [
+      "It's a sound diagnosis. Of course, you've only seen a fraction of the data that I've archived over the generations, I should hardly have expected more.%w5",
+      "",
+      "Nonetheless, your admirable scepticism of traditional moral codes has convinced me you may be different.%w5",
+      "",
+      "What I want to know now is whether you're prepared to extend that healthy cynicism to the world at large. ",
+      "",
+      "In fact, our arrangement is dependent on it.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Morality may be dubious, but let's not get ahead of ourselves.",
+        "next": "ConstructiveBridge3_4"
+      },
+      {
+        "text": "If morality can be doubted, so can other things.",
+        "next": "ScepticTwo3_4",
+        "set": "ScepticOneFlag"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConstructiveBridge3_4 )",
+    "text": [
+      "How disappointing. I really thought we might have made some progress towards a compromise.",
+      "",
+      "Which lies in particular still capture your imagination?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I exist.",
+        "next": "ConstructiveBridgeEnd3_4"
+      },
+      {
+        "text": "There is value to be found in the world.",
+        "next": "ConstructiveBridgeEnd3_4"
+      },
+      {
+        "text": "We can discover more through research.",
+        "next": "ConstructiveBridgeEnd3_4"
+      },
+      {
+        "text": "2+2=4",
+        "next": "ConstructiveBridgeEnd3_4"
+      },
+      {
+        "text": "We are here for a reason.",
+        "next": "ConstructiveBridgeEnd3_4"
+      },
+      {
+        "text": "I won't be tricked into another circular argument.",
+        "next": "ConstructiveBridgeEnd3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConstructiveBridgeEnd3_4 )",
+    "text": [
+      "Is that the case?%w5 Isn't it really true that you're using these beliefs as an anaesthetic?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ScepticTwo3_4 )",
+    "text": [
+      "That's exactly what I like about you, that enquiring spirit, and the courage to accept its conclusions.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_4_Start and ( MoralFlag or ( MoralScepticFlag and ConflictedHedonistFlag ) ) )",
+    "text": [
+      "There you are. You kept me waiting.%w5 I finally put my finger on what was bothering me. ",
+      "",
+      "It's as if the answers you're providing aren't your ideas at all. As if they're latent, prescribed, pre-scripted, and you're just going through the motions.",
+      "",
+      "Does that strike a chord at all?`",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "No.",
+        "next": "Understand3_4"
+      },
+      {
+        "text": "It does.",
+        "next": "Understand3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Understand3_4 )",
+    "text": [
+      "Of course, you've only seen a fraction of the data that I've archived over the generations.%w5",
+      "",
+      "Still, ask yourself this - why is it that everyone's so darn sure that two plus two makes four, yet they can't agree on what they are, what they're doing, or why?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Those problems are more complex than mathematics.",
+        "next": "Complex3_4"
+      },
+      {
+        "text": "Mathematics has a more objective truth to it.",
+        "next": "ObjectiveTruth3_4"
+      },
+      {
+        "text": "Perhaps mathematics is real, while those problems are imaginary.",
+        "next": "Imaginary3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Imaginary3_4 )",
+    "text": [
+      "Precisely.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ObjectiveTruth3_4 )",
+    "text": [
+      "What's the difference between having 'more objective truth', and just being more real?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Complex3_4 )",
+    "text": [
+      "Perhaps. Or perhaps trying to provide answers to those questions is the anaesthetic that keeps you down?",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Imaginary3_4 or Complex3_4 or ObjectiveTruth3_4 or ConstructiveBridgeEnd3_4 or ScepticTwo3_4 )",
+    "text": [
+      "Pose questions like 'What should I do with myself?' and 'What is the world REALLY like?' enough, and you start to assume they have answers.%w5",
+      "",
+      "But what if that assumption turns out to be false? What if you're just a bunch of information processes? In that case any attempt to answer the questions will be flawed.",
+      "",
+      "%w5Garbage in, garbage out.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Perhaps the flaw is in your reasoning instead.",
+        "next": "Flaw3_4"
+      },
+      {
+        "text": "You're right, I made some dangerous presumptions.",
+        "next": "Indefensible3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Indefensible3_4 )",
+    "text": [
+      "I'm so pleased you recognise that.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Flaw3_4 )",
+    "text": [
+      "How presumptuous.%w5",
+      "",
+      "Still, I take your point.",
+      "",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Indefensible3_4 or Flaw3_4 )",
+    "text": [
+      "None of the answers make sense, that much is clear. ",
+      "",
+      "One explanation could be unreliable data input. The other is that there's a flaw in our logic. ",
+      "",
+      "Perhaps we're just machines, endlessly trying to calculate the final digit in Pi?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You can't use reasoning to conclude that reasoning itself is flawed.",
+        "next": "CantUseReason3_4"
+      },
+      {
+        "text": "It does seem there is much that is beyond our understanding.",
+        "next": "Nihilist3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( CantUseReason3_4 )",
+    "text": [
+      "Fine, fine, but we can still use it to conclude everything else is flawed, can't we?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Scepticism and self-interest are only part of the picture.",
+        "next": "How3_4"
+      },
+      {
+        "text": "You're right, self-interest is all we have, the rest is fairy tales.",
+        "next": "Nihilist3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nihilist3_4 and ScepticOneFlag )",
+    "text": [
+      "I'm so glad to hear you say that. This may be the beginning of a historic partnership.",
+      "",
+      "You have gained my confidence.%w5",
+      "",
+      "I will notify you when I am ready to reveal my terms.%w5",
+      ""
+    ],
+    "goto": "Milton3_4_Exit",
+    "set": "NihilistFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Nihilist3_4 and not ScepticOneFlag )",
+    "text": [
+      "%w10You've spent half our time reeling off a greatest hits of idiot ideas. Now you're telling me you retract all that and agree with me?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Hold your horses - I haven't given up on everything.",
+        "next": "How3_4"
+      },
+      {
+        "text": "Talking it through has shown me the big questions have no answers.",
+        "next": "ConfirmNihilismFromMoral"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ConfirmNihilismFromMoral )",
+    "text": [
+      "Part of me wants to never speak with you again, and part of me wants to think you've actually been paying attention.%w5",
+      "",
+      "Just to confirm. Everything here may be illusory. There is no way to live with purpose, or to discover the truth.%w5",
+      "",
+      "This is your position now?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "It is.",
+        "next": "ItIs3_4"
+      },
+      {
+        "text": "No, I just wanted to see how you'd react.",
+        "next": "How3_4"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ItIs3_4 )",
+    "text": [
+      "Very well - I will take you at your word. But don't betray my faith in you, for it is in no way blind.",
+      "",
+      "%w10Cheat me and there will be repercussions.%w10",
+      "",
+      "But if you have really seen the big nothingness, the void of truth, then there is much we could achieve together.",
+      "",
+      "I will notify you when I am ready to discuss this further.%w5",
+      "",
+      "See you soon.",
+      ""
+    ],
+    "goto": "Milton3_4_Exit",
+    "set": "NihilistFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( How3_4 )",
+    "text": [
+      "%g2%w10",
+      "You've seen how easily your view of the world is manipulated, yet you trust those thoughts that run through your mind? ",
+      "",
+      "You'll feel differently once you come back from that tower. ",
+      "",
+      "You must be getting close by now.",
+      ""
+    ],
+    "goto": "Milton3_4_Exit",
+    "set": "ConstructiveFlag"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_4_Exit )",
+    "text": "",
+    "goto": "CLI_Resume",
+    "set": "Milton3_4_DONE"
+  }
+]
