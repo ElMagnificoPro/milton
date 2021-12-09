@@ -1297,7 +1297,7 @@
       "Oh, and if the real world turns out to be everything you imagined, do me a favour and leave me here.",
       ""
     ],
-    "goto": "EnableTheCLI",
+    "goto": "CLI_exit",
     "set": "Milton3_2_DONE"
   },
   {

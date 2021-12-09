@@ -1037,7 +1037,12 @@
     "display": "terminal",
     "condition": "( Milton3_3_Exit )",
     "text": "",
-    "goto": "CLI_Resume",
-    "set": "Milton3_3_DONE"
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Milton3_3_DONE",
+        "next": "CLI_Resume"
+      }
+    ]
   }
 ]

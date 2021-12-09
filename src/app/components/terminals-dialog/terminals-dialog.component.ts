@@ -27,8 +27,8 @@ export class TerminalsDialogComponent implements OnInit {
   ngOnInit(): void {}
 
   onClearSession() {
-    this._messageService.clearflags();
-    this._cookieService.delete("flags")
+    this._messageService.deleteAllFlags();
+    this._cookieService.deleteAll()
     window.location.reload();
   }
 

@@ -5,6 +5,7 @@
   margin-left: 50px;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5em;
 }
 
 .clear-session {
@@ -89,7 +90,7 @@
 }
 
 .current-terminal{
-  position: relative;
+  position: fixed;
   top: 0px;
   display: block;
   text-align: center;
@@ -98,4 +99,5 @@
 
 .current-terminal p {
   border-bottom: #212121 solid 1px;
+  background-color: #0d0d0d;
 }

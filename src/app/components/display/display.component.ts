@@ -12,7 +12,7 @@ import { TerminalsDialogComponent } from '../terminals-dialog/terminals-dialog.c
 })
 export class DisplayComponent implements OnInit {
   messages: string[] = [];
-  options: string[] = [];
+  options = [];
   writing: boolean = false;
   res;
   currTerminal: string = '';
@@ -88,12 +88,15 @@ export class DisplayComponent implements OnInit {
     this.writing = true;
     let n = 0;
 
+    //speed Multiplier (quicker for testing)
+    speed=0;
+
     while (n < text.length) {
       if (text.charAt(n) === '%') {
         //n += 3;
         let w = parseInt(text.slice(n + 2, n + 6));
         n += w.toString().length + 2;
-        await new Promise((r) => setTimeout(r, w * 100));
+        await new Promise((r) => setTimeout(r, w * speed * 10));
         this.messages[this.messages.length - 1] += text.charAt(n);
       } else {
         await new Promise((r) => setTimeout(r, speed));
@@ -115,6 +118,12 @@ export class DisplayComponent implements OnInit {
 
   async selectChoice(option) {
     // if choice is exit => show the stuff
+    if (option.set) {
+      this._messageService.setFlags(option.set.split(' '));
+    }
+    if (option.clear) {
+      this._messageService.clearFlags(option.clear.split(' '));
+    }
     this.updateFlags();
     if (option.next === 'CLI_Resume' || option.next === 'CLI_exit') {
       this.onExit();
@@ -159,12 +168,8 @@ export class DisplayComponent implements OnInit {
     this._messageService.setTerminal(n);
     this.getMessage();
     this._messageService.postStart();
-  }
-
-  onClearSession() {
-    this._messageService.clearflags();
-    this._cookieService.delete('flags');
-    window.location.reload();
+    document.documentElement.scrollTop =0;
+    document.body.scrollTop =0;
   }
 
   ngOnInit(): void {

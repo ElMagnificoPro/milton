@@ -343,7 +343,7 @@
     "display": "terminal",
     "condition": "( How3_4 )",
     "text": [
-      "%g2%w10",
+      "%w10",
       "You've seen how easily your view of the world is manipulated, yet you trust those thoughts that run through your mind? ",
       "",
       "You'll feel differently once you come back from that tower. ",
@@ -358,7 +358,12 @@
     "display": "terminal",
     "condition": "( Milton3_4_Exit )",
     "text": "",
-    "goto": "CLI_Resume",
-    "set": "Milton3_4_DONE"
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Milton3_4_DONE",
+        "next": "CLI_Resume"
+      }
+    ]
   }
 ]

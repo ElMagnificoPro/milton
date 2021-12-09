@@ -493,8 +493,8 @@
     "display": "terminal",
     "condition": "( Flawed3_5 )",
     "text": [
-      "%w3%g1%w3Which ones, exactly?",
-      "%w3%g1%w3",
+      "%w3 %w3Which ones, exactly?",
+      "%w3 %w3",
       ""
     ],
     "set": "FlawedFlag",
@@ -1566,7 +1566,12 @@
     "display": "terminal",
     "condition": "( Milton3_5_Exit )",
     "text": "",
-    "goto": "EnableTheCLI",
-    "set": "Milton3_5_DONE"
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Milton3_5_DONE",
+        "next": "CLI_Resume"
+      }
+    ]
   }
 ]

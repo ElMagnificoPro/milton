@@ -11,7 +11,6 @@
       "",
       "Your query? : "
     ],
-    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "asdfa",
@@ -44,7 +43,6 @@
       "",
       "Your query? : "
     ],
-    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "Can you help me?",
@@ -69,7 +67,6 @@
       "",
       "Your query? : "
     ],
-    "clear": "QueryMLA_ON",
     "options": [
       {
         "text": "Can you help me?",

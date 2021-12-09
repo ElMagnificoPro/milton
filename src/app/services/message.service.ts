@@ -28,6 +28,8 @@ export class MessageService {
     this.toDisplay.text = [];
     this.toDisplay.options = [];
 
+    let hasNext = "";
+
 
     console.log(this.index, this.flags);
     for (let i = 0; i < this.story.length; i++) {
@@ -36,6 +38,12 @@ export class MessageService {
         if (e.text) this.toDisplay.text.push(...e.text);
         if (e.options) this.toDisplay.options.push(...e.options);
         if (e.set) this.setFlags(e.set.split(' '));
+
+        // ????????????????
+        if (e.next){
+          this.setFlags([e.next]);
+          hasNext = e.next;
+        }
 
         if (e.goto) {
           this.toDisplay.goto = e.goto;
@@ -57,6 +65,8 @@ export class MessageService {
     }
 
     console.log('in getmessage ', this.toDisplay);
+
+    this.clearFlags([hasNext])
 
     return this.toDisplay;
   }
@@ -107,9 +117,15 @@ export class MessageService {
     console.log('on setFlags message service', this.flags);
   }
 
-  clearflags() {
-    this.flags.clear();
-    this.initflags();
+  clearFlags(flags) {
+    flags.forEach((e) => {
+      this.flags.delete(e);
+    });
+    console.log('on clearFlags message service', this.flags);
+  }
+
+  deleteAllFlags(){
+    this.flags.clear()
   }
 
   setTerminal(n) {
@@ -134,7 +150,7 @@ export class MessageService {
       // add for each
       //this.flags.delete(choice.clear.split(" "));
       choice.set.split(' ').map((v) => {
-        this.flags.add(v);
+        this.flags.delete(v);
       });
       console.log(this.flags);
     }
@@ -174,12 +190,14 @@ export class MessageService {
         if (this.story[index].text) this.toDisplay.text.push(...this.story[index].text);
         if (this.story[index].options) this.toDisplay.options.push(...this.story[index].options);
         if (this.story[index].set) this.setFlags(this.story[index].set.split(' '));
+
         if (this.story[index].clear)
         this.story[index].clear.split(' ').map((v) => {
           this.flags.delete(v);
         });
         if (this.story[index].goto) 
           this.gotoLabel(this.story[index].goto)
+
       }
 
       this.flags.delete(label);
