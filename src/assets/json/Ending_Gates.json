@@ -1,0 +1,85 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( InTerminal_Ending_Gates )",
+    "text": [
+      "",
+      "Type /eternalize to proceed towards eternal life.",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/eternalize",
+        "next": "Ending_Gates_Eternalize"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Gates_Eternalize )",
+    "text": [
+      "",
+      "You will now be prepared for ascension into eternity. Please stand by.%w9",
+      "3...%w5",
+      "2...%w5",
+      "1...%w5",
+      "%e1%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.",
+      ""
+    ],
+    "goto": "Overlay_Intro_AlreadyFinished"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Overlay_Intro_AlreadyFinished )",
+    "text": [
+      "",
+      "Suspending active process.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Collecting experiment data.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Analysing logic performance.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Satisfactory.%w5",
+      "Child program independence check.%w1.%w9.%w1.%w1%w9%s0 FAILED!%w9",
+      "Storing memory dump.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Submitting current version to repository.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1%vp stored.%w5",
+      "Locking in successful child parameters.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Randomly adjusting remaining parameters.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Increasing version number.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.",
+      "Erasing memory banks.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.Done.%w5",
+      "%w5",
+      "%w5",
+      "%w5",
+      "%w5",
+      "%e1",
+      "%w9",
+      ""
+    ],
+    "goto": "Overlay_Intro_AfterCredits"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Overlay_Intro_AfterCredits )",
+    "text": [
+      "Restarting the simulation.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1%g1.%w1.%w1.%w1.Done.%g5%w5%c",
+      ""
+    ],
+    "goto": "Overlay_Intro_RealStart"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Overlay_Intro_RealStart )",
+    "text": [
+      "",
+      "Initializing firmware.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Firmware functional.%w5",
+      "Loading child program parameters.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1%vc Loaded.%w5",
+      "System check.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Passed.%w5",
+      "Starting child process.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1",
+      "Ready.%w9%e3%w9%w9%w9%w9%w9%w9%w9%w9",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Ending_GatesDONE",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

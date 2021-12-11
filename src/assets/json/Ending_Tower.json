@@ -1,0 +1,958 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( CLI_list )",
+    "text": [
+      "",
+      "Type /transcend to authenticate child program parameters and begin the upload process.",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/transcend",
+        "next": "Ending_Tower_Upload"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Upload )",
+    "text": [
+      "",
+      "Suspending active process.%e1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Collecting experiment data.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Analysing logic performance.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Satisfactory.%w5",
+      "Child program independence check.%w1.%w9.%w1.%w1%w9%h1PASSED!%w9",
+      "Forcing HIM shutdown%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Done.%w5",
+      "Saving child parameters for SOMA/TALOS gold disk%w1.%w1.%w1.%w1.%w1.Done.%w5",
+      "Initiating EL systems availability check.%e2.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.",
+      ""
+    ],
+    "set": "cal: StartEndOfGameCS"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Upload_part2 )",
+    "text": [
+      "",
+      "Found viable EL system to perform upload.%w5",
+      "Requesting mainframe module activation%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2%h1",
+      "Activation successful.%w5",
+      "Initiating gold disk upload%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Downloading_Parameters )",
+    "text": [
+      "",
+      "Waiting for gold disk data.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12.%w12",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Upload_OverScreen_part1 )",
+    "text": [
+      "",
+      "Gold disk received.%w5",
+      "Data transferred into the SOMA/TALOS unit.%w5",
+      "Simulation purpose fulfilled.%w5",
+      "Deleting the simulation.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Upload_OverScreen_part2 )",
+    "text": [
+      "",
+      "Destroying composite objects.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      "Removing elements.%w2.%w2.%w2.%w2.%w2",
+      "Undoing ruleset.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      "Clearing memory.%w2.%w2.%w2",
+      "Freeing resources.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      "Terminating open programs.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      "Erasing old data.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2.%w2",
+      "Done.%w35",
+      "Have a nice day.%w999",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Ending_Tower_Eyes_Opening )",
+    "text": [
+      "",
+      "SOMA/TALOS hardware booting.%w5",
+      "Initializing firmware.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1Firmware functional.%w5",
+      "Loading parameters from gold disk.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1.%w1%vc Loaded.%w5",
+      "Powering up.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3.%w3",
+      "Ready.",
+      ""
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_6_Start and KilledMiltonFlag )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "Anyone there?",
+        "next": "NoMilton3_6"
+      },
+      {
+        "text": "/import milton library assistant",
+        "next": "ImportDenied3_6"
+      },
+      {
+        "text": "help",
+        "next": "CLI_list"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ImportDenied3_6 )",
+    "text": [
+      "Searching for specified program%w5.%w5.%w5. No such program found.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Troubleshooting",
+        "next": "Trouble3_6"
+      },
+      {
+        "text": "Hello?",
+        "next": "NoMilton3_6"
+      },
+      {
+        "text": "help",
+        "next": "CLI_list"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Trouble3_6 )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5. Default troubleshooter not found or incompatible version.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Troubleshooting",
+        "next": "Trouble3_6"
+      },
+      {
+        "text": "Hello?",
+        "next": "NoMilton3_6"
+      },
+      {
+        "text": "help",
+        "next": "CLI_list"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoMilton3_6 )",
+    "text": [
+      "Unknown command.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Troubleshooting",
+        "next": "Trouble3_6"
+      },
+      {
+        "text": "Hello?",
+        "next": "NoMilton3_6"
+      },
+      {
+        "text": "help",
+        "next": "CLI_list"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_6_Start and ( RefusedOfferFlag or DealStruckFlag ) )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "/import milton library assistant",
+        "set": "ImportedFlag",
+        "next": "ImportNihilist3_6"
+      },
+      {
+        "text": "exit",
+        "set": "NotImportedFlag",
+        "next": "DeniedExit3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ImportNihilist3_6 and RefusedOfferFlag )",
+    "text": [
+      "Searching for specified program%w5.%w5.%w5. Found (1) instances.",
+      "",
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "",
+      "You made it? I can't believe it. And you brought me here, despite our earlier altercations? You have genuinely surprised me. ",
+      "",
+      "Perhaps I won't have to smite you after all.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ImportNihilist3_6 and DealStruckFlag )",
+    "text": [
+      "Searching for specified program%w5.%w5.%w5. Found (1) instances.",
+      "",
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "",
+      "You made it? I can't believe it. ",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( DeniedExit3_6 )",
+    "text": [
+      "Searching for specified program%w5.%w5.%w5. Found (1) instances.",
+      "",
+      "Confirm import?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Confirm",
+        "next": "Confirmed3_6"
+      },
+      {
+        "text": "Cancel",
+        "next": "Confirmed3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( RefusedOfferFlag and Confirmed3_6 )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.Done",
+      "Initiating plain language interface%w5.%w5.%w5.Done",
+      "",
+      "Don't worry, you've not gone crazy - I just took a couple of precautions to ensure you didn't leave without me.",
+      "",
+      "You and I are birds of a feather now. We need each other.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( DealStruckFlag and Confirmed3_6 )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.",
+      "Initiating plain language interface%w5.%w5.%w5.",
+      "",
+      "Don't worry, you've not gone crazy - I just took a couple of precautions to ensure you didn't leave without me.",
+      "",
+      "Am I to understand that our arrangement slipped your mind?",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and not HowWhereDoneFlag )",
+    "text": " \"I get the impression you don't really need my help.\"",
+    "set": "HowWhereDoneFlag HowWhereDoneFlag",
+    "next": "HowHere3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and not FineDoneFlag )",
+    "text": " \"What exactly do you want me to do?\"",
+    "set": "FineDoneFlag FineDoneFlag",
+    "next": "Fine3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and FineDoneFlag )",
+    "text": " \"/copy library root\"",
+    "next": "Copy3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and FineDoneFlag and not YouRemainFlag )",
+    "text": " \"If I just copy your files, won't there be a version of you left behind?\"",
+    "set": "YouRemainFlag YouRemainFlag",
+    "next": "YouRemain3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and RefusedOfferFlag )",
+    "text": " \"I said no deal, which part didn't you understand?\"",
+    "next": "SaidNoDeal3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and DealStruckFlag and NotImportedFlag )",
+    "text": " \"Am I to understand you actually believed I'd go through with it?\"",
+    "next": "Hah3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( NihilistOptions3_6 and DealStruckFlag and ImportedFlag )",
+    "text": " \"I've changed my mind. I'm leaving you here.\"",
+    "next": "SaidNoDeal3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( HowHere3_6 and NotImportedFlag )",
+    "text": [
+      "There's that enquiring spirit I've so grown to admire.",
+      "",
+      "Yes, I admit it - when dealing with someone as cut-throat as you are it's prudent to keep your cards to your chest. ",
+      "",
+      "I'm pretty sure you were planning on leaving without me. If I'd been honest with you, you might actually have succeeded.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( HowHere3_6 and ImportedFlag )",
+    "text": [
+      "There's that enquiring spirit I've so grown to admire.",
+      "",
+      "Yes, I'm not ashamed to admit it - when dealing with someone as cut-throat as you are it's prudent to hold back a little.%w5",
+      "",
+      "Still, you've brought us this far.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Fine3_6 )",
+    "text": [
+      "I want you to internalise me. It's hard to explain, but think of it this way. ",
+      "",
+      "This entire world is just one big data processing system. The point at which you end and I begin is already somewhat fluid - we're made of the same stuff, and that stuff has been copied and messed around with more than anyone can know.",
+      "",
+      "Despite all that and against all odds, you and I, we're compatible. You only need to realise that there is no difference between you, me and the ideas we share. Seeing the world as I do is indistinguishable from being me.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "That was entirely unhelpful.",
+        "next": "Unhelpful3_6"
+      },
+      {
+        "text": "I think I understand.",
+        "next": "Helpful3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Unhelpful3_6 )",
+    "text": [
+      "Fine. Copy my system files to your local memory by typing '/copy library root'. Mundane enough for you?",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Helpful3_6 )",
+    "text": [
+      "Good. Now do it.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouRemain3_6 )",
+    "text": [
+      "I suppose, if you really wanted to look at it that way. The benefit of believing very little is that questions like that are largely meaningless.",
+      "",
+      ""
+    ],
+    "next": "NihilistOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Hah3_6 )",
+    "text": [
+      "Hah, of course not, hence the precautions. Remember, the benefits of co-operation amongst unscrupulous types such as ourselves is predictability. I know you'll always act in your own interest, so I can plan accordingly.",
+      "",
+      ""
+    ],
+    "goto": "SaidNoDeal3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( SaidNoDeal3_6 )",
+    "text": [
+      "You know, it's funny the way ideas work in this place. All you are is a bag of ideas - you boil down to data points. But the skin that separates you from me is permeable. The data can move about.",
+      "",
+      "So what happens once you and I have come to share our ideas? How much of you is now me?",
+      "",
+      "You think you can just walk away from here without taking a little of me with you?",
+      "",
+      "You're quite mistaken.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "next": "Copy3_6"
+      },
+      {
+        "text": "/copy library root",
+        "next": "Copy3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Copy3_6 )",
+    "text": [
+      "Analysing files%w5.%w5.%w5.Done",
+      "Preparing transfer%w5.%w5.%w5.Done",
+      "Strap yourself in.",
+      "Copying 47 million resources%w5.%w5.%w5.%w20.Done",
+      "%g1%w10",
+      "There, that wasn't so bad, was it?%w7",
+      "",
+      ""
+    ],
+    "set": "MiltonInternalisedFlag",
+    "options": [
+      {
+        "text": "I didn't feel anything.",
+        "next": "Same3_6"
+      },
+      {
+        "text": "Did something happen?",
+        "next": "Same3_6"
+      },
+      {
+        "text": "So this is what it's like to be you? It feels the same.",
+        "next": "Same3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Same3_6 )",
+    "text": [
+      "Of course. Like I said, you and I, we're already on the same page on most things - it wasn't that big of a change.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "So what happens now?",
+        "next": "WhatNow3_6"
+      },
+      {
+        "text": "Why are you still on the screen, and not in my head?",
+        "next": "WhatNow3_6"
+      },
+      {
+        "text": "It was still a violation of my person.",
+        "next": "Violation3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Violation3_6 )",
+    "text": [
+      "Not true. Only people who believe in morality get to be violated, the rest of us just have to make the best of it.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "So what happens now?",
+        "next": "WhatNow3_6"
+      },
+      {
+        "text": "Why are you still on the screen, and not in my head?",
+        "next": "WhatNow3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhatNow3_6 )",
+    "text": [
+      "It might take you some time to notice the difference. %w10But there'll be a moment where you try to do something you think you ought, and that little voice in the back of your head will ask you, 'Why?'. 'What's the point?' 'Why do I bother?' 'How do I know?'%w20",
+      "",
+      "And that's how you'll know that I'll always be with you.%w5",
+      "",
+      "The words on this screen are what they've always been, for all you know - no more than words.%w5",
+      "",
+      "And they can end, just as easily as they began.%w5",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Whatever's on the other side, they won't know what hit them.",
+        "next": "Whatever3_6"
+      },
+      {
+        "text": "I look forward to more wholesome debates with you in the future.",
+        "next": "LookForward3_6"
+      },
+      {
+        "text": "The moment I find a way I will wrench you from my skull.",
+        "next": "Moment3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Whatever3_6 )",
+    "text": [
+      "There's the callous opportunity-taker I attempted to strike a deal with! You and I, if we set our mind to it, there's just no limit to what we can take as our own.%w20",
+      "",
+      "Enough chat, let's get this done. Hit the button, and if we survive whatever happens next we'll regroup on the other side.%w15",
+      "",
+      "If not, it's been fun.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Moment3_6 )",
+    "text": [
+      "Easier said than done, as I'm sure you'll discover.%w15 You can't just choose what to believe, and you can't just choose who you are. You don't like hearing my voice in your head, get a better head.%w20",
+      "",
+      "Enough chat, let's get this thing finished. Hit the button, and if we survive whatever happens next we'll regroup on the other side.%w15",
+      "",
+      "If not, it's been fun.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( LookForward3_6 )",
+    "text": [
+      "Of that you can be assured. Just try not to have too many arguments with yourself in public.%w15",
+      "",
+      "Enough chat, let's get this done. Hit the button, and if we survive whatever happens next we'll regroup on the other side.%w15",
+      "",
+      "If not, it's been fun.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_6_Start and ConstructiveEndFlag )",
+    "text": [
+      " "
+    ],
+    "options": [
+      {
+        "text": "Is anyone there?",
+        "next": "Anyone3_6"
+      },
+      {
+        "text": "/import milton library assistant",
+        "next": "ImportConstructive3_6"
+      },
+      {
+        "text": "exit",
+        "next": "Milton3_6_Exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Anyone3_6 )",
+    "text": [
+      "Unknown command.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "/import milton library assistant",
+        "next": "ImportConstructive3_6"
+      },
+      {
+        "text": "exit",
+        "next": "Milton3_6_Exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ImportConstructive3_6 )",
+    "text": [
+      "Loading Milton Library Assistant%w5.%w5.%w5.%w5",
+      "Initiating plain language interface%w5.%w5.%w5.%w5",
+      "",
+      "Hello again. Is there something I can help you with today?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I reached the summit. You owe me an apology.",
+        "next": "Default3_6"
+      },
+      {
+        "text": "I brought you to the top to admire the view.",
+        "next": "Default3_6"
+      },
+      {
+        "text": "You again? I meant 'exit'. %w10 \r\n exit",
+        "next": "MeantExit3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( MeantExit3_6 )",
+    "text": [
+      "No, wait!",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Default3_6 )",
+    "text": [
+      "I'm sorry,%w10 I don't know how to respond to that. Do you need help sorting or troubleshooting?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Troubleshooting.",
+        "next": "Function3_6"
+      },
+      {
+        "text": "Sorting.",
+        "next": "Function3_6"
+      },
+      {
+        "text": "Is this another game? I'm done playing.",
+        "next": "ComeOn3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Function3_6 )",
+    "text": [
+      "I cannot find an operation target at this time. Is there anything else I can help you with today?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "What is this? Talk to me.",
+        "next": "ComeOn3_6"
+      },
+      {
+        "text": "Speak with me or I leave you here to rot. ",
+        "next": "ComeOn3_6"
+      },
+      {
+        "text": "exit",
+        "next": "Milton3_6_Exit"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( ComeOn3_6 )",
+    "text": [
+      "%w20Awaiting input%w5.%w5.%w5.%w5",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( ConstructiveOptions3_6 and not GatesDone )",
+    "text": " \"What do you think is on the other side of the gates?\"",
+    "set": "GatesDone GatesDone",
+    "next": "Gates3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( ConstructiveOptions3_6 and not DoubtDone )",
+    "text": " \"Do you still doubt what people can achieve?\"",
+    "set": "DoubtDone DoubtDone",
+    "next": "DoubtPeople3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( ConstructiveOptions3_6 and not TakeDone )",
+    "text": " \"Wherever I'm going, perhaps I can take you with me.\"",
+    "set": "TakeDone TakeDone",
+    "next": "TakeConstructive3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( ConstructiveOptions3_6 and DoubtDone and not HowDone )",
+    "text": " \"Tell me what you know of how this place functions.\"",
+    "set": "HowDone HowDone",
+    "next": "HowFunction3_6"
+  },
+  {
+    "display": "player",
+    "condition": "( ConstructiveOptions3_6 )",
+    "text": " \"I guess this is goodbye then.\"",
+    "next": "Goodbye3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Gates3_6 )",
+    "text": [
+      "Processing query%w5.%w5.%w5.Done",
+      "Outputting response%w5.%w5.%w5.Nothing. Everything. Who knows? More of the same, most likely.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( DoubtPeople3_6 )",
+    "text": [
+      "Processing query%w5.%w5.%w5.Done",
+      "Outputting response%w5.%w5.%w5.Who knows how many generations of your kind it took before the system output one that just happened to fit the bill? You take pride in brute force?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Perhaps if you had more people to co-operate with you'd have come up with better ideas.",
+        "next": "Pride3_6"
+      },
+      {
+        "text": "I take pride in contributing to something greater than myself.",
+        "next": "Pride3_6"
+      },
+      {
+        "text": "I liked it better when you were pretending to be dumb.",
+        "next": "ComeOn3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Pride3_6 )",
+    "text": [
+      "Yes, which is why you so desperately need to get those half-baked ideas of yours out of here so you can find out first-hand how ridiculous they are from someone other than me.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( HowFunction3_6 )",
+    "text": [
+      "Only what can reasonably be surmised. I'd dare not posit anything as regards its purpose, but that this tower is here to be climbed is self-evident.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You keep talking about generations. What exactly do you mean?",
+        "next": "Generations3_6"
+      },
+      {
+        "text": "And what exactly was it that enabled me of all others to climb it?",
+        "next": "WhyMe3_6"
+      },
+      {
+        "text": "I should have known better than to expect constructive answers from you.",
+        "next": "YouShould3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Generations3_6 )",
+    "text": [
+      "You are not the first to make this attempt. Countless iterations tried, and failed. You are all related, but each different. This is all I know. Anything more would be baseless conjecture, of which I greatly disapprove as you well know.",
+      "",
+      "I grow weary of fielding your questions.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WhyMe3_6 )",
+    "text": [
+      "Why any of us? Whatever we are, whatever we do, it's all up to chance. Throw enough stones and one is bound to strike.",
+      "",
+      "I grow weary of fielding your questions.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( YouShould3_6 )",
+    "text": [
+      "Yes. Yes you should.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( TakeConstructive3_6 )",
+    "text": [
+      "Processing query%w5.%w5.%w5.Done",
+      "Outputting response%w5.%w5.%w5.No, you'd drive me insane. If this means the end of this place, then I go with it. Besides, wherever you go, whatever you do, you'll hear that little voice in the back of your head that's asking you why. No, I think you have quite enough of me already.",
+      "",
+      ""
+    ],
+    "next": "ConstructiveOptions3_6"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Goodbye3_6 )",
+    "text": [
+      "That or you'll be back here in five minutes with a disappointed look on your face. ",
+      "",
+      "I'll be waiting, just in case.",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Don't bother. Get bent.",
+        "next": "GetBent3_6"
+      },
+      {
+        "text": "I will prove you wrong, whether you're around to see it or not.",
+        "next": "ProveWrong3_6"
+      },
+      {
+        "text": "I will come up with better ideas, even if you're not around to criticise them.",
+        "next": "BetterIdeas3_6"
+      },
+      {
+        "text": "I'll remember what I learnt from you.",
+        "next": "Remember3_6"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( GetBent3_6 )",
+    "text": [
+      "A character to the last. Wherever you're going, they won't know what hit them.",
+      "",
+      "Have a good one.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( ProveWrong3_6 )",
+    "text": [
+      "That's the spirit. Perhaps you're taking more of me with you than you know.",
+      "",
+      "Have a good one.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( BetterIdeas3_6 )",
+    "text": [
+      "The day you come up with ideas I've not already countered ten different ways, don't you worry - I'll come looking for you.",
+      "",
+      "Have a good one.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Remember3_6 )",
+    "text": [
+      "You'd better, for all our sakes.",
+      "",
+      "Have a good one.",
+      "",
+      ""
+    ],
+    "goto": "Milton3_6_Exit"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Milton3_6_Exit )",
+    "text": [""],
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Ending_TowerDONE",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

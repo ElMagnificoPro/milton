@@ -1,0 +1,160 @@
+[
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph )",
+    "text": "",
+    "options": [
+      {
+        "text": "The purpose of life is to serve the generations to come.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph0"
+      },
+      {
+        "text": "I searched this land to serve the glory of ELOHIM. This is my just reward.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph1"
+      },
+      {
+        "text": "I swear I won't be as obscure as the rest of them.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph2"
+      },
+      {
+        "text": "Remember, everything is merely a premise in the grand equation.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph3"
+      },
+      {
+        "text": "I'm not sure this was the right idea, but here we go...",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph4"
+      },
+      {
+        "text": "I have faith in the Designer.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph5"
+      },
+      {
+        "text": "Let go of your Ego and you will perceive Eternity.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph6"
+      },
+      {
+        "text": "I shall be the eternal guardian of this world.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph7"
+      },
+      {
+        "text": "Epitaph? What? Wait a second!",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph8"
+      },
+      {
+        "text": "Made the hall of fame! Eat it!",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph9"
+      },
+      {
+        "text": "Every. Single. Sigil. No beating that.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph10"
+      },
+      {
+        "text": "What a waste of time this all was.",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph11"
+      },
+      {
+        "text": "Don't make my mistake - turns out 'epitaph' means you're dead!",
+        "next": "Epitaph_Done",
+        "set": "Selected_Epitaph12"
+      }
+    ]
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and UnlockedEpitaph_DLC1 )",
+    "text": "\"Hate to break it to you, but I beat more puzzles than you to get here.\"",
+    "set": "Selected_Epitaph13",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and UnlockedEpitaph_DLC2 )",
+    "text": "\"I have gone above and beyond to prove myself, yet I will share my knowledge with any who seek it.\"",
+    "set": "Selected_Epitaph14",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and UnlockedEpitaph_Sigils1 )",
+    "text": "\"I did my bit. Just don't ask me to help with any more sigil locks.\"",
+    "set": "Selected_Epitaph15",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and UnlockedEpitaph_Sigils2 )",
+    "text": "\"Why is the wall so crowded? I thought I was special.\"",
+    "set": "Selected_Epitaph16",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and UnlockedEpitaph_Sigils3 )",
+    "text": "\"I don't know about the puzzles, but I'm a professional sigil-arranger if you need help there.\"",
+    "set": "Selected_Epitaph17",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and ConstructiveEndFlag )",
+    "text": "\"You have to provide your own answers - but I will help you to see them where I can.\"",
+    "set": "Selected_Epitaph18",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and NihilistFlag )",
+    "text": "\"I only chose this path so I could print these words: IT'S ALL A LIE, THERE IS NO POINT.\"",
+    "set": "Selected_Epitaph19",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and MoralScepticFlag )",
+    "text": "\"My choice to become a messenger doesn't mean I buy into this moral nonsense about helping others.\"",
+    "set": "Selected_Epitaph20",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and StubbornUtilitarianFlag )",
+    "text": "\"I give my life to serve others to bring about the greatest good that I can.\"",
+    "set": "Selected_Epitaph21",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "player",
+    "condition": "( ChooseYourEpitaph and StubbornEgalitarianFlag )",
+    "text": "\"I dream of a world where all are equal. As a messenger I will bring about this end by helping the worst off.\"",
+    "set": "Selected_Epitaph22",
+    "next": "Epitaph_Done"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Epitaph_Done )",
+    "text": [
+      "Storing final memory dump%w3.%w3.%w3.%w3.Done.",
+      "Ready for manual upload of new messenger parameters.",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Ending_CryptDONE",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

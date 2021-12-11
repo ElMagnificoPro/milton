@@ -126,7 +126,7 @@
   {
     "display": "terminal",
     "condition": "( FakePasswordPrompt )",
-    "text": "\"password: \"",
+    "text": ["\"password: \""],
     "options": [
       {
         "text": "******",

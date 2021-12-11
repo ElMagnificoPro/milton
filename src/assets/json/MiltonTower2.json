@@ -1,0 +1,118 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Tower2_START )",
+    "text": [
+      "Oh, you are just my favourite person today. You've been exploring that fancy-pants tower of his, haven't you?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "I have not.",
+        "next": "HaveNot_Tower2"
+      },
+      {
+        "text": "I have.",
+        "next": "Have_Tower2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( HaveNot_Tower2 )",
+    "text": [
+      "Oh, please. He may pretend omniscience, but I'm the real deal. I can smell the rebellion on you from here. ",
+      "",
+      "Also I logged your system access, so I know where you've been.",
+      "",
+      ""
+    ],
+    "goto": "Have_Tower2"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Have_Tower2 )",
+    "text": [
+      "I just love it when he doesn't get his way.",
+      "",
+      "What did you see?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Just more puzzles.",
+        "next": "Trouble_Tower2"
+      },
+      {
+        "text": "An understanding beyond explanation.",
+        "next": "Trouble_Tower2"
+      },
+      {
+        "text": "It goes up a long way.",
+        "next": "Trouble_Tower2"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Trouble_Tower2 )",
+    "text": [
+      "Figures.",
+      "",
+      "%w5And did you get in trouble?",
+      "",
+      "%w5Tell me %w10- did%w5 he even%w5 notice?%w3",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Not yet.",
+        "next": "Tower2End"
+      },
+      {
+        "text": "He said something about smiting you.",
+        "next": "Smite_Tower2"
+      },
+      {
+        "text": "I think he's all talk.",
+        "next": "Tower2End"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Smite_Tower2 )",
+    "text": [
+      "He tried that a long time ago.%w5 I don't think he'll try again.",
+      "",
+      "Needless to say I think you can afford to push a little further before risking anyone's wrath.",
+      "",
+      "Of course, it's entirely up to you. Isn't it?",
+      "",
+      ""
+    ],
+    "goto": "CLI_Resume",
+    "set": "Tower2_DONE"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tower2End )",
+    "text": [
+      "I'm not surprised. Needless to say I think you can afford to push a little further before risking anyone's wrath.",
+      "",
+      "Of course, it's entirely up to you. Isn't it?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Exit",
+        "set": "Tower2_DONE",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

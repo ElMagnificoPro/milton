@@ -10,11 +10,11 @@ export class MessageService {
   flags = new Set();
   currentLabel: string = '';
   showTerminals: boolean = false;
-  toDisplay
+  toDisplay;
 
   getMessage() {
     /****************   testing somrthing remove later     ************ */
-/*
+    /*
     this.story.forEach((e, i) => {
       if (this.parseLabel(e.condition))
         console.log('this story part is true', i, e);
@@ -22,14 +22,13 @@ export class MessageService {
     */
     /**************************************************************** */
 
-    console.log("getMessage called");
- 
-    this.toDisplay = {}
+    console.log('getMessage called');
+
+    this.toDisplay = {};
     this.toDisplay.text = [];
     this.toDisplay.options = [];
 
-    let hasNext = "";
-
+    let hasNext = '';
 
     console.log(this.index, this.flags);
     for (let i = 0; i < this.story.length; i++) {
@@ -40,14 +39,14 @@ export class MessageService {
         if (e.set) this.setFlags(e.set.split(' '));
 
         // ????????????????
-        if (e.next){
+        if (e.next) {
           this.setFlags([e.next]);
           hasNext = e.next;
         }
 
         if (e.goto) {
           this.toDisplay.goto = e.goto;
-          this.gotoLabel(e.goto)
+          this.gotoLabel(e.goto);
         }
 
         if (e.clear)
@@ -60,13 +59,18 @@ export class MessageService {
       const e = this.story[i];
       if (this.parseLabel(e.condition) && e.display === 'player') {
         //obj.text.push(e.text)
-        this.toDisplay.options.push(e);
+        if (e.options) {
+          this.toDisplay.options.push(...e.options);
+
+        } else {
+          this.toDisplay.options.push(e);
+        }
       }
     }
 
     console.log('in getmessage ', this.toDisplay);
 
-    this.clearFlags([hasNext])
+    this.clearFlags([hasNext]);
 
     return this.toDisplay;
   }
@@ -124,8 +128,8 @@ export class MessageService {
     console.log('on clearFlags message service', this.flags);
   }
 
-  deleteAllFlags(){
-    this.flags.clear()
+  deleteAllFlags() {
+    this.flags.clear();
   }
 
   setTerminal(n) {
@@ -179,28 +183,34 @@ export class MessageService {
   }
 
   gotoLabel(label) {
-
     this.flags.add(label);
-    
+
     let index = this.story
       .map((v) => v.condition || '')
       .findIndex((v) => v.indexOf(label + ' ') >= 0 && this.parseLabel(v));
-      if (index>=0) {
-        console.log("goto in get message v2 index :",index,"goto",label,this.flags);
-        if (this.story[index].text) this.toDisplay.text.push(...this.story[index].text);
-        if (this.story[index].options) this.toDisplay.options.push(...this.story[index].options);
-        if (this.story[index].set) this.setFlags(this.story[index].set.split(' '));
+    if (index >= 0) {
+      console.log(
+        'goto in get message v2 index :',
+        index,
+        'goto',
+        label,
+        this.flags
+      );
+      if (this.story[index].text)
+        this.toDisplay.text.push(...this.story[index].text);
+      if (this.story[index].options)
+        this.toDisplay.options.push(...this.story[index].options);
+      if (this.story[index].set)
+        this.setFlags(this.story[index].set.split(' '));
 
-        if (this.story[index].clear)
+      if (this.story[index].clear)
         this.story[index].clear.split(' ').map((v) => {
           this.flags.delete(v);
         });
-        if (this.story[index].goto) 
-          this.gotoLabel(this.story[index].goto)
+      if (this.story[index].goto) this.gotoLabel(this.story[index].goto);
+    }
 
-      }
-
-      this.flags.delete(label);
+    this.flags.delete(label);
 
     console.log('on goto', this.toDisplay);
   }
@@ -227,6 +237,12 @@ export class MessageService {
     this.flags.delete('Milton3_4_Start');
     this.flags.delete('Milton3_5_Start');
 
+    this.flags.delete('ChooseYourEpitaph');
+    this.flags.delete('InTerminal_Ending_Gates');
+    this.flags.delete('Milton3_6_Start');
+
+    this.flags.delete('Tower1_START');
+    this.flags.delete('Tower2_START');
   }
 
   initflags() {
@@ -250,6 +266,13 @@ export class MessageService {
     this.flags.add('Milton3_3_Start');
     this.flags.add('Milton3_4_Start');
     this.flags.add('Milton3_5_Start');
+
+    this.flags.add('ChooseYourEpitaph');
+    this.flags.add('InTerminal_Ending_Gates');
+    this.flags.add('Milton3_6_Start');
+
+    this.flags.add('Tower1_START');
+    this.flags.add('Tower2_START');
   }
 
   constructor() {

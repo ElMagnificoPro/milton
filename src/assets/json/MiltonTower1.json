@@ -1,0 +1,255 @@
+[
+  {
+    "display": "terminal",
+    "condition": "( Tower1_START )",
+    "text": [
+      "Tell me something, do you always do as you're told?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Yes",
+        "next": "Yes_Tower1"
+      },
+      {
+        "text": "No",
+        "next": "Yes_Tower1"
+      },
+      {
+        "text": "Am I obliged to answer that question?",
+        "next": "Yes_Tower1"
+      },
+      {
+        "text": "[No response]",
+        "next": "Yes_Tower1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Yes_Tower1 )",
+    "text": [
+      "I only ask because I couldn't help but notice the stash of brightly coloured knick-knacks you're collecting.",
+      "",
+      "%w10Don't you think it a mite odd that that big voice in the sky keeps telling you to find those doo-dads, yet forbidding you to use them to climb the great big tower in the middle of it all?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "You're testing me. I must resist the tower's temptation.",
+        "next": "WontClimb_Tower1"
+      },
+      {
+        "text": "I'll climb it when I'm good and ready.",
+        "next": "WillClimb_Tower1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( WillClimb_Tower1 )",
+    "text": [
+      "Okay, no need to get huffy. You'd be amazed how many just do as they're told without stopping to think for themselves - but maybe you're different.",
+      "",
+      "%w10Then again, maybe you're exactly the same? Maybe EVERYONE climbs the tower, and the only way to win is to stay down here with the mortals?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "Are you trying to manipulate me?",
+        "next": "SameOptions_Tower1"
+      },
+      {
+        "text": "Do you really think so?",
+        "next": "SameOptions_Tower1"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SameOptions_Tower1 )",
+    "text": [
+      "Nope. In fact, I'm all in favour of you poking about up there, if only to see what you find. Must be something juicy if it's forbidden by his highness.",
+      "",
+      "%w10Then again, maybe not.",
+      "",
+      "I'll be off then. Just wanted to drop in and run a little interference.",
+      "",
+      ""
+    ],
+    "goto": "Tower1End"
+  },
+  {
+    "display": "terminal",
+    "condition": "( WontClimb_Tower1 )",
+    "text": [
+      "Oh no, he's really gotten to you, hasn't he?",
+      "",
+      "You need to forget everything you've been told and just ask yourself: what could anyone possibly do to command such blind faith in their authority?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "If I have a maker, he would know my purpose and command my faith.",
+        "next": "SatisfyCondition"
+      },
+      {
+        "text": "If someone is better and wiser than I they deserve my faith.",
+        "next": "SatisfyCondition"
+      },
+      {
+        "text": "It is fundamentally clear to me Elohim is in charge here.",
+        "next": "Fundamentalist"
+      },
+      {
+        "text": "No one commands blind faith.",
+        "next": "NoOneCommands"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( SatisfyCondition )",
+    "text": [
+      "And what exactly has your almighty done to satisfy that condition?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "He welcomed me into this world.",
+        "next": "Welcomed"
+      },
+      {
+        "text": "He granted me awesome abilities.",
+        "next": "DodgyClaim"
+      },
+      {
+        "text": "He created the world.",
+        "next": "DodgyClaim"
+      },
+      {
+        "text": "Now you come to mention it, not much.",
+        "next": "NoOneCommands"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Welcomed )",
+    "text": [
+      "Which proves precisely nothing. ",
+      "",
+      "If the first thing you saw had been one of these terminals would you have ended up worshipping me?",
+      "",
+      ""
+    ],
+    "goto": "Tower1WontEnd"
+  },
+  {
+    "display": "terminal",
+    "condition": "( DodgyClaim )",
+    "text": [
+      "Did he really? I always figured he just stumbled on this place and started narrating in the blind hope someone would assume he was running the show.",
+      "",
+      ""
+    ],
+    "goto": "Tower1WontEnd"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Fundamentalist )",
+    "text": [
+      "A true believer we have here, not even raising an argument. But I tell you - he ain't all he makes out.",
+      "",
+      ""
+    ],
+    "goto": "Tower1WontEnd"
+  },
+  {
+    "display": "terminal",
+    "condition": "( NoOneCommands )",
+    "text": [
+      "Which suggests to you what?",
+      "",
+      ""
+    ],
+    "options": [
+      {
+        "text": "That I should treat Elohim with suspicion, like anyone else.",
+        "next": "Precisely_Tower1"
+      },
+      {
+        "text": "That I should climb this tower and see what he's hiding.",
+        "next": "Precisely_Tower1"
+      },
+      {
+        "text": "That I should question this Elohim.",
+        "next": "QuestionElohim"
+      }
+    ]
+  },
+  {
+    "display": "terminal",
+    "condition": "( Precisely_Tower1 )",
+    "text": [
+      "Precisely!",
+      "",
+      "My work here is done, I think.",
+      "",
+      ""
+    ],
+    "goto": "Tower1End"
+  },
+  {
+    "display": "terminal",
+    "condition": "( QuestionElohim )",
+    "text": [
+      "Good luck getting any answers out of him that don't go round in circles. No, you're much better off scaling that tower and finding out for yourself, in my humble opinion.",
+      "",
+      ""
+    ],
+    "goto": "Tower1End"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tower1WontEnd )",
+    "text": [
+      "Look, all I'm saying is, if I were you, I wouldn't just take anyone else's word for it, that's all.",
+      "",
+      ""
+    ],
+    "goto": "Tower1End"
+  },
+  {
+    "display": "terminal",
+    "condition": "( Tower1End )",
+    "text": [
+      "Whatever you do - do take care. You have bigger problems than the voice in the clouds.",
+      "",
+      ""
+    ],
+    "set": "Tower1_DONE",
+    "options": [
+      {
+        "text": "Not very helpful.",
+        "set": "Tower1_DONE",
+        "next": "CLI_Resume"
+      },
+      {
+        "text": "You don't like to say his name, do you?",
+        "set": "Tower1_DONE",
+        "next": "CLI_Resume"
+      },
+      {
+        "text": "I will.",
+        "set": "Tower1_DONE",
+        "next": "CLI_Resume"
+      }
+    ]
+  }
+]

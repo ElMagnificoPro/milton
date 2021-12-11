@@ -12,3 +12,7 @@
 .save-textarea{
   width: 100%;
 }
+
+.mat-divider.mat-divider-inset {
+	margin: 10px 0px;
+}

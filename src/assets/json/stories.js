@@ -17,6 +17,13 @@ import Milton3_3 from './Milton3_3.json'
 import Milton3_4 from './Milton3_4.json'
 import Milton3_5 from './Milton3_5.json'
 
+import Ending_Tower from './Ending_Tower.json'
+import Ending_Crypt from './Ending_Crypt.json'
+import Ending_Gates from './Ending_Gates.json'
+
+import MiltonTower1 from './MiltonTower1.json'
+import MiltonTower2 from './MiltonTower2.json'
+
 export default {
   QueryMLA: QueryMLA,
   MLA_CommPortal: MLA_CommPortal,
@@ -35,5 +42,12 @@ export default {
   Milton3_2: Milton3_2,
   Milton3_3: Milton3_3,
   Milton3_4: Milton3_4,
-  Milton3_5: Milton3_5
+  Milton3_5: Milton3_5,
+
+  Ending_Tower: Ending_Tower,
+  Ending_Crypt: Ending_Crypt,
+  Ending_Gates: Ending_Gates,
+  
+  MiltonTower1: MiltonTower1,
+  MiltonTower2: MiltonTower2
 };
