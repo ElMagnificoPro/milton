@@ -2,31 +2,6 @@
   <h1 mat-dialog-title>Select Terminal</h1>
   <div mat-dialog-content>
     <mat-divider [inset]="true"></mat-divider>
-
-    <div class="save-load-text">
-      <button mat-raised-button matTooltip="save to text" matTooltipPosition="below" (click)="onSaveText()">
-        save
-      </button>
-      <button mat-raised-button matTooltip="load from text" matTooltipPosition="below" (click)="onLoadText()">
-        load
-      </button>
-      <br />
-      <mat-form-field class="save-textarea" appearance="fill">
-        <mat-label>Save Data</mat-label>
-        <textarea matInput placeholder="click save button to get data or put exixting data and click load"
-          [(ngModel)]="saveText"></textarea>
-      </mat-form-field>
-    </div>
-
-    <div class="clear-session">
-      <button mat-raised-button class="clear-session-btn" matTooltip="clear current session and start again"
-        aria-label="clear current session and start again" matTooltipPosition="below" (click)="onClearSession()">
-        <mat-icon>refresh</mat-icon>
-      </button>
-    </div>
-
-    <mat-divider [inset]="true"></mat-divider>
-
     <span>
       <button mat-button [mat-dialog-close]="'QueryMLA'">QueryMLA</button>
       <button mat-icon-button class="save-load-btn" matTooltip="load progress from this terminal"
@@ -194,37 +169,51 @@
     </span>
     <mat-divider [inset]="true"></mat-divider>
     <span>
-      <button mat-button [mat-dialog-close]="'Ending_Gates'" [disabled]="isDisabled('Milton3_4_DONE')">
+      <button mat-button [mat-dialog-close]="'Ending_Gates'" matTooltip="unlock by doing most of the terminals"
+        [disabled]="isDisabled('Milton3_4_DONE')">
         Ending_Gates
-      </button>
-      <button mat-icon-button class="save-load-btn" matTooltip="load progress from this terminal"
-        matTooltipPosition="below" (click)="onLoadState('Ending_Gates')" [disabled]="isDisabled('Milton3_4_DONE')">
-        <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Ending_Tower'"
+      <button mat-button [mat-dialog-close]="'Ending_Tower'" matTooltip="unlock by doing all terminals"
         [disabled]="isDisabled('Milton3_5_DONE') || isDisabled('Tower1_DONE') || isDisabled('Tower2_DONE')">
         Ending_Tower
       </button>
-      <button mat-icon-button class="save-load-btn" matTooltip="load progress from this terminal"
-        matTooltipPosition="below" (click)="onLoadState('Ending_Tower')"
-        [disabled]="isDisabled('Milton3_5_DONE') || isDisabled('Tower1_DONE') || isDisabled('Tower2_DONE')">
-        <mat-icon>file_upload</mat-icon>
-      </button>
     </span>
     <span>
-      <button mat-button [mat-dialog-close]="'Ending_Crypt'"
-        [disabled]="isDisabled('Milton3_5_DONE') ">
+      <button mat-button [mat-dialog-close]="'Ending_Crypt'" matTooltip="unlock by doing all terminals"
+        [disabled]="isDisabled('Milton3_5_DONE') || isDisabled('Tower1_DONE') || isDisabled('Tower2_DONE')">
         Ending_Crypt
-      </button>
-      <button mat-icon-button class="save-load-btn" matTooltip="load progress from this terminal"
-        matTooltipPosition="below" (click)="onLoadState('Ending_Crypt')"
-        [disabled]="isDisabled('Milton3_5_DONE') ">
-        <mat-icon>file_upload</mat-icon>
       </button>
     </span>
     <mat-divider [inset]="true"></mat-divider>
+    <div class="save-load-text">
+      <p>Save or Load your progress as text</p>
+      <mat-form-field class="save-textarea" appearance="fill">
+        <mat-label>Save Data</mat-label>
+        <textarea matInput placeholder="click save button to get data or put exixting data and click load"
+          [(ngModel)]="saveText"></textarea>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button matTooltip="get text" matTooltipPosition="below" (click)="onSaveText()">
+        get
+      </button>
+      <button mat-raised-button matTooltip="load text" matTooltipPosition="below" (click)="onLoadText()">
+        load
+      </button>
+    </div>
+    <mat-divider [inset]="true"></mat-divider>
+
+    <div class="clear-session">
+      <button mat-raised-button class="clear-session-btn"
+        matTooltip="clear current session and start again (clear all cookies)" matTooltipPosition="below"
+        (click)="onClearSession()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+
+    <mat-divider [inset]="true"></mat-divider>
+
   </div>
   <div mat-dialog-actions></div>
 </div>

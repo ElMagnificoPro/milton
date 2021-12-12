@@ -6,31 +6,19 @@ import StoriesJson from '../../assets/json/stories.js';
 })
 export class MessageService {
   index: number = 0;
-  story; // = StoryJson;
+  story; 
   flags = new Set();
   currentLabel: string = '';
   showTerminals: boolean = false;
   toDisplay;
 
   getMessage() {
-    /****************   testing somrthing remove later     ************ */
-    /*
-    this.story.forEach((e, i) => {
-      if (this.parseLabel(e.condition))
-        console.log('this story part is true', i, e);
-    });
-    */
-    /**************************************************************** */
-
-    console.log('getMessage called');
-
     this.toDisplay = {};
     this.toDisplay.text = [];
     this.toDisplay.options = [];
 
     let hasNext = '';
 
-    console.log(this.index, this.flags);
     for (let i = 0; i < this.story.length; i++) {
       const e = this.story[i];
       if (this.parseLabel(e.condition) && e.display === 'terminal') {
@@ -38,7 +26,6 @@ export class MessageService {
         if (e.options) this.toDisplay.options.push(...e.options);
         if (e.set) this.setFlags(e.set.split(' '));
 
-        // ????????????????
         if (e.next) {
           this.setFlags([e.next]);
           hasNext = e.next;
@@ -58,7 +45,6 @@ export class MessageService {
     for (let i = 0; i < this.story.length; i++) {
       const e = this.story[i];
       if (this.parseLabel(e.condition) && e.display === 'player') {
-        //obj.text.push(e.text)
         if (e.options) {
           this.toDisplay.options.push(...e.options);
 
@@ -67,8 +53,6 @@ export class MessageService {
         }
       }
     }
-
-    console.log('in getmessage ', this.toDisplay);
 
     this.clearFlags([hasNext]);
 
@@ -81,8 +65,6 @@ export class MessageService {
     this.index = this.story
       .map((v) => v.condition || '')
       .findIndex((v) => v.indexOf(label) >= 0);
-
-    console.log('goto called', label, this.index);
 
     return this.getMessage();
   }
@@ -105,7 +87,6 @@ export class MessageService {
         else return 'false';
       })
       .join('');
-    // console.log(str);
 
     return eval(str);
   }
@@ -118,14 +99,12 @@ export class MessageService {
     flags.forEach((e) => {
       this.flags.add(e);
     });
-    console.log('on setFlags message service', this.flags);
   }
 
   clearFlags(flags) {
     flags.forEach((e) => {
       this.flags.delete(e);
     });
-    console.log('on clearFlags message service', this.flags);
   }
 
   deleteAllFlags() {
@@ -134,38 +113,22 @@ export class MessageService {
 
   setTerminal(n) {
     this.index = 0;
-    //console.log(this.story);
     this.story = StoriesJson[n];
     this.initflags();
   }
 
   setChoice(choice) {
-    console.log('choice : ', choice);
 
     if (choice.set) {
-      // add for each
       choice.set.split(' ').map((v) => {
         this.flags.add(v);
       });
-      //this.flags.add(choice.set.split(" "));
-      console.log(this.flags);
     }
     if (choice.clear) {
-      // add for each
-      //this.flags.delete(choice.clear.split(" "));
       choice.set.split(' ').map((v) => {
         this.flags.delete(v);
       });
-      console.log(this.flags);
     }
-    /* TODO this may be a big problem
-
-    this.currentLabel = choice.next;
-    this.index = this.story
-      .map((v) => v.condition || '')
-      .findIndex((v) => v.indexOf(choice.next + ' ') >= 0);
-    console.log(this.index, this.story[this.index]);
-    */
 
     this.currentLabel = choice.next;
     this.index = this.story
@@ -179,7 +142,6 @@ export class MessageService {
         .map((v) => v.condition || '')
         .findIndex((v) => v.indexOf(choice.next + ' ') >= 0);
     }
-    console.log(this.index, this.story[this.index]);
   }
 
   gotoLabel(label) {
@@ -189,13 +151,6 @@ export class MessageService {
       .map((v) => v.condition || '')
       .findIndex((v) => v.indexOf(label + ' ') >= 0 && this.parseLabel(v));
     if (index >= 0) {
-      console.log(
-        'goto in get message v2 index :',
-        index,
-        'goto',
-        label,
-        this.flags
-      );
       if (this.story[index].text)
         this.toDisplay.text.push(...this.story[index].text);
       if (this.story[index].options)
@@ -211,8 +166,6 @@ export class MessageService {
     }
 
     this.flags.delete(label);
-
-    console.log('on goto', this.toDisplay);
   }
 
   postStart() {

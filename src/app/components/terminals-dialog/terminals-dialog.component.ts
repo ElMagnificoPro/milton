@@ -37,10 +37,19 @@ export class TerminalsDialogComponent implements OnInit {
     this._cookieService.set('flags '+i, x, 69);
   }
 
-  onLoadState(i) {
+  onLoadState(t) {
+
+    let arr = [
+      "QueryMLA","MLA_CommPortal","Milton1_1","Milton1_2","Milton2_1","Milton2_2","Milton2_3","Milton2_4","Milton2_5","Milton2_6","Milton3_1","Milton3_2","Milton3_3","Milton3_4","Milton3_5","Ending_Tower","Ending_Crypt","Ending_Gates","MiltonTower1","MiltonTower2",
+    ].map(v=> 'flags ' + v)
+
     this._cookieService.delete('flags');
-    let x = this._cookieService.get('flags ' + i);
+    let x = this._cookieService.get('flags ' + t);
     this._cookieService.set('flags', x, 69);
+
+    for (let i = arr.indexOf('flags ' + t) + 1; i < arr.length; i++) {
+      this._cookieService.delete(arr[i]);
+    }
     window.location.reload();
   }
 

@@ -31,18 +31,14 @@ export class DisplayComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed : ', result);
       this.currTerminal = result;
       this.messages = [];
-      // this.terminalNumber = result;
       this.onTerminal(result);
     });
   }
 
   async getMessage() {
     this.res = this._messageService.getMessage();
-
-    console.log('from messageService', this.res);
 
     if (this.res) {
       this.messages.push('');
@@ -89,11 +85,10 @@ export class DisplayComponent implements OnInit {
     let n = 0;
 
     //speed Multiplier (quicker for testing)
-    speed=0;
+    //speed=0;
 
     while (n < text.length) {
       if (text.charAt(n) === '%') {
-        //n += 3;
         let w = parseInt(text.slice(n + 2, n + 6));
         n += w.toString().length + 2;
         await new Promise((r) => setTimeout(r, w * speed * 10));
@@ -129,7 +124,6 @@ export class DisplayComponent implements OnInit {
       this.onExit();
     } else {
       this._messageService.setChoice(option);
-      //this.messages.push('');
       this.options = [];
       await this.displayMessage(option.text, 30);
       if (this.res.goto === 'CLI_Resume' || this.res.goto === 'CLI_exit') {
@@ -143,17 +137,20 @@ export class DisplayComponent implements OnInit {
   displayOptions() {
     this.options = this.res.options;
     this.scrollBottom();
+    
+    document.documentElement.scrollTop =document.documentElement.scrollHeight;
+    document.body.scrollTop =document.body.scrollHeight;
   }
 
   scrollBottom() {
     this.element.nativeElement.scrollTop =
       this.element.nativeElement.scrollHeight;
+
   }
 
   updateFlags() {
     let x = this._messageService.getFlags();
-    //  let option.Expires = DateTime.Now.AddDays(x);
-    this._cookieService.set('flags', x, 69);
+    this._cookieService.set('flags', x, 69); //lol
     this._messageService.setFlags(x.split(','));
   }
 
@@ -161,13 +158,14 @@ export class DisplayComponent implements OnInit {
     let x = this._cookieService.get('flags');
     x = x ? x : '';
     this._messageService.setFlags(x.split(','));
-    console.log('on loadFlags ', x);
   }
 
   onTerminal(n) {
     this._messageService.setTerminal(n);
     this.getMessage();
     this._messageService.postStart();
+
+    this.element.nativeElement.scrollTop = 0;
     document.documentElement.scrollTop =0;
     document.body.scrollTop =0;
   }

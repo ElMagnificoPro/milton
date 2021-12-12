@@ -1,4 +1,3 @@
-
 <div class="current-terminal">
   <p>
     {{currTerminal}}
@@ -6,41 +5,12 @@
 </div>
 
 <div #display id="display">
-  <p
-    *ngFor="let message of messages"
-    [ngClass]="{ 'player-message': message.indexOf('>') >= 0 }"
-  >
+  <p *ngFor="let message of messages" [ngClass]="{ 'player-message': message.indexOf('>') >= 0 }">
     {{ message }}
   </p>
 </div>
 <div class="options" *ngIf="options.length > 0">
-  <button
-    mat-button
-    *ngFor="let option of options"
-    (click)="selectChoice(option)"
-  >
+  <button mat-button *ngFor="let option of options" (click)="selectChoice(option)">
     {{ option.short ? option.short : option.text }}
   </button>
 </div>
-
-
-  <!-- <div class="save-load-btns">
-  <button
-    mat-icon-button
-    class="save-btn"
-    title="save"
-    (click)="onSave()"
-    [disabled]="writing"
-  >
-    <mat-icon>save</mat-icon>
-  </button>
-  <button
-    mat-fab-button
-    class="load-btn"
-    title="load"
-    (click)="onLoad()"
-    [disabled]="writing"
-  >
-    <mat-icon>undo</mat-icon>
-  </button>
-</div> -->
