@@ -91,7 +91,7 @@ export class DisplayComponent implements OnInit {
       if (text.charAt(n) === '%') {
         let w = parseInt(text.slice(n + 2, n + 6));
         n += w.toString().length + 2;
-        await new Promise((r) => setTimeout(r, w * speed * 10));
+        await new Promise((r) => setTimeout(r, w * speed * 30));
         this.messages[this.messages.length - 1] += text.charAt(n);
       } else {
         await new Promise((r) => setTimeout(r, speed));
